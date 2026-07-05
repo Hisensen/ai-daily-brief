@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-07-05 · 过去 24 小时精选 · 共 3 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：论文研究 2 · 技巧与观点 1 · GitHub 今日趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#16a34a"></span><h2>论文研究</h2><span class="count">2 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://www.marktechpost.com/2026/07/03/nvidia-ai-introduces-aspire-a-self-improving-robotics-framework-reaching-31-zero-shot-on-libero-pro-long-tasks">NVIDIA 联合多所大学提出 ASPIRE：自我改进机器人框架，零样本成功率最高提升 77 分</a></div>
+<div class="meta"><span class="src">MarkTechPost（RSS）</span> · 昨天 14:32</div>
+<div class="summary">NVIDIA 联合密歇根大学、UIUC、UC Berkeley 等提出 ASPIRE，一个持续学习机器人框架。它通过协调器-执行器架构、闭环执行引擎、技能库和进化搜索，编写并优化机器人控制程序。编程智能体使用 Claude Code（Claude Opus 4.6，1M token 上下文窗口）。在 LIBERO-Pro 上最高比最强基线提升 77 分；Robosuite 双手交接成功率从 20% 提升至 92%；BEHAVIOR-1K 收音机拾取任务从 56% 提升至 88%。利用 LIBERO-90 积累的技能，ASPIRE 在零样本条件下对 LIBERO-Pro Long 任务达到约 31% 成功率，此前方法饱和在 4% 附近。</div>
+<div class="src-link"><a href="https://www.marktechpost.com/2026/07/03/nvidia-ai-introduces-aspire-a-self-improving-robotics-framework-reaching-31-zero-shot-on-libero-pro-long-tasks">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://www.ithome.com/0/972/526.htm">我国研制全球首款基于可控存内计算的忆阻器神经动力学芯片</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 13:01</div>
+<div class="summary">北京大学集成电路学院联合中科院上海微系统所，发布全球首款基于可控存内计算的忆阻器神经动力学芯片，首次将单步运算时延压缩至2.12毫秒。芯片采用40纳米工艺，存内计算阵列与外围电路总面积0.28平方毫米，运行频率50 MHz，单步积分仅需9级流水。在脑皮层重建等任务中较当前GPU提速50至478倍，突破神经动力学实时计算瓶颈。相关成果7月3日发表于《科学》。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/972/526.htm">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://the-decoder.com/a-26000-student-study-shows-ais-hidden-learning-cost-takes-two-full-years-to-surface">26000名学生研究显示AI隐藏学习成本需两年才显现</a></div>
+<div class="meta"><span class="src">The Decoder：AI News（RSS）</span> · 昨天 17:08</div>
+<div class="summary">一项追踪26000名7-12年级中学生30个月的面板数据研究发现：使用AI后作业分数提升18%，完成时间从64分钟降至45分钟，但闭卷考试分数下降20%，升学考试成绩下降18%至24%，且完全影响约两年才显现。81%长期用户作业完成时间低于50分钟（外包迹象）。社会学科下降27%，STEM下降22%，英语下降17%，语文下降9%。每周使用AI一小时损失约5%，五小时损失30%。早期损失从约25%降至16%但未消失。</div>
+<div class="src-link"><a href="https://the-decoder.com/a-26000-student-study-shows-ais-hidden-learning-cost-takes-two-full-years-to-surface">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 今日趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://github.com/openai/codex-plugin-cc">openai/codex-plugin-cc</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐24,471 · JavaScript · 今日+718</span></div>
+<div class="summary">Use Codex from Claude Code to review code or delegate tasks.</div>
+<div class="src-link"><a href="https://github.com/openai/codex-plugin-cc">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐83,998 · JavaScript · 今日+1,089</span></div>
+<div class="summary">🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman</div>
+<div class="src-link"><a href="https://github.com/JuliusBrussee/caveman">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://github.com/alibaba/page-agent">alibaba/page-agent</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐23,130 · TypeScript · 今日+742</span></div>
+<div class="summary">JavaScript in-page GUI agent. Control web interfaces with natural language.</div>
+<div class="src-link"><a href="https://github.com/alibaba/page-agent">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://github.com/usestrix/strix">usestrix/strix</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐36,071 · Python · 今日+1,904</span></div>
+<div class="summary">Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.</div>
+<div class="src-link"><a href="https://github.com/usestrix/strix">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐45,786 · TypeScript · 今日+304</span></div>
+<div class="summary">Chrome DevTools for coding agents</div>
+<div class="src-link"><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://github.com/Zackriya-Solutions/meetily">Zackriya-Solutions/meetily</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐15,307 · Rust · 今日+718</span></div>
+<div class="summary">Privacy first, AI meeting assistant with 4x faster Parakeet/Whisper live transcription, speaker diarization, and Ollama </div>
+<div class="src-link"><a href="https://github.com/Zackriya-Solutions/meetily">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐48,945 · JavaScript · 今日+471</span></div>
+<div class="summary">Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thi</div>
+<div class="src-link"><a href="https://github.com/asgeirtj/system_prompts_leaks">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://github.com/harvard-edge/cs249r_book">harvard-edge/cs249r_book</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐26,575 · Python · 今日+443</span></div>
+<div class="summary">Machine Learning Systems</div>
+<div class="src-link"><a href="https://github.com/harvard-edge/cs249r_book">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://github.com/rommapp/romm">rommapp/romm</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐10,217 · Python · 今日+398</span></div>
+<div class="summary">A beautiful, powerful, self-hosted rom manager and player.</div>
+<div class="src-link"><a href="https://github.com/rommapp/romm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://github.com/ogulcancelik/herdr">ogulcancelik/herdr</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐11,461 · Rust · 今日+707</span></div>
+<div class="summary">agent multiplexer that lives in your terminal.</div>
+<div class="src-link"><a href="https://github.com/ogulcancelik/herdr">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://github.com/dotnet/skills">dotnet/skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐3,811 · C# · 今日+59</span></div>
+<div class="summary">Repository for skills to assist AI coding agents with .NET and C#</div>
+<div class="src-link"><a href="https://github.com/dotnet/skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://github.com/agentskills/agentskills">agentskills/agentskills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐22,344 · Python · 今日+351</span></div>
+<div class="summary">Specification and documentation for Agent Skills</div>
+<div class="src-link"><a href="https://github.com/agentskills/agentskills">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-07-05 · 共 15 条</div></body></html>
