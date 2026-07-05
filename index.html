@@ -169,17 +169,17 @@ body {
   <div class="item">
     <h3><span class="tag paper-t">论文</span><a href="https://www.marktechpost.com/2026/07/03/nvidia-ai-introduces-aspire-a-self-improving-robotics-framework-reaching-31-zero-shot-on-libero-pro-long-tasks">NVIDIA 联合多所大学提出 ASPIRE:自我改进机器人框架,零样本成功率最高提升 77 分</a></h3>
     <div class="meta"><b>MarkTechPost</b> · 7月4日 14:32</div>
-    <p>协调器-执行器架构 + 闭环执行引擎 + 技能库 + 进化搜索,编程智能体用 Claude Code(Opus 4.6,1M 上下文)。LIBERO-Pro 最高比最强基线提升 77 分;双手交接成功率 20%→92%;零样本长任务达 31%(此前方法约 4%)。</p>
+    <p>NVIDIA 联合密歇根大学、UIUC、UC Berkeley 等提出 ASPIRE,一个持续学习机器人框架。它通过协调器-执行器架构、闭环执行引擎、技能库和进化搜索,编写并优化机器人控制程序。编程智能体使用 Claude Code(Claude Opus 4.6,1M token 上下文窗口)。在 LIBERO-Pro 上最高比最强基线提升 77 分;Robosuite 双手交接成功率从 20% 提升至 92%;BEHAVIOR-1K 收音机拾取任务从 56% 提升至 88%。利用 LIBERO-90 积累的技能,ASPIRE 在零样本条件下对 LIBERO-Pro Long 任务达到约 31% 成功率,此前方法饱和在 4% 附近。</p>
   </div>
   <div class="item">
     <h3><span class="tag paper-t">论文</span><a href="https://www.ithome.com/0/972/526.htm">我国研制全球首款基于可控存内计算的忆阻器神经动力学芯片</a></h3>
     <div class="meta"><b>IT之家</b> · 7月4日 13:01</div>
-    <p>北大联合中科院上海微系统所发布,单步运算时延压至 2.12 毫秒,40nm 工艺、总面积 0.28mm²,脑皮层重建等任务较 GPU 提速 50~478 倍。成果 7月3日发表于《科学》。</p>
+    <p>北京大学集成电路学院联合中科院上海微系统所,发布全球首款基于可控存内计算的忆阻器神经动力学芯片,首次将单步运算时延压缩至 2.12 毫秒。芯片采用 40 纳米工艺,存内计算阵列与外围电路总面积 0.28 平方毫米,运行频率 50 MHz,单步积分仅需 9 级流水。在脑皮层重建等任务中较当前 GPU 提速 50 至 478 倍,突破神经动力学实时计算瓶颈。相关成果 7月3日发表于《科学》。</p>
   </div>
   <div class="item">
     <h3><span class="tag view-t">观点</span><a href="https://the-decoder.com/a-26000-student-study-shows-ais-hidden-learning-cost-takes-two-full-years-to-surface">26000 名学生研究显示 AI 隐藏学习成本需两年才显现</a></h3>
     <div class="meta"><b>The Decoder</b> · 7月4日 17:08</div>
-    <p>30 个月追踪 7-12 年级学生:作业分 +18%、完成时间 64→45 分钟,但闭卷考 −20%、升学考 −18~24%。每周用 AI 一小时损失约 5%,五小时损失 30%。社科 −27%、STEM −22%。</p>
+    <p>一项追踪 26000 名 7-12 年级中学生 30 个月的面板数据研究发现:使用 AI 后作业分数提升 18%,完成时间从 64 分钟降至 45 分钟,但闭卷考试分数下降 20%,升学考试成绩下降 18% 至 24%,且完全影响约两年才显现。81% 长期用户作业完成时间低于 50 分钟(外包迹象)。社会学科下降 27%,STEM 下降 22%,英语下降 17%,语文下降 9%。每周使用 AI 一小时损失约 5%,五小时损失 30%。早期损失从约 25% 降至 16% 但未消失。</p>
   </div>
 </section>
 
@@ -212,130 +212,130 @@ body {
       <p class="sub">产品发布 / 更新 · 5 条</p>
       <div class="item">
         <h3><a href="https://www.marktechpost.com/2026/07/02/meet-alibabas-page-agent-a-javascript-in-page-gui-agent-that-controls-web-interfaces-with-natural-language-through-the-dom">阿里巴巴发布 Page Agent:开源 JavaScript 库实现网页 DOM 自然语言操控</a></h3>
-        <div class="meta"><b>MarkTechPost</b></div>
-        <p>嵌入网页后用自然语言操作 DOM,不依赖截图或多模态模型,把实时 DOM 压缩为 FlatDomTree 文本映射,继承用户登录态,支持任意 OpenAI 兼容端点,MIT 许可。</p>
+        <div class="meta"><b>MarkTechPost(RSS)</b> · 7月3日 04:51</div>
+        <p>阿里巴巴发布 Page Agent,一个开源的 JavaScript 客户端库,嵌入网页后可通过自然语言指令直接操作 DOM 元素。与 Playwright、Puppeteer 等外部浏览器自动化工具不同,Page Agent 不依赖截图或多模态模型,而是将实时 DOM 脱水压缩为 FlatDomTree 文本映射,让纯文本模型精准执行点击、表单填写等操作。它继承用户 cookies 和会话,无需独立后端,并支持任意 OpenAI 兼容端点的模型(示例使用 qwen3.5-plus)。项目采用 MIT 许可证,适合在自有应用内构建 AI 副驾、智能表单填充或无障碍控制等场景,但限于单页面范围,风险操作仍需服务端验证。</p>
       </div>
       <div class="item">
         <h3><a href="https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend">Claude Enterprise 新增用量与成本分析及支出管控功能</a></h3>
-        <div class="meta"><b>Claude Blog</b></div>
-        <p>仪表板按群组/用户分析用量与成本;Claude Code 控制台新增"使用量""价值"选项卡;支持支出限额 75%/90% 告警,Analytics API 可接 Datadog 等。</p>
+        <div class="meta"><b>Claude Blog(网页)</b> · 7月3日 02:03</div>
+        <p>Claude Enterprise 推出更丰富的管理分析工具和成本控制功能。仪表板现可按群组和用户分析用量与成本,支持按 SCIM 群组筛选,展示制品创建、文件编辑、技能和连接器对应的成本。Claude Code 管理控制台新增"使用量"和"价值"选项卡,分别显示活跃开发者、会话次数、常用命令,以及生产力提升估算、每次提交成本和年度价值估算。分析聊天支持自然语言查询并返回可导出图表。Analytics API 可将数据接入 Datadog Cloud Cost Management 和 CloudZero。管理员可设置模型默认和权限控制,并配置组织级支出限额的 75%、90% 告警通知;用户在 75% 和 95% 时收到应用内提醒。Admin API 支持自动审批额度增加、标记接近限额用户及快速变化的用量。</p>
       </div>
       <div class="item">
         <h3><a href="https://senior-swe-bench.snorkel.ai/">Senior SWE-Bench:评估 AI 智能体作为高级工程师的基准测试</a></h3>
-        <div class="meta"><b>Hacker News</b></div>
-        <p>Claude Opus 4.8 + Mini-SWE-Agent 通过率 24.0%,Sonnet 5 为 19.4%,GPT-5.5 为 16.0%;最强前沿模型在超 75% 任务中未达高级工程师水准。</p>
+        <div class="meta"><b>Hacker News 热门(buzzing.cc 中文翻译)</b> · 7月2日 19:04</div>
+        <p>Senior SWE-Bench 是一个开源基准测试,用于评估 AI 智能体完成高级软件工程师级别任务的能力。任务分功能开发与 Bug 修复两类:功能任务指令类似自然语言消息,采用验证智能体基于专家配方自动生成行为测试;Bug 任务要求根据日志、profiling 等运行时信息深入调查。排行榜显示,Claude Opus 4.8 搭配 Mini-SWE-Agent(max effort)通过率 24.0%,Claude Sonnet 5 为 19.4%,GPT-5.5 为 16.0%,最强前沿模型在超 75% 任务中未能达到高级工程师级别的正确性与品味。每个功能任务平均涉及 11 个文件,最强智能体也需数百步完成;中位指令长度仅为 SWE-Bench Pro 的 31%。任务来源于从库到多服务应用的仓库 PR,由拥有数百次提交的工程师编写。</p>
       </div>
       <div class="item">
-        <h3><a href="https://www.marktechpost.com/2026/07/02/the-google-health-api-got-a-cli-ghealth-is-an-open-source-tool-for-your-fitbit-air-data">Google Health API 推出 CLI:ghealth 开源工具管理 Fitbit 数据</a></h3>
-        <div class="meta"><b>MarkTechPost</b></div>
-        <p>单 Go 二进制封装 Health API v4,40 种数据类型结构化 JSON 输出,Agent 优先设计并附 SKILL.md。</p>
+        <h3><a href="https://www.marktechpost.com/2026/07/02/the-google-health-api-got-a-cli-ghealth-is-an-open-source-tool-for-your-fitbit-air-data">Google Health API 推出 CLI:ghealth 是一款针对 Fitbit 数据的开源工具</a></h3>
+        <div class="meta"><b>MarkTechPost(RSS)</b> · 7月2日 16:46</div>
+        <p>ghealth 是一款封装 Google Health API v4 的开源命令行工具,以单个 Go 二进制文件发布(Apache 2.0 协议)。它提供 40 种已验证的数据类型(包括步数、心率、睡眠、体重、血氧饱和度、心率变异性等)的结构化 JSON 输出。工具采用 Agent 优先设计,具备确定性退出码、--dry-run 和 --raw 标志,并附带两个 SKILL.md 文件供 AI 智能体使用。用户需自行创建 OAuth 凭据,通过 PKCE S256 认证。数据来源覆盖 Fitbit、Pixel Watch 及连接的第三方设备。</p>
       </div>
       <div class="item">
         <h3><a href="https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot">Kimi K2.7 Code 已在 GitHub Copilot 上正式发布</a></h3>
-        <div class="meta"><b>GitHub Blog</b></div>
-        <p>Copilot 模型选择器首个开源权重模型,Azure 托管按量计费,逐步向 Pro/Pro+/Max 推送。</p>
+        <div class="meta"><b>Hacker News 热门(buzzing.cc 中文翻译)</b> · 7月2日 16:24</div>
+        <p>Kimi K2.7 Code 开源权重模型已在 GitHub Copilot 中正式可用,成为 Copilot 模型选择器首个可选的开源权重模型,为编程工作流提供更低成本选择。该模型由 GitHub 托管于 Microsoft Azure,按供应商列表价格以用量计费。逐步向 Copilot Pro、Pro+ 和 Max 计划用户推送,用户可在 Visual Studio Code 1.127.0 或更新版本、Visual Studio 17.14.6 或更新版本、JetBrains 1.9.1-251 或更新版本、Xcode、Eclipse 等 IDE 及 Copilot CLI、GitHub.com、GitHub Mobile 等平台中选用。后续几周将扩展至 Copilot Business 和 Enterprise,当前默认关闭,需管理员在 Copilot 设置中启用策略。</p>
       </div>
 
       <p class="sub">行业动态 · 9 条</p>
       <div class="item">
-        <h3><a href="https://www.ithome.com/0/971/971.htm">得州特斯拉致命车祸:司机嫌 FSD 太保守,踩死加速踏板致 76 岁居民死亡</a></h3>
-        <div class="meta"><b>IT之家</b></div>
-        <p>车辆数据显示加速踏板被 100% 踩下约 6 秒,时速 117 公里,制动未踩;NHTSA 与 NTSB 已介入。</p>
+        <h3><a href="https://www.ithome.com/0/971/971.htm">得州特斯拉致命车祸:司机嫌 FSD 太保守,加速踏板踩死致 76 岁居民死亡</a></h3>
+        <div class="meta"><b>IT之家(RSS)</b> · 7月3日 07:43</div>
+        <p>44 岁的迈克尔·巴特勒驾驶特斯拉 Model 3 冲入得州住宅,致 76 岁玛莎·阿维拉死亡,现被控过失杀人。警方从其手机发现 2026 年 5 月多次搜索"FSD 不够激进""特斯拉 FSD 过于保守"等记录。特斯拉 AI 负责人称驾驶员将加速踏板踩到底(100%),手动操作覆盖了 FSD。车辆数据显示,约 6 秒内加速踏板被完全踩下,时速升至 117 公里(超限速两倍),制动踏板始终未踩。阿维拉家属已起诉特斯拉和巴特勒,美国 NHTSA 和 NTSB 已介入调查。</p>
       </div>
       <div class="item">
         <h3><a href="https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped">扎克伯格称 AI 智能体开发速度未如预期</a></h3>
-        <div class="meta"><b>TechCrunch</b></div>
-        <p>Meta 今年预计 AI 基础设施投入达 1450 亿美元;裁员 8000 人、7000 人转入 AI 团队,新结构预期收益尚未兑现。</p>
+        <div class="meta"><b>TechCrunch:AI(RSS)</b> · 7月3日 07:38</div>
+        <p>Meta CEO 扎克伯格在本周内部全体会议上表示,AI 智能体的开发速度并未像高管们此前预期的那样加速。今年早些时候 Meta 裁减约 8000 名员工(约占 10%),并将另外 7000 人调至多个 AI 团队,包括 Agent Transformation 小组。扎克伯格称裁员不够"干净",原因是高管担心公司无法足够快地适应技术行业变化。他还指出以 AI 为中心的新公司结构所预期的好处尚未实现,但相信未来三到六个月将开始看到 AI 投资的改善。路透社报道,Meta 今年预计在 AI 基础设施上投入高达 1450 亿美元。</p>
       </div>
       <div class="item">
-        <h3><a href="https://the-decoder.com/microsoft-launches-2-5-billion-frontier-company-to-embed-6000-ai-engineers-inside-enterprise-clients">Microsoft 成立 Frontier Company,25 亿美元派 6000 名 AI 工程师驻场企业客户</a></h3>
-        <div class="meta"><b>The Decoder</b></div>
-        <p>超越"前部署工程"模式,定位 OpenAI/Anthropic 的平台中立替代,借埃森哲、凯捷、安永扩大覆盖。</p>
+        <h3><a href="https://the-decoder.com/microsoft-launches-2-5-billion-frontier-company-to-embed-6000-ai-engineers-inside-enterprise-clients">Microsoft 成立"Frontier Company",斥资 25 亿美元派驻 6000 名 AI 工程师到企业客户现场</a></h3>
+        <div class="meta"><b>The Decoder:AI News(RSS)</b> · 7月3日 03:18</div>
+        <p>Microsoft 新设业务部门"Frontier Company",拨款 25 亿美元,将 6000 名行业与工程专家派驻企业客户现场,"共同设计、共同创新、部署并持续改进 AI 系统"。该部门由 Rodrigo Kede Lima 领导,旨在超越"前部署工程"模式,成为"最大、以结果为导向的工程组织"。Microsoft 将自己定位为 OpenAI 和 Anthropic 的"平台中立"替代方案,后两者也已设立专门部署公司。Microsoft 将借助埃森哲、凯捷、安永等系统集成商扩大覆盖范围。</p>
       </div>
       <div class="item">
         <h3><a href="https://x.com/kimmonismus/status/2072718147279335507">Anthropic 与五角大楼控权之争:Claude 军事用途护栏分歧</a></h3>
-        <div class="meta"><b>X · Kim</b></div>
-        <p>Anthropic 要求禁止全自主武器及部分监控用途;五角大楼将其列为供应链风险,法官暂停部分措施,政府上诉中。</p>
+        <div class="meta"><b>X:Kim (@kimmonismus)</b> · 7月3日 00:24</div>
+        <p>WSJ 法庭文件显示,Anthropic CEO Dario Amodei 与五角大楼副部长 Emil Michael 数月邮件往来,核心分歧在于 Claude 的军事用途护栏。Anthropic 要求禁止全自主武器及某些监控用途,五角大楼则希望 Claude 可用于所有合法国家安全场景。Michael 称若分歧太大不愿"强行推动"。随后五角大楼将 Anthropic 列为供应链风险,阻止合作伙伴在国防部项目中使用其模型。法官暂停部分措施,政府正在上诉。Michael 称原先采用 Anthropic 的操作中已有三分之二切换至其他 AI 工具。</p>
       </div>
       <div class="item">
-        <h3><a href="https://www.ithome.com/0/971/954.htm">快手可灵 AI 获 20.28 亿美元注资,投后估值 180 亿美元</a></h3>
-        <div class="meta"><b>IT之家</b></div>
-        <p>21 名初始投资者注资 138.24 亿元,12 个月内启动可灵 AI 赴港上市,募资扩算力、建数据中心。</p>
+        <h3><a href="https://www.ithome.com/0/971/954.htm">快手可灵 AI 获初始投资者 20.28 亿美元注资,投后估值 180 亿美元</a></h3>
+        <div class="meta"><b>IT之家(RSS)</b> · 7月2日 23:36</div>
+        <p>快手在港交所公告,21 名初始投资者同意以 138.24 亿元人民币(20.28 亿美元)现金注资北京可灵,后者将持有可灵 AI 相关资产。同日 15 名额外投资者追加出资 52.235 亿元人民币(7.6639 亿美元),认购总上限为 204.471 亿元(30 亿美元),对应北京可灵扩大后注册资本的 16.67%。投后估值 180 亿美元。快手预计未来 12 个月内启动可灵 AI 赴港上市,募资用于扩充算力、建设数据中心及人才引进。</p>
       </div>
       <div class="item">
         <h3><a href="https://www.ithome.com/0/971/937.htm">花旗、Adobe 等企业限制员工使用 AI 旗舰模型以控制成本</a></h3>
-        <div class="meta"><b>IT之家</b></div>
-        <p>至少一家企业月度 AI 开销涨至三倍超 1500 万美元;花旗禁用 Opus 4.6/4.7 及 GPT-5.5,Atlassian 本财年 AI 支出预计超 1.2 亿美元。</p>
+        <div class="meta"><b>IT之家(RSS)</b> · 7月2日 22:22</div>
+        <p>据 404 Media 获取的内部资料,Atlassian、Adobe、亚马逊等六家企业正限制员工使用 AI 工具,要求改用能力较低的大模型避免成本失控。至少一家企业月度 AI 开销增至三倍,超 1500 万美元。花旗银行因 GitHub 改为按量计费,于 6月24日禁用 Claude Opus 4.6、4.7 及 GPT-5.5 等旗舰模型。Adobe 于 6月30日终止 Claude 无限制使用协议。Atlassian 数据显示其 AI 月支出从 500 万美元飙升至 1500 万美元,本财年预计超 1.2 亿美元。GitHub 计划改用开源模型并测试单人按量计费模式。</p>
       </div>
       <div class="item">
         <h3><a href="https://arstechnica.com/ai/2026/07/googles-ai-buildout-drove-37-increase-in-electricity-use-in-2025">谷歌 AI 建设导致 2025 年用电量增长 37%</a></h3>
-        <div class="meta"><b>Ars Technica</b></div>
-        <p>数据中心全年消耗超 4200 万兆瓦时,超过新西兰、丹麦全国用电;自 2019 年以来总用电量增长超 250%。</p>
+        <div class="meta"><b>Ars Technica:AI(RSS)</b> · 7月2日 19:15</div>
+        <p>2025 年,谷歌年度用电量同比上涨 37%,创历史最大增幅。数据中心全年消耗超 4200 万兆瓦时,超过新西兰、丹麦、尼日利亚等国总用电量。自 2019 年以来,谷歌总用电量已增长超 250%。用电激增主要来自 Google Cloud、YouTube 视频流及支撑 AI 产品和服务的数据中心建设与运营。公司表示,AI 基础设施建设速度超过电网脱碳速度,但仍致力于扩大全球清洁电力规模,并通过技术创新降低运营排放。2024 年谷歌用电量增幅为 27%。</p>
       </div>
       <div class="item">
         <h3><a href="https://www.ithome.com/0/971/790.htm">证监会同意宇树科技科创板 IPO 注册申请</a></h3>
-        <div class="meta"><b>IT之家</b></div>
-        <p>全球四足机器人销量领先,核心零部件全栈自研、成本约进口 1/3,批复 12 个月内有效。</p>
+        <div class="meta"><b>IT之家(RSS)</b> · 7月2日 17:10</div>
+        <p>7月2日,证监会同意宇树科技股份有限公司首次公开发行股票并在科创板上市的注册申请。宇树科技是国内头部民用足式、人形机器人研发企业,全球四足机器人销量领先,2016 年由王兴兴在杭州创立,截至 2025 年 6 月员工总数超 1000 人。公司核心优势在于实现关节电机、减速器、控制器等核心零部件全栈自研,关键部件成本仅为进口产品的约 1/3。批复自同意注册之日起 12 个月内有效。</p>
       </div>
       <div class="item">
         <h3><a href="https://x.com/testingcatalog/status/2072585845542969583">OpenAI 提议美国政府持股 5%,估值 426 亿美元</a></h3>
-        <div class="meta"><b>X · Testing Catalog</b></div>
-        <p>按 8520 亿美元估值计,Altman 称此举是与公众分享 AI 红利的最佳方式。</p>
+        <div class="meta"><b>X:Testing Catalog (@testingcatalog)</b> · 7月2日 15:39</div>
+        <p>据 Financial Times 和 CNBC 报道,OpenAI 提议向美国政府提供公司 5% 的股份,按近期 8520 亿美元估值计算,价值约 426 亿美元。OpenAI CEO Sam Altman 表示,此举是与公众分享 AI 发展红利的最佳方式。</p>
       </div>
 
       <p class="sub">论文研究 · 1 条</p>
       <div class="item">
-        <h3><a href="https://x.com/emollick/status/2072778376494895139">Ethan Mollick:关于 Mythos 和网络安全的讨论并非炒作</a></h3>
-        <div class="meta"><b>X · Ethan Mollick</b></div>
-        <p>"正如任何使用 Fable 进行自主工作的人可能已经认识到的那样。"</p>
+        <h3><a href="https://x.com/emollick/status/2072778376494895139">关于 Mythos 和网络安全的讨论并非炒作</a></h3>
+        <div class="meta"><b>X:Ethan Mollick (@emollick)</b> · 7月3日 04:24</div>
+        <p>关于 Mythos 和网络安全的讨论并非炒作。(正如任何使用 Fable 进行自主工作的人可能已经认识到的那样。)</p>
       </div>
 
       <p class="sub">技巧与观点 · 6 条</p>
       <div class="item">
         <h3><a href="https://mp.weixin.qq.com/s/L6R_SPWlOBv6dI0wWWHQrg">Claude Fable 5 自主优化 AIHOT 网站 SEO/GEO 全记录</a></h3>
-        <div class="meta"><b>公众号 · 数字生命卡兹克</b></div>
-        <p>模型自主启动 22 个 Agent 调研 40 分钟,否定 Cloudflare 方案改用火山引擎 CDN,自行提交工单 22 分钟开通,并生成运维文档提醒证书到期。</p>
+        <div class="meta"><b>公众号:数字生命卡兹克</b> · 7月3日 08:16</div>
+        <p>作者用 Claude Fable 5 优化 AIHOT 网站的 SEO 与 GEO。模型自主启动 22 个 Agent 调研 40 分钟,发现豆包 App 每天六千多次访问未被统计等异常。规划境外加速时,否定 Claude Opus 4.8 的 Cloudflare 方案(无法国内直连/国外分流,且 2025 年起默认拦截 AI 爬虫),改用火山引擎 CDN。因需白名单,模型自行找到工单入口提交专业工单,22 分钟开通;发现工程师漏答回源 IP 网段问题,礼貌追问并补充备选方案;发现官方方案有安全漏洞,自行加暗号验证。23:30 切换域名解析,10 分钟后 616 个海外请求走新线路。最终生成运维文档,提醒边缘证书 10月2日到期并附续期步骤。</p>
       </div>
       <div class="item">
         <h3><a href="https://www.lmsys.org/blog/2026-07-02-agent-assisted-sglang-development">Agent 辅助的 SGLang 开发:初步探索</a></h3>
-        <div class="meta"><b>LMSYS Blog</b></div>
-        <p>把 LLM 服务、GPU 内核等工作流编码为可执行 SKILL.md + 基准合约 + 审查循环;长期优化转向 Loop Engineering。</p>
+        <div class="meta"><b>LMSYS:Blog(Chatbot Arena 团队)</b> · 7月3日 02:37</div>
+        <p>SGLang 团队将 LLM 服务、分布式运行时、GPU 内核、扩散管道等工作流编码为可执行的 SKILL.md 文件、脚本、基准合约和审查循环。现有技能包括:SGLang .claude/skills(CUDA 调试、内核集成、性能分析等)、SGLang diffusion .claude/skills(扩散模型添加与调优)、BBuf/AI-Infra-Auto-Driven-SKILLS(跨框架 SOTA 循环)、KDA(MLSys 2026 FlashInfer 内核竞赛获胜方案)以及 BBuf/KDA-Pilot(已合并三个 SGLang 集成 PR)。Profile 证据是性能工作的核心,长期优化转向 Loop Engineering——SGLang SOTA Performance Loop 将追求 SOTA 分解为公平基准测试、差距决策、性能分析、补丁和再验证,Humanize/RLCR 添加外部审查,Codex Goal 以更低协调开销运行相同循环。评审重要性提升,开发者需定义问题、选择证据、设计工作流并判断结果是否可用于生产。</p>
       </div>
       <div class="item">
         <h3><a href="https://x.com/OpenRouter/status/2072738704922439689">Fable 5 仅 4.44 美元搭建 Rube Goldberg 机器</a></h3>
-        <div class="meta"><b>X · OpenRouter</b></div>
-        <p>提示词已在 Reddit 公开。</p>
+        <div class="meta"><b>X:OpenRouter (@OpenRouter)</b> · 7月3日 01:46</div>
+        <p>用 Fable 5 构建的鲁布·戈德堡机械,仅需 4.44 美元 👀 提示词见 Reddit r/openrouter 帖子(原文内附链接)。</p>
       </div>
       <div class="item">
-        <h3><a href="https://the-decoder.com/ai-agents-can-now-complete-16-percent-of-freelance-jobs-at-pro-quality-up-from-2-5-percent-eight-months-ago">Fable 5 在 RLI 基准达成 16.1% 自动化率,较八个月前提升六倍</a></h3>
-        <div class="meta"><b>The Decoder</b></div>
-        <p>240 个付费自由职业项目(总值 14.4 万美元),Fable 5 达 16.1%,超 Opus 4.8(8.3%)与 GPT-5.5(6.3%);多数项目仍达不到专业质量。</p>
+        <h3><a href="https://the-decoder.com/ai-agents-can-now-complete-16-percent-of-freelance-jobs-at-pro-quality-up-from-2-5-percent-eight-months-ago">Fable 5 在 RLI 基准中达成 16.1% 自动化率,较八个月前提升六倍</a></h3>
+        <div class="meta"><b>The Decoder:AI News(RSS)</b> · 7月2日 20:37</div>
+        <p>Remote Labor Index(RLI)衡量 AI 智能体完成 240 个付费自由职业项目(总值 14.4 万美元)的专业质量比例。最新结果显示,Fable 5 自动化率达 16.1%,是八个月前最佳系统 2.5% 的六倍多,也超过 Opus 4.8(8.3%)和 GPT-5.5(6.3%)。因美国政府限制访问,Fable 5 仅完成 218/240 个项目评估,最坏情况仍达 14.6%。Gemini 3 Pro 仅 1.25%,落后于更老模型。AI 裁判会高估模型表现(GPT-5.5 评分偏高近三倍),仍需人类评估员打开专业软件(如 Blender)检验几何模型等细节。测试环境为虚拟 Linux 机,配备 30 余款专业应用,每项目最多 24 小时计算时间。尽管自动化率快速攀升,多数项目仍无法达到专业质量。</p>
       </div>
       <div class="item">
         <h3><a href="https://x.com/shao__meng/status/2072644710523691110">browser-use 发布开源 AI 视频剪辑 Skill「video-use」</a></h3>
-        <div class="meta"><b>X · 邵猛</b></div>
-        <p>ElevenLabs Scribe 转写 + JSON EDL + ffmpeg 渲染,附 12 条硬规则确保生产正确性。</p>
+        <div class="meta"><b>X:邵猛 (@shao__meng)</b> · 7月2日 19:33</div>
+        <p>browser-use 团队推出面向 Codex、Claude Code 等 AI 编码智能体的开源 Skill「video-use」,让 LLM 通过 ElevenLabs Scribe 将音频转写为约 12KB 文本(含逐词时间戳、说话人分离、事件标记),仅在决策点调用 timeline_view.py 生成 PNG 帧图。技术流水线包括转写、打包、生成 JSON 格式 EDL、ffmpeg 渲染及最多 3 轮自评估。渲染关键细节:分段提取 + -c copy 拼接、30ms 音频淡入淡出、PTS 时移、字幕最后叠加、HDR 自动映射、竖屏缩放、两 pass loudnorm。动画支持 HyperFrames、Remotion、Manim 等引擎。项目附带 12 条硬规则确保生产正确性。</p>
       </div>
       <div class="item">
-        <h3><a href="https://mp.weixin.qq.com/s/l70iUM0bIpG9EdV9Px7QPQ">千问团队朱达:C 端 Agent Harness 的"多快好省"工程哲学</a></h3>
-        <div class="meta"><b>公众号 · 千问APP</b></div>
-        <p>执行时间降至初始 1/3,Token 消耗仅海外产品 1/10;提出从 Prompt Engineering 演进至 Harness Engineering。</p>
+        <h3><a href="https://mp.weixin.qq.com/s/l70iUM0bIpG9EdV9Px7QPQ">千问团队朱达:C 端 Agent Harness 的"多快好省"工程哲学与主动服务探索</a></h3>
+        <div class="meta"><b>公众号:千问APP(阿里)</b> · 7月2日 18:22</div>
+        <p>千问团队 2026 年 1 月上线通用复杂任务 Agent(千问 App 胶囊入口),总结"多快好省"方法论:支持信息搜集、研究分析等任务;执行时间降至初始 1/3;通过搜索范式与上下文管理优化交付质量;Token 消耗仅为海外产品 1/10。团队探索从被动响应转向主动服务,构建 User Memory、Environment、Task System、Assistant 四大组件,指出"情商"是主动服务最难环节。朱达提出 Agent 工程从 Prompt Engineering 演进至 Harness Engineering,下一站是 AIWare Engineering,强调"低功耗,够用就行"。</p>
       </div>
 
       <p class="sub">GitHub 趋势 · 12 条</p>
       <ul class="gh-list">
-        <li><a href="https://github.com/usestrix/strix">usestrix/strix</a><span class="stat">⭐32,524 · Python · <span class="up">今日+2,137</span></span></li>
-        <li><a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a><span class="stat">⭐81,294 · JavaScript · <span class="up">今日+926</span></span></li>
-        <li><a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a><span class="stat">⭐125,681 · Shell · <span class="up">今日+3,032</span></span></li>
-        <li><a href="https://github.com/hasaneyldrm/exercises-dataset">hasaneyldrm/exercises-dataset</a><span class="stat">⭐9,357 · HTML · <span class="up">今日+938</span></span></li>
-        <li><a href="https://github.com/santifer/career-ops">santifer/career-ops</a><span class="stat">⭐57,970 · JavaScript · <span class="up">今日+372</span></span></li>
-        <li><a href="https://github.com/obra/superpowers">obra/superpowers</a><span class="stat">⭐244,607 · Shell · <span class="up">今日+897</span></span></li>
-        <li><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a><span class="stat">⭐45,147 · TypeScript · <span class="up">今日+104</span></span></li>
-        <li><a href="https://github.com/browser-use/video-use">browser-use/video-use</a><span class="stat">⭐13,890 · Python · <span class="up">今日+554</span></span></li>
-        <li><a href="https://github.com/actions/checkout">actions/checkout</a><span class="stat">⭐8,181 · TypeScript · <span class="up">今日+26</span></span></li>
-        <li><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a><span class="stat">⭐225,272 · JavaScript · <span class="up">今日+486</span></span></li>
-        <li><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a><span class="stat">⭐17,421 · Python · <span class="up">今日+939</span></span></li>
-        <li><a href="https://github.com/agentskills/agentskills">agentskills/agentskills</a><span class="stat">⭐21,672 · Python · <span class="up">今日+86</span></span></li>
+        <li><a href="https://github.com/usestrix/strix">usestrix/strix</a><span class="stat">⭐32,524 · Python · <span class="up">今日+2,137</span></span><span class="desc">Open-source AI penetration testing tool to find and fix your app's vulnerabilities.</span></li>
+        <li><a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a><span class="stat">⭐81,294 · JavaScript · <span class="up">今日+926</span></span><span class="desc">🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman</span></li>
+        <li><a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a><span class="stat">⭐125,681 · Shell · <span class="up">今日+3,032</span></span><span class="desc">A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas.</span></li>
+        <li><a href="https://github.com/hasaneyldrm/exercises-dataset">hasaneyldrm/exercises-dataset</a><span class="stat">⭐9,357 · HTML · <span class="up">今日+938</span></span><span class="desc">A comprehensive dataset of 433 fitness exercises with category, target muscle group, equipment.</span></li>
+        <li><a href="https://github.com/santifer/career-ops">santifer/career-ops</a><span class="stat">⭐57,970 · JavaScript · <span class="up">今日+372</span></span><span class="desc">AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.</span></li>
+        <li><a href="https://github.com/obra/superpowers">obra/superpowers</a><span class="stat">⭐244,607 · Shell · <span class="up">今日+897</span></span><span class="desc">An agentic skills framework &amp; software development methodology that works.</span></li>
+        <li><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a><span class="stat">⭐45,147 · TypeScript · <span class="up">今日+104</span></span><span class="desc">Chrome DevTools for coding agents</span></li>
+        <li><a href="https://github.com/browser-use/video-use">browser-use/video-use</a><span class="stat">⭐13,890 · Python · <span class="up">今日+554</span></span><span class="desc">Edit videos with coding agents</span></li>
+        <li><a href="https://github.com/actions/checkout">actions/checkout</a><span class="stat">⭐8,181 · TypeScript · <span class="up">今日+26</span></span><span class="desc">Action for checking out a repo</span></li>
+        <li><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a><span class="stat">⭐225,272 · JavaScript · <span class="up">今日+486</span></span><span class="desc">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development.</span></li>
+        <li><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a><span class="stat">⭐17,421 · Python · <span class="up">今日+939</span></span><span class="desc">"Vibe-Trading: Your Personal Trading Agent"</span></li>
+        <li><a href="https://github.com/agentskills/agentskills">agentskills/agentskills</a><span class="stat">⭐21,672 · Python · <span class="up">今日+86</span></span><span class="desc">Specification and documentation for Agent Skills</span></li>
       </ul>
     </div>
   </details>
