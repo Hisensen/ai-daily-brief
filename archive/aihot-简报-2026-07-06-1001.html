@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-07-06 · 最近 2 天精选 · 共 9 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：模型发布/更新 1 · 行业动态 4 · 技巧与观点 4。</div><div class="section"><div class="section-head"><span class="bar" style="background:#6d28d9"></span><h2>模型发布/更新</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://x.com/Meituan_LongCat/status/2073768940078317713">美团 LongCat-2.0 完全开源（MIT 许可），1.6T MoE 模型开放权重与推理代码</a></div>
+<div class="meta"><span class="src">X：美团 LongCat (@Meituan_LongCat)</span> · 昨天 22:00</div>
+<div class="summary">美团今日宣布 LongCat-2.0 完全开源（MIT 许可），公开模型权重与推理代码。该模型为 MoE 架构，总参数量 1.6T，每 token 激活约 48B，支持 1M token 上下文。技术亮点包括 LongCat Sparse Attention 高效处理长文本、Zero-Compute Experts 动态激活 33B-56B 零浪费计算、MOPD 按任务路由 Agent/Reasoning/Interaction 三组专家。Benchmark 成绩：Terminal-Bench 2.1 70.8；SWE-bench Pro 59.5（超越 GPT-5.5 的 58.6）；SWE-bench Multilingual 77.3；FORTE 73.2；RWSearch 78.8；BrowseComp 79.9。原生集成 Claude Code、OpenClaw、Hermes Agent 等工具，支持 GPU 与 NPU 部署，已在大规模国内集群验证。</div>
+<div class="src-link"><a href="https://x.com/Meituan_LongCat/status/2073768940078317713">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#0891b2"></span><h2>行业动态</h2><span class="count">4 条</span></div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://www.ithome.com/0/972/896.htm">SK 海力士将启动 280 亿美元美股上市，有望成史上第二大 IPO</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 今天 09:09</div>
+<div class="summary">SK 海力士于本周一启动规模约 280 亿美元的美股上市计划，将在纳斯达克通过存托凭证发行 1779 万股新股，每 10 份存托凭证对应 1 股普通股。发行价区间周一公布，最终发行价周四敲定，股票周五挂牌交易。受益于全球人工智能热潮，该股年内涨幅超 270%。本次募资规模预计为史上第二大新股发行，仅次于上月 SpaceX 的 857 亿美元 IPO。SK 海力士是高带宽内存芯片核心供应商，产品用于英伟达、谷歌等 AI 设备。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/972/896.htm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://x.com/SemiAnalysis_/status/2073874671498387899">NVIDIA Kyber NVL144 延迟超 12 个月至 2028</a></div>
+<div class="meta"><span class="src">X：SemiAnalysis (@SemiAnalysis_)</span> · 今天 05:00</div>
+<div class="summary">重大延迟：Jensen 在 GTC 上展示 Kyber NVL144 仅 3 个月后，该项目遭遇重大挫折，已推迟超过 12 个月，延至 2028 年。下文我们将解释 Kyber 为何面临大幅延迟，以及 NVIDIA 的 NVL72x2 背靠背机架架构为何也被取消，导致 Rubin Ultra 的扩展域受限。👇️ 1/6🧵</div>
+<div class="src-link"><a href="https://x.com/SemiAnalysis_/status/2073874671498387899">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://x.com/rohanpaul_ai/status/2073834219659534816">扎克伯格：建千兆瓦级AI集群，集中精英与资本</a></div>
+<div class="meta"><span class="src">X：Rohan Paul (@rohanpaul_ai)</span> · 今天 02:19</div>
+<div class="summary">&quot;我们正在建设这个 Prometheus 集群，首个千兆瓦以上的单一集群……我们是在谈论数千亿美元的资本投入。&quot;
+
+Mark Zuckerberg 表示，他的职责就是集中精英人才、资本和基础设施。</div>
+<div class="src-link"><a href="https://x.com/rohanpaul_ai/status/2073834219659534816">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://www.heise.de/en/news/Chat-Control-1-0-EU-Council-forces-messenger-scans-via-fast-track-11353659.html">欧盟理事会通过快速通道强制推行&quot;聊天管控&quot;（Chat Control 2.0）</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 今天 00:23</div>
+<div class="summary">欧盟理事会通过书面程序快速通过一项新法规，强制要求科技集团对加密通信进行无差别扫描（Chat Control 2.0），以填补过渡性规定4月3日到期后的法律漏洞，并向欧洲议会施压。批评者指责该做法试图绕过民主监督。草案将在夏季休会前以紧急程序提交议会表决，多数议员可能已离会，反对需绝对多数，几乎无法阻止。理事会称扫描限于必要范围，处理的数据须在检测后12个月内不可撤销地删除。</div>
+<div class="src-link"><a href="https://www.heise.de/en/news/Chat-Control-1-0-EU-Council-forces-messenger-scans-via-fast-track-11353659.html">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">4 条</span></div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://mp.weixin.qq.com/s/ZkMsdeTK6wmgkaER0iPT8w">分享8个Claude Fable 5下线前必跑的超实用Prompt</a></div>
+<div class="meta"><span class="src">公众号：卡尔的AI沃茨</span> · 今天 09:19</div>
+<div class="summary">Claude Fable 5即将下线，作者整理了8个经实战验证的提示词：/goal提示语让模型自主跑25次实验（花费165美元，构建速度提高50%、token开销降60%）；工作模式提示语将用户习惯转化为可复用Skills；行动规范提示语约束subagent行为；subagent分配提示语智能分配任务；25个定时循环工作流（含Shadow prompt loop做A/B测试）；自治运行+自动暂停提示语；记忆系统提示语保留错题本；反向面试提示语确保95%把握再执行。这些提示词可迁移至API计费后继续使用，核心是让模型研究用户而非限制能力。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s/ZkMsdeTK6wmgkaER0iPT8w">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://extelligence.substack.com/p/i-accidentally-started-a-small-business">三周前，我不小心创办了一家小公司</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 今天 01:43</div>
+<div class="summary">一位父亲为患有自闭症的非语言儿子开发了一款沟通应用，在言语治疗室的等候区展示时，所有非语言儿童的母亲看到后都忍不住流泪，言语治疗师也啜泣了五分钟。他意外发现产品市场匹配，决定腾出时间让更多孩子能用上，即使这意味着几周睡眠不足。应用本身是专为理解语言困难的儿童设计的，与传统的AAC设备不同--后者主要面向身体障碍但语言理解正常的成人。</div>
+<div class="src-link"><a href="https://extelligence.substack.com/p/i-accidentally-started-a-small-business">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://github.com/Trystan-SA/claude-design-system-prompt">Anthropic Claude Design 反向工程提示词开源更新</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 23:35</div>
+<div class="summary">Anthropic 旗下 Claude Design 的反向工程系统提示词在 GitHub 以 MIT 许可证开源，包含 20 章提示词和 14 项技能，覆盖内容纪律、美学、无障碍（WCAG、语义 HTML、键盘导航）、交互状态、系统思维等。近日针对 Fable 5/Opus 4.7+ 系列校准，新增自主决策条款：小决定直接执行记录而不询问。项目支持 Claude Code/Claude.ai 及 Codex 两种变体。</div>
+<div class="src-link"><a href="https://github.com/Trystan-SA/claude-design-system-prompt">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://www.marktechpost.com/2026/07/05/llamaindex-legal-kb-agentic-retrieval-over-index-v2-with-retrieve-find-read-and-grep-tools">LlamaIndex 发布 legal-kb：基于 Index v2 的智能体检索参考应用</a></div>
+<div class="meta"><span class="src">MarkTechPost（RSS）</span> · 昨天 15:50</div>
+<div class="summary">LlamaIndex 发布 legal-kb，一个基于 Index v2（LlamaParse Platform）的法律文档知识库参考应用。采用 Retrieval Harness 模式，赋予 Agent 四个文件系统风格工具：retrieve（混合语义检索，支持 rerank 和引用）、findFiles（精确/模糊文件名搜索）、readFile（带偏移量的原始内容读取）和 grepFile（正则匹配并返回字符位置）。Agent 需先调用 findFiles 确定文件清单，再依次使用其他工具定位内容。底层基于 Vercel AI SDK 6 的 ToolLoopAgent，可选用 OpenAI 或 Anthropic 模型，支持用户自带 API key。项目以 TanStack Start web app 形式运行，上传文件自动解析索引，同一文件名重复上传可产生版本，检索时通过版本元数据字段过滤。</div>
+<div class="src-link"><a href="https://www.marktechpost.com/2026/07/05/llamaindex-legal-kb-agentic-retrieval-over-index-v2-with-retrieve-find-read-and-grep-tools">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-07-06 · 共 9 条</div></body></html>
