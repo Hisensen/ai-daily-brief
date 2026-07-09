@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-07-10 · 过去 24 小时精选 · 共 18 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：模型发布/更新 8 · 产品发布/更新 3 · 行业动态 6 · 技巧与观点 1 · GitHub 今日趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#6d28d9"></span><h2>模型发布/更新</h2><span class="count">8 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://www.marktechpost.com/2026/07/09/meet-nemotron-labs-3-puzzle-75b-a9b">英伟达推出Nemotron-Labs-3-Puzzle-75B-A9B：压缩混合MoE大模型，服务器吞吐量提升2.03倍</a></div>
+<div class="meta"><span class="src">MarkTechPost（RSS）</span> · 今天 03:31</div>
+<div class="summary">英伟达发布Nemotron-Labs-3-Puzzle-75B-A9B，是Nemotron-3-Super的压缩变体。母模型总参120.7B、活跃12.8B；压缩后总参75.3B、活跃9.3B。在8×B200节点上，匹配NVFP4权重和用户吞吐量，总吞吐量提升1.60x至2.14x，8K/64K场景达2.03x。单张H100上1M token并发数从1升至8，权重从70GB降至44.5GB。采用迭代Puzzle压缩方法，平均分比单步Puzzle提升0.57。已发布BF16、FP8和NVFP4三种格式checkpoint。</div>
+<div class="src-link"><a href="https://www.marktechpost.com/2026/07/09/meet-nemotron-labs-3-puzzle-75b-a9b">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://x.com/sama/status/2075266471316615436">OpenAI 发布最强模型与最佳博文</a></div>
+<div class="meta"><span class="src">X：Sam Altman (@sama)</span> · 今天 01:10</div>
+<div class="summary">显然是我们有史以来最好的模型，也是我们写得最好的博文之一：
+
+https://openai.com/index/gpt-5-6/</div>
+<div class="src-link"><a href="https://x.com/sama/status/2075266471316615436">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://x.com/AIatMeta/status/2075218647359111460">Meta 发布 Muse Spark 1.1 模型</a></div>
+<div class="meta"><span class="src">X：AI at Meta (@AIatMeta)</span> · 昨天 22:00</div>
+<div class="summary">来自 @finkd 的消息 - Muse Spark 1.1 已上线。</div>
+<div class="src-link"><a href="https://x.com/AIatMeta/status/2075218647359111460">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://openai.com/index/chatgpt-for-your-most-ambitious-work">OpenAI 推出 ChatGPT Work：可跨应用自主工作的 AI 智能体</a></div>
+<div class="meta"><span class="src">OpenAI：官网动态（RSS · 排除企业/客户案例）</span> · 昨天 18:00</div>
+<div class="summary">OpenAI 发布 ChatGPT Work，一个能跨应用和文件收集信息、将复杂项目分解为小步骤独立完成并持续工作数小时的 AI 智能体。它内置 Codex 技术，目前每周超 500 万用户使用 Codex，其中超 100 万用于非软件开发场景。ChatGPT Work 由今天同步推出的最新前沿模型 GPT-5.6 驱动，具备多步骤推理和按模板生成材料的能力。该功能今天起面向 Pro、Enterprise 和 Edu 计划推出，未来几天扩展至 Plus 和 Business 计划。桌面版 ChatGPT 在所有计划（含免费版）中提供 Chat、Work 和 Codex 模式，且 Codex 应用已合并至新的桌面应用。</div>
+<div class="src-link"><a href="https://openai.com/index/chatgpt-for-your-most-ambitious-work">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://www.marktechpost.com/2026/07/09/nvidia-releases-nemotron-labs-3-puzzle-75b-a9b-a-compressed-hybrid-moe-llm-delivering-2-03x-server-throughput-at-matched-user-throughput">NVIDIA 发布 Nemotron-Labs-3-Puzzle-75B-A9B：压缩混合 MoE 模型，服务器吞吐量提升 2.03 倍</a></div>
+<div class="meta"><span class="src">MarkTechPost（RSS）</span> · 昨天 16:47</div>
+<div class="summary">NVIDIA 发布 Nemotron-3-Super 的压缩变体 Nemotron-Labs-3-Puzzle-75B-A9B，总参数从 120.7B 降至 75.3B，活跃参数从 12.8B 降至 9.3B，保持 88 块混合布局（40 Mamba、40 MoE、8 注意力）。在 8×B200 节点上，8K/64K 场景匹配用户吞吐量≥100 tok/s 时，服务器吞吐量提升 2.03 倍。单 H100 上 1M-token 并发从 1 增至 8，权重占用从 70 GB 降至 44.5 GB。迭代式 Puzzle 方法平均得分比单步高 0.57。代价：Arena-Hard-V2 降 4.2 分、SWE-Bench 降 2.6 分。Hugging Face 提供 BF16、FP8、NVFP4 检查点。</div>
+<div class="src-link"><a href="https://www.marktechpost.com/2026/07/09/nvidia-releases-nemotron-labs-3-puzzle-75b-a9b-a-compressed-hybrid-moe-llm-delivering-2-03x-server-throughput-at-matched-user-throughput">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://www.ithome.com/0/974/517.htm">蚂蚁灵波开源全球首个面向具身智能的MoE视频基模LingBot-Video</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 15:06</div>
+<div class="summary">蚂蚁灵波科技正式开源LingBot-Video，这是全球首个基于MoE架构、面向具身智能的视频生成基础模型。总参数30B，推理时仅激活约3B，效率较同规模Dense架构提升约3倍。模型引入7万小时VLA、VLN、Ego等机器人数据，并通过多维强化学习奖励系统对齐物理合理性与任务完成度。在RBench上总分0.620，超越Wan2.6等模型；在Physics-IQ Verified评测中排名第一。可用于机器人动作预测、仿真数据生成等方向。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/974/517.htm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://www.ithome.com/0/974/508.htm">蚂蚁灵波开源实时交互世界模型 LingBot-World 2.0</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 14:53</div>
+<div class="summary">蚂蚁灵波开源新一代实时交互世界模型 LingBot-World 2.0（14B 参数），支持施法、攻击、跳跃等丰富角色动作及文本驱动事件（如切换场景、召唤风暴），内置 Pilot Agent 与 Director Agent 实现世界持续演化，并支持多人同时交互。模型采用因果预训练范式和混合双向自回归注意力掩码（MoBA），可稳定输出 720p/60fps 实时画面，长达一小时测试画质不衰减。通过一致性蒸馏与 DMD 降低采样成本，结合注意力 kernel 优化、混合并行推理、动态 KV 缓存调度和异步流媒体传输实现低延迟交互。模型权重及推理代码以非商用协议开源，SGLang 已适配，并提供 Reactor PC 端和灵光 APP 在线体验。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/974/508.htm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://www.marktechpost.com/2026/07/08/lingbot-vla-2-0">Robbyant 发布 LingBot-VLA 2.0：开源 6B 跨实体机器人视觉-语言-动作模型</a></div>
+<div class="meta"><span class="src">MarkTechPost（RSS）</span> · 昨天 08:45</div>
+<div class="summary">Robbyant 推出 LingBot-VLA 2.0，一个 6B 参数的开源视觉-语言-动作（VLA）基础模型。它以 Qwen3-VL-4B-Instruct 为骨干，采用 MoE 动作专家架构，通过 55 维规范向量统一表示不同机器人的状态和动作。训练数据涵盖约 60，000 小时高质量数据（50，000 小时机器人轨迹 + 10，000 小时第一人称人类视频），覆盖 20 种机器人配置。在 GM-100 双机械臂基准测试中，模型在多个平台上超越 π0.5 和之前版本。模型权重、代码和技术报告已以 Apache-2.0 许可开源。</div>
+<div class="src-link"><a href="https://www.marktechpost.com/2026/07/08/lingbot-vla-2-0">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#2563eb"></span><h2>产品发布/更新</h2><span class="count">3 条</span></div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://mistral.ai/news/manage-prompts-and-skills-in-studio">Mistral 推出 Studio，为 AI 提示词和技能提供系统记录</a></div>
+<div class="meta"><span class="src">Mistral AI：News（网页）</span> · 昨天 22:33</div>
+<div class="summary">Mistral 今日推出 Studio，为 AI 提示词和技能提供集中式系统记录。平台将 prompts 和 skills 视为生产资产，支持不可变版本、回滚、明确所有权、分类标签和审计日志，保证变更可追溯。非开发者可直接编辑测试，通过标签将变更推送至生产，保留原有 CI/CD 流程。可观测性让生产输出回溯到对应资产版本，形成闭环治理。现面向 Mistral Studio 客户开放。</div>
+<div class="src-link"><a href="https://mistral.ai/news/manage-prompts-and-skills-in-studio">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://www.anthropic.com/news/reflect-with-claude">Claude 推出反思功能（Beta）</a></div>
+<div class="meta"><span class="src">Anthropic：Newsroom（网页）</span> · 昨天 21:40</div>
+<div class="summary">Anthropic 为 Claude 推出一项反思功能（Beta），帮助用户追踪使用模式。用户可回顾过去 1、3、6 或 12 个月的活动总结，涵盖关键主题、使用频率和任务类型。功能结合 4D AI Fluency Framework（委托、描述、辨别、勤勉）提供协作分析，支持设定静音时段或定时休息提醒。隐私方面，不涉及无痕对话和健康集成工具，也不提取连接工具中的底层文件。该功能面向 Free、Pro 和 Max 用户，需开启记忆功能，可通过 Claude 网页或桌面应用设置。</div>
+<div class="src-link"><a href="https://www.anthropic.com/news/reflect-with-claude">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://x.com/runwayml/status/2074982268175630814">Seedream 5.0 Pro 登陆 Runway，支持14种语言</a></div>
+<div class="meta"><span class="src">X：Runway (@runwayml)</span> · 昨天 06:21</div>
+<div class="summary">Seedream 5.0 Pro 现已登陆 Runway。可通过提示词或参考图生成高细节图像，图像内文字清晰可读，支持多达14种语言。立即点击下方链接尝试。</div>
+<div class="src-link"><a href="https://x.com/runwayml/status/2074982268175630814">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#0891b2"></span><h2>行业动态</h2><span class="count">6 条</span></div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://www.anthropic.com/news/hard-questions">Anthropic发起&quot;硬问题&quot;倡议，邀请公众提出AI相关尖锐问题</a></div>
+<div class="meta"><span class="src">Anthropic：Newsroom（网页）</span> · 今天 01:40</div>
+<div class="summary">Anthropic作为公益公司，发起&quot;硬问题&quot;倡议，邀请公众就AI对就业、社会、家庭、科学医学等领域的影响提出最尖锐的问题。此前已通过多种方式收集看法：首轮调查询问5.2万美国人；通过Anthropic Interviewer调查了159个国家70种语言的8.1万Claude用户；开展数十场线下焦点小组；并基于匿名真实数据研究Claude使用情况。公司还设立了Anthropic Institute和Long-Term Benefit Trust以监督公益使命进展。Anthropic承诺将公开追踪并报告针对这些问题的具体行动及成效。</div>
+<div class="src-link"><a href="https://www.anthropic.com/news/hard-questions">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://www.anthropic.com/news/ben-bernanke">Anthropic长期利益信托任命本·伯南克为受托人</a></div>
+<div class="meta"><span class="src">Anthropic：Newsroom（网页）</span> · 今天 00:40</div>
+<div class="summary">Anthropic的长期利益信托（LTBT）任命前美联储主席、2022年诺贝尔经济学奖得主本·伯南克为最新受托人。他将与另外三位受托人共同监督公司以对社会长期有益的方式负责任开发先进AI的使命。LTBT独立于管理团队和投资者，受托人不持股、不分红，仅按服务时间获酬。该信托有权向Anthropic董事会任命成员，并就AI风险与社会影响等关键决策提供建议。伯南克将参与公司的经济研究，帮助理解AI对全球劳动力与经济的影响。</div>
+<div class="src-link"><a href="https://www.anthropic.com/news/ben-bernanke">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://www.ithome.com/0/974/782.htm">消息称特斯拉三代擎天柱人形机器人初步定型，马斯克放话达不成产能目标就开掉整个采购团队</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 23:48</div>
+<div class="summary">据晚点LatePost报道，特斯拉Optimus Gen 3经马斯克评审通过，即将量产。供应链要求供应商9月产能达1000台/周，年底升至2000-2500台/周，届时年产能可达10万台。马斯克六月底高管会上要求年底前实现产能目标，否则开除整个Optimus采购团队。弗里蒙特工厂已改造为Optimus生产线，Model S/X于5月停产。马斯克表示初期生产极其缓慢，低产量夏季启动，高产量2027年展开。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/974/782.htm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://www.ithome.com/0/974/744.htm">法国对英伟达反垄断调查接近尾声，聚焦 CUDA 生态和产业投资</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 21:01</div>
+<div class="summary">法国竞争管理局确认，对英伟达的反垄断调查已近尾声，即将发布正式异议声明。调查聚焦两大问题：市场对CUDA平台的严重依赖，以及英伟达对CoreWeave等AI云计算公司的投资。英伟达占全球AI加速器超70%份额。若认定滥用市场支配地位，最高可处全球年营业额10%罚款。法国是首个准备正式指控英伟达的监管机构。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/974/744.htm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">16</span><a class="title" href="https://www.tomtunguz.com/ollama-series-b">Ollama 开发者数达890万，B轮融资由Theory领投</a></div>
+<div class="meta"><span class="src">Tomer Tunguz 博客（VC 分析）</span> · 昨天 08:00</div>
+<div class="summary">Ollama 让开源模型在本地或云端轻松运行，保持体验一致。目前拥有890万开发者、6.7万集成，并与各大模型实验室及硬件供应商建立合作。B轮融资由Theory领投。</div>
+<div class="src-link"><a href="https://www.tomtunguz.com/ollama-series-b">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">17</span><a class="title" href="https://www.ithome.com/0/974/275.htm">利润超10亿美元、ARR剑指千亿，Anthropic抢先OpenAI冲击IPO</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 06:30</div>
+<div class="summary">Anthropic今年第三季度利润预计超10亿美元，已于6月1日秘密提交IPO申请，若成功将成为规模最大AI实验室IPO。其与OpenAI的年度经常性收入合计接近1000亿美元。凭借Claude Code在软件开发领域的快速普及，Anthropic在2026年实现AI模型盈利变现，成为B2B市场领跑者。SemiAnalysis报告认为其商业模式优越，若持续良好执行，市值可能触及6万亿美元。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/974/275.htm">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">18</span><a class="title" href="https://x.com/OpenBMB/status/2075218678027850154">TeXada：基于MiniCPM的本地数学Agent发布</a></div>
+<div class="meta"><span class="src">X：面壁智能 OpenBMB (@OpenBMB)</span> · 昨天 22:01</div>
+<div class="summary">社区开发者基于MiniCPM5-1B和MiniCPM-V 4.6构建了本地优先的数学智能体TeXada。该Agent支持自然语言直接转LaTeX、手写/图像公式OCR转可编辑LaTeX、LaTeX补全与错误修复等核心功能。所有推理在本地完成，无需依赖云服务，保障隐私安全，适用于学生、研究人员和开发者随时随地处理数学表达式。已开源至GitHub，并提供HuggingFace模型下载。</div>
+<div class="src-link"><a href="https://x.com/OpenBMB/status/2075218678027850154">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 今日趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">19</span><a class="title" href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐18,450 · TypeScript · 今日+3,728</span></div>
+<div class="summary">AI-powered job application framework built on Claude Code. Fork it, fill in your profile, and let Claude evaluate jobs, </div>
+<div class="src-link"><a href="https://github.com/MadsLorentzen/ai-job-search">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">20</span><a class="title" href="https://github.com/SmartlyDressedGames/U3-SDK">SmartlyDressedGames/U3-SDK</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐1,953 · C# · 今日+541</span></div>
+<div class="summary">Source code for Unturned, a free open-world zombie survival sandbox game.</div>
+<div class="src-link"><a href="https://github.com/SmartlyDressedGames/U3-SDK">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">21</span><a class="title" href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐75,734 · JavaScript · 今日+2,582</span></div>
+<div class="summary">Production-grade engineering skills for AI coding agents.</div>
+<div class="src-link"><a href="https://github.com/addyosmani/agent-skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">22</span><a class="title" href="https://github.com/VoltAgent/awesome-design-md">VoltAgent/awesome-design-md</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐99,470 · — · 今日+1,233</span></div>
+<div class="summary">A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agen</div>
+<div class="src-link"><a href="https://github.com/VoltAgent/awesome-design-md">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">23</span><a class="title" href="https://github.com/iOfficeAI/OfficeCLI">iOfficeAI/OfficeCLI</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐13,267 · C# · 今日+1,923</span></div>
+<div class="summary">OfficeCLI is the first and best Office suite purpose-built for AI agents to read, edit, and automate Word, Excel, and Po</div>
+<div class="src-link"><a href="https://github.com/iOfficeAI/OfficeCLI">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">24</span><a class="title" href="https://github.com/wonderwhy-er/DesktopCommanderMCP">wonderwhy-er/DesktopCommanderMCP</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐6,551 · TypeScript · 今日+185</span></div>
+<div class="summary">This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities</div>
+<div class="src-link"><a href="https://github.com/wonderwhy-er/DesktopCommanderMCP">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">25</span><a class="title" href="https://github.com/anthropics/claude-cookbooks">anthropics/claude-cookbooks</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐47,064 · Jupyter Notebook · 今日+194</span></div>
+<div class="summary">A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.</div>
+<div class="src-link"><a href="https://github.com/anthropics/claude-cookbooks">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">26</span><a class="title" href="https://github.com/vxcontrol/pentagi">vxcontrol/pentagi</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐19,287 · Go · 今日+543</span></div>
+<div class="summary">Fully autonomous AI Agents system capable of performing complex penetration testing tasks</div>
+<div class="src-link"><a href="https://github.com/vxcontrol/pentagi">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">27</span><a class="title" href="https://github.com/unclecode/crawl4ai">unclecode/crawl4ai</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐71,756 · Python · 今日+195</span></div>
+<div class="summary">🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler &amp; Scraper. Don&#x27;t be shy, join here: https://discord.gg/jP8KfhDhyN</div>
+<div class="src-link"><a href="https://github.com/unclecode/crawl4ai">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">28</span><a class="title" href="https://github.com/imthenachoman/How-To-Secure-A-Linux-Server">imthenachoman/How-To-Secure-A-Linux-Server</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐29,006 · — · 今日+306</span></div>
+<div class="summary">An evolving how-to guide for securing a Linux server.</div>
+<div class="src-link"><a href="https://github.com/imthenachoman/How-To-Secure-A-Linux-Server">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">29</span><a class="title" href="https://github.com/huxingyi/autoremesher">huxingyi/autoremesher</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐2,307 · C++ · 今日+405</span></div>
+<div class="summary">Automatic quad remeshing tool</div>
+<div class="src-link"><a href="https://github.com/huxingyi/autoremesher">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">30</span><a class="title" href="https://github.com/bradautomates/claude-video">bradautomates/claude-video</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐6,595 · Python · 今日+727</span></div>
+<div class="summary">Give Claude the ability to watch any video. /watch downloads, extracts frames, transcribes, hands it all to Claude.</div>
+<div class="src-link"><a href="https://github.com/bradautomates/claude-video">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-07-10 · 共 30 条</div></body></html>
