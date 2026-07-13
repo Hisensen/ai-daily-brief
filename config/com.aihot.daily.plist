@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.aihot.daily</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/macbookpro/anaconda3/bin/python3</string>
+    <string>/Users/macbookpro/Desktop/claude_project/AI每日简报/scripts/aihot_daily_publish.py</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>/Users/macbookpro/Desktop/claude_project/AI每日简报</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key>
+    <string>/Users/macbookpro</string>
+    <key>PATH</key>
+    <string>/Users/macbookpro/.local/bin:/usr/local/bin:/opt/homebrew/bin:/Users/macbookpro/anaconda3/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>PYTHONUNBUFFERED</key>
+    <string>1</string>
+  </dict>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Hour</key>
+      <integer>4</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+    <dict>
+      <key>Hour</key>
+      <integer>12</integer>
+      <key>Minute</key>
+      <integer>33</integer>
+    </dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/Users/macbookpro/Library/Logs/aihot-daily.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/macbookpro/Library/Logs/aihot-daily-error.log</string>
+</dict>
+</plist>
