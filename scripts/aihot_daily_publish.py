@@ -688,7 +688,14 @@ def publish_existing_brief(
     base_sha = git(site, "rev-parse", "origin/main").stdout.strip()
     previous_index = git(site, "show", f"{base_sha}:index.html").stdout
     archive_paths = git(
-        site, "ls-tree", "-r", "--name-only", base_sha, "archive"
+        site,
+        "-c",
+        "core.quotepath=false",
+        "ls-tree",
+        "-r",
+        "--name-only",
+        base_sha,
+        "archive",
     ).stdout.splitlines()
     if published_snapshot(
         previous_index,
@@ -999,7 +1006,13 @@ def remote_publication_status(
     sha = git("rev-parse", "origin/main").stdout.strip()
     index_html = git("show", f"{sha}:index.html").stdout
     archives = git(
-        "ls-tree", "-r", "--name-only", sha, "archive"
+        "-c",
+        "core.quotepath=false",
+        "ls-tree",
+        "-r",
+        "--name-only",
+        sha,
+        "archive",
     ).stdout.splitlines()
     return sha, published_snapshot(
         index_html,

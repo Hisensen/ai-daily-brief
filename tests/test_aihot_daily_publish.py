@@ -761,6 +761,17 @@ class DailyPublisherTests(unittest.TestCase):
                 f"{new_sha}:archive/aihot-简报-2026-07-13-0400.html",
             )
             self.assertEqual(archived, brief.read_text(encoding="utf-8"))
+            remote_sha, already_published = publisher.remote_publication_status(
+                site=site,
+                today_cn="2026年7月13日",
+                today_iso="2026-07-13",
+                expected_remote=None,
+            )
+            self.assertEqual(remote_sha, new_sha)
+            self.assertTrue(
+                already_published,
+                "中文 archive 路径不得因 Git quotePath 转义而漏判",
+            )
 
 
 if __name__ == "__main__":
