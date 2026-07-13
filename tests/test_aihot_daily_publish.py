@@ -70,7 +70,7 @@ class DailyPublisherTests(unittest.TestCase):
 
         self.assertTrue(
             publisher.published_snapshot(
-                "<h1>2026年7月13日</h1>",
+                '<h1>2026年7月13日</h1><a href="archive/aihot-简报-2026-07-13-1023.html">原版</a>',
                 ["archive/aihot-简报-2026-07-13-1023.html"],
                 today_cn="2026年7月13日",
                 today_iso="2026-07-13",
@@ -78,7 +78,7 @@ class DailyPublisherTests(unittest.TestCase):
         )
         self.assertFalse(
             publisher.published_snapshot(
-                "<h1>2026年7月13日</h1>",
+                '<h1>2026年7月13日</h1><a href="archive/aihot-简报-2026-07-12-0400.html">原版</a>',
                 ["archive/aihot-简报-2026-07-12-0400.html"],
                 today_cn="2026年7月13日",
                 today_iso="2026-07-13",
@@ -86,7 +86,8 @@ class DailyPublisherTests(unittest.TestCase):
         )
         self.assertFalse(
             publisher.published_snapshot(
-                "<h1>2026年7月12日</h1>",
+                '<h1>2026年7月12日</h1><p>正文提到 2026年7月13日</p>'
+                '<a href="archive/aihot-简报-2026-07-13-1023.html">原版</a>',
                 ["archive/aihot-简报-2026-07-13-1023.html"],
                 today_cn="2026年7月13日",
                 today_iso="2026-07-13",
@@ -145,6 +146,13 @@ class DailyPublisherTests(unittest.TestCase):
 
         self.assertTrue(publisher.codex_ready(Path("/usr/bin/true"), ROOT))
         self.assertFalse(publisher.codex_ready(Path("/usr/bin/false"), ROOT))
+        with tempfile.TemporaryDirectory() as tmp:
+            sleepy = Path(tmp) / "codex"
+            sleepy.write_text("#!/bin/sh\nsleep 2\n", encoding="utf-8")
+            os.chmod(sleepy, 0o755)
+            self.assertFalse(
+                publisher.codex_ready(sleepy, ROOT, timeout_seconds=0.05)
+            )
 
     def test_build_prompt_uses_repo_rules_and_keeps_git_out_of_agent(self):
         publisher = self.load_publisher()
@@ -154,6 +162,7 @@ class DailyPublisherTests(unittest.TestCase):
             archive_name="aihot-简报-2026-07-13-1023.html",
             today_cn="2026年7月13日",
             today_iso="2026-07-13",
+            previous_archive_path="archive/aihot-简报-2026-07-12-0400.html",
         )
 
         self.assertIn("AGENTS.md", prompt)
@@ -162,6 +171,36 @@ class DailyPublisherTests(unittest.TestCase):
         self.assertIn("2026年7月13日", prompt)
         self.assertIn("只编辑 index.html", prompt)
         self.assertIn("不要执行 git", prompt)
+        self.assertIn("archive/aihot-简报-2026-07-12-0400.html", prompt)
+
+    def test_prepare_isolated_codex_home_links_only_auth(self):
+        publisher = self.load_publisher()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            original = root / "original"
+            isolated = root / "isolated"
+            original.mkdir()
+            (original / "auth.json").write_text('{"token":"test"}', encoding="utf-8")
+            (original / "auth.json").chmod(0o600)
+            (original / "skills").mkdir()
+            (original / "skills" / "do-not-copy.txt").write_text("secret")
+
+            publisher.prepare_isolated_codex_home(
+                original_codex_home=original,
+                isolated_home=isolated,
+            )
+
+            self.assertEqual(
+                (isolated / "auth.json").read_text(encoding="utf-8"),
+                '{"token":"test"}',
+            )
+            self.assertTrue((isolated / "auth.json").is_symlink())
+            self.assertEqual(
+                (isolated / "auth.json").resolve(),
+                (original / "auth.json").resolve(),
+            )
+            self.assertFalse((isolated / "skills").exists())
+            self.assertEqual((isolated / "auth.json").stat().st_mode & 0o777, 0o600)
 
     def test_validate_rendered_site_checks_date_archive_history_and_summaries(self):
         publisher = self.load_publisher()
@@ -171,6 +210,8 @@ class DailyPublisherTests(unittest.TestCase):
         )
         source = """
             <h1>AI HOT 每日简报</h1>
+            <a href="https://example.com/one">参考一</a>
+            <a href="https://example.com/two">参考二</a>
             <div class="summary">这是一段必须完整保留的摘要。</div>
             <h2>GitHub 今日趋势榜</h2>
         """
@@ -181,8 +222,10 @@ class DailyPublisherTests(unittest.TestCase):
               <div class="item"><div class="angle">创业借鉴</div><div class="refs"><a href="https://example.com/one">参考一</a></div></div>
               <div class="item"><div class="angle">自媒体选题</div><div class="refs"><a href="https://example.com/two">参考二</a></div></div>
             </section>
+            <section><h2>今日精选</h2>
+              <p>这是一段必须完整保留的摘要。</p>
+            </section>
             <section>GitHub 趋势榜</section>
-            <p>这是一段必须完整保留的摘要。</p>
             <a href="archive/aihot-简报-2026-07-13-1023.html">原版</a>
             <a href="archive/aihot-简报-2026-07-12-0400.html">旧刊</a>
         """
@@ -223,6 +266,21 @@ class DailyPublisherTests(unittest.TestCase):
         )
         self.assertTrue(any("搞钱" in error for error in errors), errors)
 
+        invented_ref = rendered.replace(
+            'href="https://example.com/one"',
+            'href="https://evil.example/invented"',
+            1,
+        )
+        errors = publisher.validate_rendered_site(
+            previous_index=previous,
+            rendered_index=invented_ref,
+            source_html=source,
+            archive_name="aihot-简报-2026-07-13-1023.html",
+            today_cn="2026年7月13日",
+            preserve_history=True,
+        )
+        self.assertTrue(any("当日数据源" in error for error in errors), errors)
+
     def test_validate_rendered_site_allows_chinese_trend_rewrite_and_checks_top_h1(self):
         publisher = self.load_publisher()
         source = """
@@ -234,10 +292,10 @@ class DailyPublisherTests(unittest.TestCase):
         rendered = """
             <h1>2026年7月13日</h1>
             <section class="money-sec" id="money"><h2>💰 今日搞钱参考</h2>
-              <div class="item"><div class="angle">创业借鉴</div><div class="refs"><a href="https://example.com/one">参考一</a></div></div>
-              <div class="item"><div class="angle">求职谈资</div><div class="refs"><a href="https://example.com/two">参考二</a></div></div>
+              <div class="item"><div class="angle">创业借鉴</div><div class="refs"><a href="https://github.com/acme/widget">参考一</a></div></div>
+              <div class="item"><div class="angle">求职谈资</div><div class="refs"><a href="https://github.com/acme/widget">参考二</a></div></div>
             </section>
-            <p>新闻完整摘要。</p>
+            <section><h2>今日精选</h2><p>新闻完整摘要。</p></section>
             <section>GitHub 趋势榜
               <li><a href="https://github.com/acme/widget">acme/widget</a>
               <span class="desc"><b>解决什么问题:</b>解决团队协作问题。<b>大致内容:</b>提供中文项目说明。</span></li>
@@ -323,6 +381,135 @@ class DailyPublisherTests(unittest.TestCase):
         )
         self.assertTrue(any("来源链接" in error for error in errors), errors)
         self.assertTrue(any("精选数量" in error for error in errors), errors)
+
+        misplaced_summary = rendered.replace(
+            "<p>新闻二完整摘要。</p>", ""
+        ).replace(
+            '<a href="archive/aihot-简报-2026-07-13-0400.html">原版</a>',
+            '<a href="archive/aihot-简报-2026-07-13-0400.html">原版</a><p>新闻二完整摘要。</p>',
+        )
+        errors = publisher.validate_rendered_site(
+            previous_index="",
+            rendered_index=misplaced_summary,
+            source_html=source,
+            archive_name="aihot-简报-2026-07-13-0400.html",
+            today_cn="2026年7月13日",
+            preserve_history=True,
+        )
+        self.assertTrue(any("今日精选未完整保留摘要" in error for error in errors), errors)
+
+    def test_validate_rendered_site_preserves_archive_bodies_and_demotes_previous_issue(self):
+        publisher = self.load_publisher()
+        previous = """
+            <h1>2026年7月12日</h1>
+            <section id="today"><h2>今日精选</h2>
+              <div class="item"><h3><a href="https://old.example/news">旧日新闻</a></h3><p>旧日新闻必须完整下沉的长摘要内容。</p></div>
+            </section>
+            <section id="gh"><h2>GitHub 趋势</h2>
+              <li><a href="https://github.com/old/repo">old/repo</a><span>旧日项目说明。</span></li>
+            </section>
+            <details><summary>2026年7月11日</summary><div>
+              <a href="archive/aihot-简报-2026-07-11-0400.html">原版</a>
+              <h3><a href="https://history.example/item">历史新闻</a></h3>
+              <p>历史新闻正文也必须继续完整保留。</p>
+            </div></details>
+        """
+        source = """
+            <div class="sub">2026-07-13 · 共 1 条</div>
+            <a class="title" href="https://today.example/news">今日新闻</a>
+            <div class="summary">今日摘要。</div>
+            <h2>GitHub 本周趋势榜</h2>
+        """
+        rendered = """
+            <h1>2026年7月13日</h1>
+            <section class="money-sec"><h2>今日搞钱参考</h2>
+              <div class="angle">角度一</div><div class="refs"><a href="https://today.example/news">参考</a></div>
+              <div class="angle">角度二</div><div class="refs"><a href="https://today.example/news">参考</a></div>
+            </section>
+            <section id="today"><h2>今日精选</h2><span>1 条</span>
+              <a href="https://today.example/news">今日新闻</a><p>今日摘要。</p>
+            </section>
+            <h2>GitHub 趋势榜</h2>
+            <a href="archive/aihot-简报-2026-07-13-0400.html">今日原版</a>
+            <details><summary>2026年7月12日</summary>
+              <a href="archive/aihot-简报-2026-07-12-0400.html">旧日原版</a>
+              <a href="https://old.example/news">旧日新闻</a><p>旧日新闻必须完整下沉的长摘要内容。</p>
+              <a href="https://github.com/old/repo">old/repo</a><span>旧日项目说明。</span>
+            </details>
+            <details><summary>2026年7月11日</summary>
+              <a href="archive/aihot-简报-2026-07-11-0400.html">原版</a>
+              <h3><a href="https://history.example/item">历史新闻</a></h3>
+              <p>历史新闻正文也必须继续完整保留。</p>
+            </details>
+        """
+        self.assertEqual(
+            publisher.validate_rendered_site(
+                previous_index=previous,
+                rendered_index=rendered,
+                source_html=source,
+                archive_name="aihot-简报-2026-07-13-0400.html",
+                today_cn="2026年7月13日",
+                preserve_history=True,
+                previous_archive_path="archive/aihot-简报-2026-07-12-0400.html",
+            ),
+            [],
+        )
+
+        links_only = rendered.replace("<p>历史新闻正文也必须继续完整保留。</p>", "")
+        errors = publisher.validate_rendered_site(
+            previous_index=previous,
+            rendered_index=links_only,
+            source_html=source,
+            archive_name="aihot-简报-2026-07-13-0400.html",
+            today_cn="2026年7月13日",
+            preserve_history=True,
+            previous_archive_path="archive/aihot-简报-2026-07-12-0400.html",
+        )
+        self.assertTrue(any("历史存档正文" in error for error in errors), errors)
+
+    def test_validate_source_brief_rejects_empty_or_wrong_day_sources(self):
+        publisher = self.load_publisher()
+        good = """
+            <div>2026-07-13 · 共 1 条</div>
+            <a class="title" href="https://news.example/item">新闻</a>
+            <div class="summary">完整摘要。</div>
+            <h2>GitHub 本周趋势榜</h2>
+            <a class="title" href="https://github.com/acme/repo">acme/repo</a>
+            <div class="summary">Repository summary.</div>
+        """
+        self.assertEqual(
+            publisher.validate_source_brief(good, today_iso="2026-07-13"), []
+        )
+        self.assertTrue(
+            publisher.validate_source_brief("", today_iso="2026-07-13")
+        )
+        self.assertTrue(
+            publisher.validate_source_brief(
+                good.replace("2026-07-13", "2026-07-12"),
+                today_iso="2026-07-13",
+            )
+        )
+
+    def test_page_is_live_requires_top_date_and_today_archive_link(self):
+        publisher = self.load_publisher()
+        live = (
+            '<h1>2026年7月13日</h1>'
+            '<a href="archive/aihot-简报-2026-07-13-0400.html">原版</a>'
+        )
+        self.assertTrue(
+            publisher.page_is_live(
+                live,
+                today_cn="2026年7月13日",
+                today_iso="2026-07-13",
+            )
+        )
+        self.assertFalse(
+            publisher.page_is_live(
+                live.replace("<h1>2026年7月13日</h1>", "<h1>2026年7月12日</h1>"),
+                today_cn="2026年7月13日",
+                today_iso="2026-07-13",
+            )
+        )
 
     def test_extract_github_repos_is_unique_and_skips_non_repo_paths(self):
         publisher = self.load_publisher()
@@ -423,7 +610,15 @@ class DailyPublisherTests(unittest.TestCase):
             self.git(site, "push", "-u", "origin", "main")
 
             brief = root / "aihot-简报-2026-07-13-0400.html"
-            brief.write_text("<h1>AI HOT 每日简报</h1>", encoding="utf-8")
+            brief.write_text(
+                '<div>2026-07-13 · 共 1 条</div>'
+                '<a class="title" href="https://news.example/item">新闻</a>'
+                '<div class="summary">完整摘要。</div>'
+                '<h2>GitHub 今日趋势榜</h2>'
+                '<a class="title" href="https://github.com/acme/repo">acme/repo</a>'
+                '<div class="summary">Repository summary.</div>',
+                encoding="utf-8",
+            )
             exit_code = publisher.main(
                 [
                     "--site",
@@ -488,8 +683,12 @@ class DailyPublisherTests(unittest.TestCase):
 
             brief = root / "aihot-简报-2026-07-13-0400.html"
             brief.write_text(
+                '<div>2026-07-13 · 共 1 条</div>'
+                '<a class="title" href="https://example.com/one">测试新闻</a>'
                 '<div class="summary">这是一段必须完整保留的摘要。</div>'
-                '<h2>GitHub 今日趋势榜</h2>',
+                '<h2>GitHub 今日趋势榜</h2>'
+                '<a class="title" href="https://github.com/acme/repo">acme/repo</a>'
+                '<div class="summary">Repository summary.</div>',
                 encoding="utf-8",
             )
             fake_codex = root / "fake-codex"
@@ -509,10 +708,14 @@ class DailyPublisherTests(unittest.TestCase):
                         '<h1>2026年7月13日</h1>'
                         '<section class="money-sec" id="money"><h2>💰 今日搞钱参考</h2>'
                         '<div class="item"><div class="angle">创业借鉴</div><div class="refs"><a href="https://example.com/one">参考一</a></div></div>'
-                        '<div class="item"><div class="angle">自媒体选题</div><div class="refs"><a href="https://example.com/two">参考二</a></div></div>'
+                        '<div class="item"><div class="angle">自媒体选题</div><div class="refs"><a href="https://github.com/acme/repo">参考二</a></div></div>'
                         '</section>'
-                        '<section>GitHub 趋势榜</section>'
-                        '<p>这是一段必须完整保留的摘要。</p>'
+                        '<section id="today"><h2>今日精选</h2><span>1 条</span>'
+                        '<a href="https://example.com/one">测试新闻</a>'
+                        '<p>这是一段必须完整保留的摘要。</p></section>'
+                        '<section><h2>GitHub 趋势榜</h2>'
+                        '<li><a href="https://github.com/acme/repo">acme/repo</a>'
+                        '<span><b>解决什么问题:</b>解决测试问题。<b>大致内容:</b>这是项目中文介绍。</span></li></section>'
                         f'<a href="archive/{archive}">今日原版</a>'
                         '<a href="archive/aihot-简报-2026-07-12-0400.html">旧刊</a>',
                         encoding="utf-8",

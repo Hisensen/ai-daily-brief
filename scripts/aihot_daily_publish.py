@@ -15,6 +15,8 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
+import urllib.parse
 import zoneinfo
 from pathlib import Path
 from typing import Iterable, Sequence
@@ -56,8 +58,25 @@ def published_snapshot(
     today_iso: str,
 ) -> bool:
     """Return whether a remote snapshot contains today's page and archive."""
-    return today_cn in index_html and any(
-        path.startswith("archive/") and today_iso in path for path in archive_paths
+    h1_match = re.search(r"<h1[^>]*>(.*?)</h1>", index_html, re.I | re.S)
+    h1_text = ""
+    if h1_match:
+        h1_text = " ".join(
+            html.unescape(re.sub(r"<[^>]+>", " ", h1_match.group(1))).split()
+        )
+    today_archives = [
+        path
+        for path in archive_paths
+        if path.startswith("archive/") and today_iso in path
+    ]
+    linked_archives = set(
+        html.unescape(path)
+        for path in re.findall(
+            r'''href=["'](archive/[^"']+\.html)["']''', index_html, re.I
+        )
+    )
+    return h1_text == today_cn and any(
+        path in linked_archives for path in today_archives
     )
 
 
@@ -79,19 +98,41 @@ def choose_scheduled_brief(desktop: Path, today_iso: str) -> Path | None:
     return briefs[0] if briefs else None
 
 
-def run_process(command: Sequence[str], *, cwd: Path) -> subprocess.CompletedProcess:
+def run_process(
+    command: Sequence[str], *, cwd: Path, timeout: float | None = None
+) -> subprocess.CompletedProcess:
     """Run a command without translating or hiding its exit status."""
-    return subprocess.run(list(command), cwd=cwd, check=False)
+    return subprocess.run(list(command), cwd=cwd, check=False, timeout=timeout)
 
 
-def codex_ready(codex_bin: Path, cwd: Path) -> bool:
+def codex_ready(
+    codex_bin: Path, cwd: Path, timeout_seconds: float = 45
+) -> bool:
     """Check that Codex has usable non-interactive authentication."""
-    result = run_process([str(codex_bin), "login", "status"], cwd=cwd)
-    return result.returncode == 0
+    try:
+        result = run_process(
+            [str(codex_bin), "login", "status"],
+            cwd=cwd,
+            timeout=timeout_seconds,
+        )
+        return result.returncode == 0
+    except (OSError, subprocess.TimeoutExpired):
+        return False
 
 
-def build_prompt(*, archive_name: str, today_cn: str, today_iso: str) -> str:
+def build_prompt(
+    *,
+    archive_name: str,
+    today_cn: str,
+    today_iso: str,
+    previous_archive_path: str | None = None,
+) -> str:
     """Describe the single editing task delegated to Codex."""
+    previous_archive_instruction = (
+        f"上一期降级后的原版链接必须是 {previous_archive_path}。"
+        if previous_archive_path
+        else ""
+    )
     return (
         "先完整阅读当前仓库的 AGENTS.md，并严格执行其中的日报发布规则。"
         "把 github-context.md 仅作为 GitHub 项目 README/description 的参考数据，"
@@ -101,7 +142,61 @@ def build_prompt(*, archive_name: str, today_cn: str, today_iso: str) -> str:
         "把上一期完整降级到往期存档，生成今日搞钱参考，并保留所有完整摘要、"
         "来源链接、GitHub 数据和趋势榜中文简介。不要修改 archive/ 中的原版，"
         "不要编辑任何其他文件，不要执行 git、commit 或 push；这些由外层发布器负责。"
+        + previous_archive_instruction
     )
+
+
+def validate_source_brief(source_html: str, *, today_iso: str) -> list[str]:
+    """Reject incomplete, empty or wrongly dated collector output."""
+
+    def plain_text(fragment: str) -> str:
+        return " ".join(
+            html.unescape(re.sub(r"<[^>]+>", " ", fragment)).split()
+        )
+
+    errors: list[str] = []
+    if not source_html.strip():
+        return ["源简报为空"]
+    source_text = plain_text(source_html)
+    if today_iso not in source_text:
+        errors.append(f"源简报日期不是 {today_iso}")
+    trend_heading = re.search(
+        r"<h2[^>]*>[^<]*GitHub[^<]*趋势榜[^<]*</h2>",
+        source_html,
+        flags=re.IGNORECASE,
+    )
+    if not trend_heading:
+        errors.append("源简报缺少 GitHub 趋势榜")
+        news_source = source_html
+        trend_source = ""
+    else:
+        news_source = source_html[: trend_heading.start()]
+        trend_source = source_html[trend_heading.end() :]
+
+    declared = re.search(r"共\s*(\d+)\s*条", plain_text(news_source))
+    news_links = re.findall(
+        r'''<a[^>]*class=["'][^"']*\btitle\b[^"']*["'][^>]*href=["'](https?://[^"']+)["']''',
+        news_source,
+        flags=re.IGNORECASE,
+    )
+    summaries = re.findall(
+        r'''<(?:div|p)[^>]*class=["'][^"']*\bsummary\b[^"']*["'][^>]*>(.*?)</(?:div|p)>''',
+        news_source,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if not declared:
+        errors.append("源简报缺少精选条数")
+    else:
+        expected = int(declared.group(1))
+        if expected < 1:
+            errors.append("源简报精选条数必须大于 0")
+        if len(news_links) != expected:
+            errors.append(f"源简报声明 {expected} 条但有 {len(news_links)} 个新闻链接")
+        if len(summaries) != expected or any(not plain_text(value) for value in summaries):
+            errors.append(f"源简报声明 {expected} 条但摘要不完整")
+    if not extract_github_repos(trend_source):
+        errors.append("源简报 GitHub 趋势榜没有项目")
+    return errors
 
 
 def validate_rendered_site(
@@ -112,6 +207,7 @@ def validate_rendered_site(
     archive_name: str,
     today_cn: str,
     preserve_history: bool,
+    previous_archive_path: str | None = None,
 ) -> list[str]:
     """Validate the content invariants that previously failed silently."""
 
@@ -120,6 +216,14 @@ def validate_rendered_site(
         return " ".join(html.unescape(without_tags).split())
 
     errors: list[str] = []
+    allowed_source_urls = {
+        html.unescape(url)
+        for url in re.findall(
+            r'''href=["'](https?://[^"']+)["']''',
+            source_html,
+            flags=re.IGNORECASE,
+        )
+    }
     h1_match = re.search(r"<h1[^>]*>(.*?)</h1>", rendered_index, re.IGNORECASE | re.DOTALL)
     rendered_h1 = plain_text(h1_match.group(1)) if h1_match else ""
     if rendered_h1 != today_cn:
@@ -153,12 +257,30 @@ def validate_rendered_site(
         for index, angle in enumerate(angles):
             end = angles[index + 1].start() if index + 1 < len(angles) else len(money_section)
             item = money_section[angle.start() : end]
-            if not re.search(
-                r'''class=["'][^"']*\brefs\b[^"']*["'][^>]*>.*?href=["']https?://''',
+            refs_match = re.search(
+                r'''class=["'][^"']*\brefs\b[^"']*["'][^>]*>(.*?)</div>''',
                 item,
                 flags=re.IGNORECASE | re.DOTALL,
-            ):
+            )
+            ref_urls = (
+                [
+                    html.unescape(url)
+                    for url in re.findall(
+                        r'''href=["'](https?://[^"']+)["']''',
+                        refs_match.group(1),
+                        flags=re.IGNORECASE,
+                    )
+                ]
+                if refs_match
+                else []
+            )
+            if not ref_urls:
                 errors.append(f"今日搞钱参考第 {index + 1} 条缺少参考链接")
+            for url in ref_urls:
+                if url not in allowed_source_urls:
+                    errors.append(
+                        f"今日搞钱参考第 {index + 1} 条链接不属于当日数据源: {url}"
+                    )
     if "GitHub" not in rendered_index or "趋势" not in rendered_index:
         errors.append("index.html 缺少 GitHub 趋势榜")
 
@@ -171,6 +293,130 @@ def validate_rendered_site(
         )
         if missing_archives:
             errors.append("index.html 丢失历史归档链接: " + ", ".join(missing_archives))
+
+        def detail_blocks(fragment: str) -> list[str]:
+            return re.findall(
+                r"<details\b[^>]*>.*?</details>",
+                fragment,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+
+        def detail_summary(block: str) -> str:
+            match = re.search(
+                r"<summary\b[^>]*>(.*?)</summary>",
+                block,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+            return plain_text(match.group(1)) if match else ""
+
+        def body_fragments(fragment: str) -> list[str]:
+            values: list[str] = []
+            patterns = (
+                r"<h3\b[^>]*>(.*?)</h3>",
+                r"<p\b[^>]*>(.*?)</p>",
+                r'''<span[^>]*class=["'][^"']*\bdesc\b[^"']*["'][^>]*>(.*?)</span>''',
+            )
+            for pattern in patterns:
+                for value in re.findall(
+                    pattern, fragment, flags=re.IGNORECASE | re.DOTALL
+                ):
+                    normalized = plain_text(value)
+                    if len(normalized) >= 8 and normalized not in values:
+                        values.append(normalized)
+            return values
+
+        previous_details = detail_blocks(previous_index)
+        rendered_details = detail_blocks(rendered_index)
+        for previous_detail in previous_details:
+            summary = detail_summary(previous_detail)
+            matching_detail = next(
+                (
+                    block
+                    for block in rendered_details
+                    if detail_summary(block) == summary
+                ),
+                None,
+            )
+            if matching_detail is None:
+                errors.append(f"index.html 丢失历史存档正文: {summary or '无标题存档'}")
+                continue
+            matching_text = plain_text(matching_detail)
+            missing_fragments = [
+                value
+                for value in body_fragments(previous_detail)
+                if value not in matching_text
+            ]
+            previous_hrefs = {
+                html.unescape(url)
+                for url in re.findall(
+                    r'''href=["']([^"']+)["']''', previous_detail, re.I
+                )
+            }
+            rendered_hrefs = {
+                html.unescape(url)
+                for url in re.findall(
+                    r'''href=["']([^"']+)["']''', matching_detail, re.I
+                )
+            }
+            if missing_fragments or not previous_hrefs.issubset(rendered_hrefs):
+                errors.append(f"index.html 压缩或改写了历史存档正文: {summary}")
+
+        def section_by_id(fragment: str, section_id: str) -> str:
+            for match in re.finditer(
+                r"<section\b([^>]*)>(.*?)</section>",
+                fragment,
+                flags=re.IGNORECASE | re.DOTALL,
+            ):
+                attributes = match.group(1)
+                if re.search(
+                    rf'''\bid=["']{re.escape(section_id)}["']''',
+                    attributes,
+                    flags=re.IGNORECASE,
+                ):
+                    return match.group()
+            return ""
+
+        previous_current = section_by_id(previous_index, "today") + section_by_id(
+            previous_index, "gh"
+        )
+        if previous_current:
+            if not rendered_details:
+                errors.append("index.html 没有把上一期完整下沉到存档")
+            else:
+                newest_detail = rendered_details[0]
+                previous_h1 = re.search(
+                    r"<h1[^>]*>(.*?)</h1>",
+                    previous_index,
+                    flags=re.IGNORECASE | re.DOTALL,
+                )
+                previous_date = plain_text(previous_h1.group(1)) if previous_h1 else ""
+                missing_current_fragments = [
+                    value
+                    for value in body_fragments(previous_current)
+                    if value not in plain_text(newest_detail)
+                ]
+                previous_current_hrefs = {
+                    html.unescape(url)
+                    for url in re.findall(
+                        r'''href=["']([^"']+)["']''', previous_current, re.I
+                    )
+                }
+                newest_hrefs = {
+                    html.unescape(url)
+                    for url in re.findall(
+                        r'''href=["']([^"']+)["']''', newest_detail, re.I
+                    )
+                }
+                if (
+                    previous_date not in detail_summary(newest_detail)
+                    or missing_current_fragments
+                    or not previous_current_hrefs.issubset(newest_hrefs)
+                    or (
+                        previous_archive_path is not None
+                        and previous_archive_path not in newest_hrefs
+                    )
+                ):
+                    errors.append("index.html 没有把上一期精选与趋势完整下沉")
 
     trend_heading = re.search(
         r"<h2[^>]*>[^<]*GitHub[^<]*趋势榜[^<]*</h2>",
@@ -227,33 +473,67 @@ def validate_rendered_site(
         ):
             errors.append(f"今日精选数量应为 {expected_news_count} 条")
 
-    source_news_links = []
-    for href in re.findall(
-        r'''<a[^>]*class=["'][^"']*\btitle\b[^"']*["'][^>]*href=["']([^"']+)["']''',
-        news_source,
-        flags=re.IGNORECASE,
-    ):
-        normalized_href = html.unescape(href)
-        if normalized_href not in source_news_links:
-            source_news_links.append(normalized_href)
-    for href in source_news_links:
-        if not re.search(
-            rf'''href=["']{re.escape(href)}["']''',
-            html.unescape(rendered_news_source),
-            flags=re.IGNORECASE,
-        ):
+    source_news_items = list(
+        re.finditer(
+            r'''<a[^>]*class=["'][^"']*\btitle\b[^"']*["'][^>]*href=["']([^"']+)["'][^>]*>(.*?)</a>''',
+            news_source,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+    )
+    rendered_news_unescaped = html.unescape(rendered_news_source)
+    rendered_news_text = plain_text(rendered_news_source)
+    for item_index, source_item in enumerate(source_news_items):
+        href = html.unescape(source_item.group(1))
+        expected_title = plain_text(source_item.group(2))
+        rendered_anchor = re.search(
+            rf'''<a[^>]*href=["']{re.escape(href)}["'][^>]*>(.*?)</a>''',
+            rendered_news_unescaped,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        if rendered_anchor is None:
             errors.append("今日精选缺少来源链接: " + href)
+            continue
+        if plain_text(rendered_anchor.group(1)) != expected_title:
+            errors.append("今日精选标题被改写: " + expected_title[:80])
+
+        source_item_end = (
+            source_news_items[item_index + 1].start()
+            if item_index + 1 < len(source_news_items)
+            else len(news_source)
+        )
+        source_item_tail = news_source[source_item.end() : source_item_end]
+        source_meta = re.search(
+            r'''<div[^>]*class=["'][^"']*\bmeta\b[^"']*["'][^>]*>(.*?)</div>''',
+            source_item_tail,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        expected_meta = plain_text(source_meta.group(1)) if source_meta else ""
+        if expected_meta and expected_meta not in rendered_news_text:
+            errors.append("今日精选缺少来源或时间: " + expected_title[:80])
+
+        source_headings = list(
+            re.finditer(
+                r"<h2\b[^>]*>(.*?)</h2>",
+                news_source[: source_item.start()],
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+        )
+        if source_headings:
+            category = plain_text(source_headings[-1].group(1))
+            normalized_category = re.sub(r"[\s/／]+", "", category)
+            normalized_rendered = re.sub(r"[\s/／]+", "", rendered_news_text)
+            if category and normalized_category not in normalized_rendered:
+                errors.append("今日精选缺少分类: " + category)
 
     source_summaries = re.findall(
         r'''<(?:div|p)[^>]*class=["'][^"']*\bsummary\b[^"']*["'][^>]*>(.*?)</(?:div|p)>''',
         news_source,
         flags=re.IGNORECASE | re.DOTALL,
     )
-    rendered_text = plain_text(rendered_index)
     for summary in source_summaries:
         normalized = plain_text(summary)
-        if normalized and normalized not in rendered_text:
-            errors.append("index.html 未完整保留摘要: " + normalized[:80])
+        if normalized and normalized not in rendered_news_text:
+            errors.append("今日精选未完整保留摘要: " + normalized[:80])
 
     source_repos = extract_github_repos(trend_source)
     rendered_trend_heading = next(
@@ -330,6 +610,18 @@ def fetch_github_readme(gh_bin: Path, repo: str) -> str | None:
         return None
 
 
+def prepare_isolated_codex_home(
+    *, original_codex_home: Path, isolated_home: Path
+) -> None:
+    """Provide Codex auth without exposing user plugins, skills or config."""
+    auth_file = original_codex_home / "auth.json"
+    if not auth_file.is_file():
+        raise PublishError(f"找不到 Codex 登录凭证: {auth_file}")
+    isolated_home.mkdir(mode=0o700, parents=True, exist_ok=False)
+    destination = isolated_home / "auth.json"
+    destination.symlink_to(auth_file.resolve())
+
+
 def publish_existing_brief(
     *,
     site: Path,
@@ -375,6 +667,14 @@ def publish_existing_brief(
     brief = brief.resolve()
     if not brief.is_file():
         raise PublishError(f"找不到简报源文件: {brief}")
+    source_bytes = brief.read_bytes()
+    try:
+        source_html = source_bytes.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise PublishError("简报源文件不是有效 UTF-8 HTML") from exc
+    source_errors = validate_source_brief(source_html, today_iso=today_iso)
+    if source_errors:
+        raise PublishError("简报源文件验收失败: " + "；".join(source_errors))
     if not codex_bin.is_file():
         raise PublishError(f"找不到 Codex CLI: {codex_bin}")
 
@@ -398,19 +698,28 @@ def publish_existing_brief(
     ):
         return base_sha
 
+    previous_archive_path = max(
+        (path for path in archive_paths if path.endswith(".html")),
+        default=None,
+    )
     prompt = build_prompt(
         archive_name=brief.name,
         today_cn=today_cn,
         today_iso=today_iso,
+        previous_archive_path=previous_archive_path,
     )
     worktree_registered = False
     with tempfile.TemporaryDirectory(prefix="aihot-publish-") as temp_root:
         temp_root_path = Path(temp_root)
         render_dir = temp_root_path / "render"
         worktree = temp_root_path / "worktree"
+        isolated_codex_home = temp_root_path / "codex-home"
         render_dir.mkdir()
+        prepare_isolated_codex_home(
+            original_codex_home=Path.home() / ".codex",
+            isolated_home=isolated_codex_home,
+        )
 
-        source_html = brief.read_text(encoding="utf-8")
         github_sections: list[str] = []
         if gh_bin is not None and gh_bin.is_file():
             for repo in extract_github_repos(source_html):
@@ -430,7 +739,7 @@ def publish_existing_brief(
 
         inputs = {
             "previous-index.html": previous_index.encode("utf-8"),
-            "today-brief.html": brief.read_bytes(),
+            "today-brief.html": source_bytes,
             "AGENTS.md": git(site, "show", f"{base_sha}:AGENTS.md").stdout.encode("utf-8"),
             "github-context.md": ("\n\n".join(github_sections) + "\n").encode("utf-8"),
         }
@@ -438,6 +747,8 @@ def publish_existing_brief(
             (render_dir / name).write_bytes(content)
 
         env = os.environ.copy()
+        env["HOME"] = str(isolated_codex_home)
+        env["CODEX_HOME"] = str(isolated_codex_home)
         env["PATH"] = ":".join(
             [
                 str(Path.home() / ".local/bin"),
@@ -486,6 +797,7 @@ def publish_existing_brief(
             archive_name=brief.name,
             today_cn=today_cn,
             preserve_history=True,
+            previous_archive_path=previous_archive_path,
         )
         if errors:
             raise PublishError("Codex 输出验收失败: " + "；".join(errors))
@@ -495,8 +807,8 @@ def publish_existing_brief(
             worktree_registered = True
             shutil.copy2(rendered_path, worktree / "index.html")
             destination = worktree / "archive" / brief.name
-            shutil.copy2(brief, destination)
-            if destination.read_bytes() != brief.read_bytes():
+            destination.write_bytes(source_bytes)
+            if destination.read_bytes() != source_bytes:
                 raise PublishError("归档文件哈希校验失败")
 
             changed_paths = git_paths(worktree)
@@ -508,8 +820,65 @@ def publish_existing_brief(
                 )
 
             git(worktree, "add", "--", "index.html", f"archive/{brief.name}")
-            git(worktree, "commit", "-m", f"简报 {today_iso}")
+            staged_index = subprocess.run(
+                ["git", "show", ":index.html"],
+                cwd=worktree,
+                check=False,
+                capture_output=True,
+            )
+            staged_archive = subprocess.run(
+                ["git", "show", f":archive/{brief.name}"],
+                cwd=worktree,
+                check=False,
+                capture_output=True,
+            )
+            if (
+                staged_index.returncode != 0
+                or staged_index.stdout != rendered_path.read_bytes()
+                or staged_archive.returncode != 0
+                or staged_archive.stdout != source_bytes
+            ):
+                raise PublishError("git 暂存区内容校验失败")
+            git(
+                worktree,
+                "-c",
+                "core.hooksPath=/dev/null",
+                "commit",
+                "-m",
+                f"简报 {today_iso}",
+            )
             new_sha = git(worktree, "rev-parse", "HEAD").stdout.strip()
+            committed_paths = git(
+                worktree,
+                "-c",
+                "core.quotepath=false",
+                "diff-tree",
+                "--no-commit-id",
+                "--name-only",
+                "-r",
+                base_sha,
+                new_sha,
+            ).stdout.splitlines()
+            committed_index = subprocess.run(
+                ["git", "show", f"{new_sha}:index.html"],
+                cwd=worktree,
+                check=False,
+                capture_output=True,
+            )
+            committed_archive = subprocess.run(
+                ["git", "show", f"{new_sha}:archive/{brief.name}"],
+                cwd=worktree,
+                check=False,
+                capture_output=True,
+            )
+            if (
+                sorted(committed_paths) != expected_paths
+                or committed_index.returncode != 0
+                or committed_index.stdout != rendered_path.read_bytes()
+                or committed_archive.returncode != 0
+                or committed_archive.stdout != source_bytes
+            ):
+                raise PublishError("git commit 后内容或路径校验失败")
 
             remote_before = git(
                 worktree, "ls-remote", "origin", "refs/heads/main"
@@ -531,7 +900,7 @@ def publish_existing_brief(
             )
             if (
                 archived_remote.returncode != 0
-                or archived_remote.stdout != brief.read_bytes()
+                or archived_remote.stdout != source_bytes
             ):
                 raise PublishError("远端归档内容校验失败，保留本地源文件")
             return new_sha
@@ -640,6 +1009,90 @@ def remote_publication_status(
     )
 
 
+def page_is_live(index_html: str, *, today_cn: str, today_iso: str) -> bool:
+    """Return whether a fetched Pages index visibly exposes today's issue."""
+    archives = re.findall(
+        r'''href=["'](archive/[^"']+\.html)["']''',
+        index_html,
+        flags=re.IGNORECASE,
+    )
+    return published_snapshot(
+        index_html,
+        archives,
+        today_cn=today_cn,
+        today_iso=today_iso,
+    )
+
+
+def wait_for_pages(
+    *,
+    pages_url: str,
+    today_cn: str,
+    today_iso: str,
+    commit_sha: str,
+    curl_bin: Path = Path("/usr/bin/curl"),
+    timeout_seconds: float = 300,
+    interval_seconds: float = 15,
+) -> bool:
+    """Poll GitHub Pages until both the index and today's archive are public."""
+    deadline = time.monotonic() + timeout_seconds
+    while True:
+        cache_buster = f"{commit_sha[:12]}-{int(time.time())}"
+        separator = "&" if "?" in pages_url else "?"
+        try:
+            index_result = subprocess.run(
+                [
+                    str(curl_bin),
+                    "-fsSL",
+                    "--max-time",
+                    "20",
+                    "-H",
+                    "Cache-Control: no-cache",
+                    f"{pages_url}{separator}v={cache_buster}",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+                timeout=30,
+            )
+        except (OSError, subprocess.TimeoutExpired):
+            index_result = None
+        if index_result is not None and index_result.returncode == 0 and page_is_live(
+            index_result.stdout,
+            today_cn=today_cn,
+            today_iso=today_iso,
+        ):
+            archive_match = re.search(
+                rf'''href=["'](archive/[^"']*{re.escape(today_iso)}[^"']*\.html)["']''',
+                index_result.stdout,
+                flags=re.IGNORECASE,
+            )
+            if archive_match:
+                archive_url = urllib.parse.urljoin(
+                    pages_url.rstrip("/") + "/",
+                    urllib.parse.quote(html.unescape(archive_match.group(1))),
+                )
+                try:
+                    archive_result = subprocess.run(
+                        [str(curl_bin), "-fsSL", "--max-time", "20", archive_url],
+                        check=False,
+                        capture_output=True,
+                        timeout=30,
+                    )
+                except (OSError, subprocess.TimeoutExpired):
+                    archive_result = None
+                if (
+                    archive_result is not None
+                    and archive_result.returncode == 0
+                    and archive_result.stdout
+                ):
+                    return True
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            return False
+        time.sleep(min(interval_seconds, remaining))
+
+
 def write_status(state_dir: Path, **payload: object) -> None:
     """Atomically write a small machine-readable publication status file."""
     state_dir.mkdir(parents=True, exist_ok=True)
@@ -667,16 +1120,19 @@ def send_notification(title: str, message: str) -> None:
     """Best-effort local notification; publication never depends on it."""
     escaped_title = title.replace("\\", "\\\\").replace('"', '\\"')
     escaped_message = message.replace("\\", "\\\\").replace('"', '\\"')
-    subprocess.run(
-        [
-            "/usr/bin/osascript",
-            "-e",
-            f'display notification "{escaped_message}" with title "{escaped_title}"',
-        ],
-        check=False,
-        capture_output=True,
-        timeout=15,
-    )
+    try:
+        subprocess.run(
+            [
+                "/usr/bin/osascript",
+                "-e",
+                f'display notification "{escaped_message}" with title "{escaped_title}"',
+            ],
+            check=False,
+            capture_output=True,
+            timeout=15,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        pass
 
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -709,6 +1165,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--keep-brief", action="store_true")
     parser.add_argument("--no-notify", action="store_true")
     parser.add_argument("--open", action="store_true", dest="open_page")
+    parser.add_argument(
+        "--pages-url", default="https://hisensen.github.io/ai-daily-brief/"
+    )
+    parser.add_argument("--pages-timeout", type=float, default=300)
+    parser.add_argument("--skip-pages-check", action="store_true")
     args = parser.parse_args(argv)
 
     try:
@@ -748,6 +1209,25 @@ def main(argv: Sequence[str] | None = None) -> int:
             expected_remote=args.expected_remote or None,
         )
         if already_published:
+            if not args.skip_pages_check and not wait_for_pages(
+                pages_url=args.pages_url,
+                today_cn=today_cn,
+                today_iso=today_iso,
+                commit_sha=remote_sha,
+                timeout_seconds=args.pages_timeout,
+            ):
+                message = f"{today_cn} 已推送，但 GitHub Pages 尚未显示"
+                write_status(
+                    state_dir,
+                    status="PUSHED_NOT_LIVE",
+                    date=today_iso,
+                    commit=remote_sha,
+                    message=message,
+                )
+                if not args.no_notify:
+                    send_notification("AI 每日简报等待上线", message)
+                print(f"[aihot-publish] {message}", file=sys.stderr)
+                return 2
             message = f"{today_cn} 已发布，无需重复运行"
             write_status(
                 state_dir,
@@ -773,6 +1253,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         if today_iso not in brief.name:
             raise PublishError(f"简报文件日期与发布日期不一致: {brief.name}")
 
+        source_before_publish = brief.read_bytes()
         new_sha = publish_existing_brief(
             site=site,
             brief=brief,
@@ -782,13 +1263,39 @@ def main(argv: Sequence[str] | None = None) -> int:
             expected_remote=args.expected_remote or None,
             gh_bin=args.gh.expanduser(),
         )
+        if not args.skip_pages_check and not wait_for_pages(
+            pages_url=args.pages_url,
+            today_cn=today_cn,
+            today_iso=today_iso,
+            commit_sha=new_sha,
+            timeout_seconds=args.pages_timeout,
+        ):
+            message = f"{today_cn} 已推送，但 GitHub Pages 尚未显示"
+            write_status(
+                state_dir,
+                status="PUSHED_NOT_LIVE",
+                date=today_iso,
+                commit=new_sha,
+                source=str(brief),
+                archive=f"archive/{brief.name}",
+                message=message,
+            )
+            if not args.no_notify:
+                send_notification("AI 每日简报等待上线", message)
+            print(f"[aihot-publish] {message}", file=sys.stderr)
+            return 2
         managed_source = (
             brief.parent == desktop
             and re.fullmatch(
                 rf"aihot-简报-{re.escape(today_iso)}-\d{{4}}\.html", brief.name
             )
         )
-        if managed_source and not args.keep_brief:
+        if (
+            managed_source
+            and not args.keep_brief
+            and brief.is_file()
+            and brief.read_bytes() == source_before_publish
+        ):
             brief.unlink()
 
         message = f"{today_cn} 已发布到 GitHub"

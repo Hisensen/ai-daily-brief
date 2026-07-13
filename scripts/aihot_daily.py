@@ -151,7 +151,8 @@ def main():
         time.sleep(0.5)
         page = fetch(f"{base}?mode=selected&since={since}&take=100&cursor={cursor}")
         if page is None:
-            break
+            log("分页拉取失败，本次放弃，不生成简报也不更新 state")
+            sys.exit(1)
         items.extend(page.get("items", []))
         cursor = page.get("nextCursor")
     log(f"共 {len(items)} 条")
