@@ -48,6 +48,7 @@ SECTION_COLORS = {
     "行业动态":     "#0891b2",
     "论文研究":     "#16a34a",
     "技巧与观点":   "#ea580c",
+    "🎨 AIGC × 电商 × 自媒体变现雷达": "#db2777",
     "快讯":         "#64748b",
     "GitHub 本周开源热榜": "#24292f",
     "GitHub 今日趋势榜": "#24292f",
@@ -123,6 +124,18 @@ body {
 }
 .item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
 .item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
 .footer {
   margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
   font-size: 11px; color: #94a3b8; text-align: center;
@@ -158,6 +171,18 @@ def render_item(it, num):
     parts.append('</div>')
     return "\n".join(parts)
 
+def render_radar_item(it):
+    """变现雷达用的紧凑条目：标题(链接) + 来源 · 时间，不含摘要。
+    完整摘要在下方各版块，这里只是一层「搞钱视角」的跳转索引，避免重复大段内容。
+    刻意不用 class="title" / class="summary"，以免被发布器的条数校验重复计入。"""
+    title = esc(it.get("title", "无标题"))
+    url   = it.get("url", "")
+    meta  = " · ".join(x for x in [esc(it.get("source", "")), esc(it.get("time", ""))] if x)
+    link  = (f'<a class="radar-link" href="{esc(url)}">{title}</a>' if url
+             else f'<span class="radar-link">{title}</span>')
+    meta_html = f'<span class="radar-meta">{meta}</span>' if meta else ""
+    return f'<div class="radar-item">{link}{meta_html}</div>'
+
 def render_html(data):
     title    = esc(data.get("title", "AI HOT 报告"))
     subtitle = esc(data.get("subtitle", ""))
@@ -179,9 +204,18 @@ def render_html(data):
         body.append('<div class="section">')
         body.append(f'<div class="section-head"><span class="bar" style="background:{color}"></span>'
                     f'<h2>{esc(label)}</h2><span class="count">{len(items)} 条</span></div>')
-        for it in items:
-            num += 1
-            body.append(render_item(it, num))
+        if sec.get("compact"):
+            # 紧凑索引版块（如变现雷达）：不参与全局编号，条目是下方各版块的跳转镜头
+            if sec.get("note"):
+                body.append(f'<div class="radar-note">{esc(sec["note"])}</div>')
+            body.append('<div class="radar">')
+            for it in items:
+                body.append(render_radar_item(it))
+            body.append('</div>')
+        else:
+            for it in items:
+                num += 1
+                body.append(render_item(it, num))
         body.append('</div>')
 
     today = datetime.date.today().isoformat()
