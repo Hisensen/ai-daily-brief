@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-07-20 · 最近 2 天精选 · 共 14 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：🎨 AIGC × 电商 × 自媒体变现雷达 3 · 模型发布/更新 6 · 产品发布/更新 4 · 行业动态 2 · 技巧与观点 2 · GitHub 本周趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#db2777"></span><h2>🎨 AIGC × 电商 × 自媒体变现雷达</h2><span class="count">3 条</span></div><div class="radar-note">从今日全部动态里按「变现相关度」捞出的重点（AIGC / 图片 / 视频 / 剪辑 / 电商 / 广告 / 自媒体）——点标题看原文，完整摘要见下方对应版块。</div><div class="radar"><div class="radar-item"><a class="radar-link" href="https://mp.weixin.qq.com/s/INvrqTrWLMm2WCLIqhqTrg">通义实验室发布 Qwen-Audio-3.0-TTS 实时语音合成模型</a><span class="radar-meta">公众号：通义实验室（千问） · 今天 16:53</span></div><div class="radar-item"><a class="radar-link" href="https://mp.weixin.qq.com/s/rAoF65ywi5trWbI-heJieg">小红书与北大开源 UltraEP：面向大规模 MoE 训推的实时负载均衡方案</a><span class="radar-meta">公众号：小红书技术（dots.llm） · 今天 16:00</span></div><div class="radar-item"><a class="radar-link" href="https://seed.bytedance.com/zh/blog/%E4%BB%8E-%E4%BC%9A%E8%AF%B4-%E8%B5%B0%E5%90%91-%E4%BC%9A%E5%88%9B%E4%BD%9C-seed-audio-1-0-%E9%9F%B3%E9%A2%91%E5%88%9B%E4%BD%9C%E6%A8%A1%E5%9E%8B%E5%8F%91%E5%B8%83">字节跳动发布 Seed Audio 1.0 音频创作模型，统一建模人声与音效实现端到端影视级音频生成</a><span class="radar-meta">字节 Seed：Research Feed（网页内嵌数据） · 今天 00:00</span></div></div></div><div class="section"><div class="section-head"><span class="bar" style="background:#6d28d9"></span><h2>模型发布/更新</h2><span class="count">6 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://mp.weixin.qq.com/s/INvrqTrWLMm2WCLIqhqTrg">通义实验室发布 Qwen-Audio-3.0-TTS 实时语音合成模型</a></div>
+<div class="meta"><span class="src">公众号：通义实验室（千问）</span> · 今天 16:53</div>
+<div class="summary">通义实验室发布 Qwen-Audio-3.0-TTS，含 Flash（首包延迟约300ms）和 Plus 两个版本。Plus 版本在 Artificial Analysis 榜单夺冠，支持16种语言和20种中文方言，平均 WER/CER 低至3.87（Flash），说话人相似度最高达82.75（Plus）。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s/INvrqTrWLMm2WCLIqhqTrg">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://www.ithome.com/0/979/017.htm">上海科学智能研究院开放科学多模态基础模型&quot;神珍&quot;</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 今天 15:00</div>
+<div class="summary">上海科学智能研究院开放科学多模态基础模型&quot;神珍&quot;，总参数约110亿，可处理DNA、RNA、蛋白质、小分子、地球系统和医学影像六类数据。在生物序列20项任务中，该模型9项取得最优结果；医学影像分割平均Dice得分91.20，在7种参评方法中最优。模型权重及代码已在星河启智、Hugging Face和GitHub开放。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/979/017.htm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://mp.weixin.qq.com/s/KwBAC8TFa846WFj-DHrgIQ">面壁智能发布首个具身智能成果 MiniCPM-Robot 系列模型，含 1.5B VLA 与 0.9B 跟踪模型</a></div>
+<div class="meta"><span class="src">公众号：面壁智能（MiniCPM）</span> · 今天 11:54</div>
+<div class="summary">面壁智能联合 OpenBMB 发布并开源 MiniCPM-Robot 系列，包括通用 VLA 模型 MiniCPM-RobotManip（1.5B 参数）与移动跟踪模型 MiniCPM-RobotTrack（0.9B 参数）。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s/KwBAC8TFa846WFj-DHrgIQ">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://mp.weixin.qq.com/s/rjFxrUylyGMqa5QtgypCdw">MiniCPM5-2B发布：4B以下全球性能第一，适配9款芯片</a></div>
+<div class="meta"><span class="src">公众号：面壁智能（MiniCPM）</span> · 昨天 21:12</div>
+<div class="summary">面壁智能联合OpenBMB发布端侧模型MiniCPM5-2B，以2B参数量在AA-Index榜单取得4B以下模型最高分17分，平均分54.26，超越Qwen3.5-2B等竞品。模型原生支持混合思考与512K上下文，已完成华为昇腾、英伟达等9款芯片的Day0适配，即将开源。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s/rjFxrUylyGMqa5QtgypCdw">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://mp.weixin.qq.com/s/LidvGePhOOoUY3KTor_w9g">昆仑万维宣布2026为&quot;世界模型元年&quot;，发布Matrix-Game 3.5等模型</a></div>
+<div class="meta"><span class="src">公众号：昆仑万维（天工）</span> · 昨天 20:35</div>
+<div class="summary">昆仑万维董事长方汉在WAIC上宣布2026年为&quot;世界模型元年&quot;，并发布Matrix-Game 3.5世界模型、Mureka v9.5与O3音乐模型。Matrix-Game 3.5实现Patch级记忆注入，5B模型在720p分辨率下单卡可达20FPS实时生成，核心架构已开源。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s/LidvGePhOOoUY3KTor_w9g">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://x.com/Alibaba_Qwen/status/2078754377473601787">Qwen3.8 开源发布，2.4T 参数模型上线</a></div>
+<div class="meta"><span class="src">X：通义千问 / Qwen (@Alibaba_Qwen)</span> · 昨天 16:10</div>
+<div class="summary">Qwen3.8 即将发布并很快开源权重！🌐
+
+该模型拥有 2.4T 海量参数，正在持续进化。我们相信它是目前最强大的模型之一，可与领先的前沿 AI 模型媲美，仅次于 Fable 5。
+
+你无需等待即可测试。就在刚才，Qwen3.8-Max-Preview 已在阿里巴巴的 Token Plan、Qoder 和 QoderWork 上首次亮相。快来抢先体验吧。
+
+期待你的作品。敬请关注！🚀</div>
+<div class="src-link"><a href="https://x.com/Alibaba_Qwen/status/2078754377473601787">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#2563eb"></span><h2>产品发布/更新</h2><span class="count">4 条</span></div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://mp.weixin.qq.com/s/rAoF65ywi5trWbI-heJieg">小红书与北大开源 UltraEP：面向大规模 MoE 训推的实时负载均衡方案</a></div>
+<div class="meta"><span class="src">公众号：小红书技术（dots.llm）</span> · 今天 16:00</div>
+<div class="summary">小红书与北大提出 UltraEP，首次将基于精确路由信息的实时负载均衡引入生产系统，在每个 microbatch 和每一层动态复制热点专家。在 Qwen3-235B 等模型上，训练吞吐平均达到理想性能的 94.6%，相比 Megatron-LM 提升 42%；推理 prefill 吞吐相比 SGLang 提升 1.56 倍。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s/rAoF65ywi5trWbI-heJieg">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://seed.bytedance.com/zh/blog/%E4%BB%8E-%E4%BC%9A%E8%AF%B4-%E8%B5%B0%E5%90%91-%E4%BC%9A%E5%88%9B%E4%BD%9C-seed-audio-1-0-%E9%9F%B3%E9%A2%91%E5%88%9B%E4%BD%9C%E6%A8%A1%E5%9E%8B%E5%8F%91%E5%B8%83">字节跳动发布 Seed Audio 1.0 音频创作模型，统一建模人声与音效实现端到端影视级音频生成</a></div>
+<div class="meta"><span class="src">字节 Seed：Research Feed（网页内嵌数据）</span> · 今天 00:00</div>
+<div class="summary">字节跳动 Seed 团队发布音频创作模型 Seed Audio 1.0，在统一框架下联合建模人声、音效和环境声，支持 100ms 间隔精度的时间控制、单次约 2 分钟音频的延展生成及 20+ 语种自然生成。该模型已在火山方舟体验中心上线，多数场景音频可用率达 90% 以上，多语言音频自然度 MOS 超 4 分。</div>
+<div class="src-link"><a href="https://seed.bytedance.com/zh/blog/%E4%BB%8E-%E4%BC%9A%E8%AF%B4-%E8%B5%B0%E5%90%91-%E4%BC%9A%E5%88%9B%E4%BD%9C-seed-audio-1-0-%E9%9F%B3%E9%A2%91%E5%88%9B%E4%BD%9C%E6%A8%A1%E5%9E%8B%E5%8F%91%E5%B8%83">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://x.com/thsottiaux/status/2078697631019303273">ChatGPT Work 功能：建站、邮件、文档处理</a></div>
+<div class="meta"><span class="src">X：Tibo (@thsottiaux)</span> · 昨天 12:25</div>
+<div class="summary">ChatGPT Work 适用于
+
+✅ 创建和托管网站 ✅ 为你管理电子邮件 ✅ 总结海量文档 ✅ 制作一流的文档、表格和幻灯片
+
+已在你的移动应用或 http://chatgpt.com 上提供，包含在 Plus、Pro、Business 和 Enterprise 套餐中。</div>
+<div class="src-link"><a href="https://x.com/thsottiaux/status/2078697631019303273">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://workshop.cjpais.com/projects/transcribe-cpp">transcribe.cpp 发布：基于 ggml 的跨平台语音转录库，支持 16 个 ASR 模型族</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 10:49</div>
+<div class="summary">transcribe.cpp v0.1.0 发布，一个基于 ggml 的语音转录库，支持 16 个 ASR 模型族（60+ 模型），并通过 Vulkan、Metal、CUDA 和 TinyBLAS 实现 GPU 加速。</div>
+<div class="src-link"><a href="https://workshop.cjpais.com/projects/transcribe-cpp">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#0891b2"></span><h2>行业动态</h2><span class="count">2 条</span></div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://ollama.com/blog/all-aboard-open-models">Ollama 获 8800 万美元融资，加速开放模型生态发展</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 今天 09:45</div>
+<div class="summary">Ollama 宣布完成 8800 万美元融资，由 Benchmark、Theory Ventures 和 8VC 等领投。该平台已服务 890 万开发者，并被 85% 的财富 500 强企业使用，其云端 token 用量月均翻倍。资金将用于支持无缝混合推理、新模型发布当日集成，以及让开发者在不牺牲所有权和隐私的前提下使用最强开放模型。</div>
+<div class="src-link"><a href="https://ollama.com/blog/all-aboard-open-models">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit">黄仁勋访日：Nvidia 联手日本打造物理 AI 时代，Noetra 主权 AI 工厂与 Cosmos 机器人联盟落地</a></div>
+<div class="meta"><span class="src">TechCrunch：AI（RSS）</span> · 今天 05:16</div>
+<div class="summary">Nvidia CEO 黄仁勋在 7 月 15-16 日访日期间，宣布为日本建设&quot;Vera Rubin AI 工厂&quot;，配备 13，750 颗 Vera CPU 和 27，500 颗 Rubin GPU，预计 2028 年投运。</div>
+<div class="src-link"><a href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">2 条</span></div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://mp.weixin.qq.com/s/EeHjsju08ARLbwtwFcViqg">不会代码也能做产品：一份从0开始的Vibe Coding保姆级教程</a></div>
+<div class="meta"><span class="src">公众号：数字生命卡兹克</span> · 今天 08:08</div>
+<div class="summary">本文面向零代码用户，提供一套使用国产大模型（Kimi、GLM、Qwen等）从零开发并上线产品的完整流程。核心步骤包括购买Coding Plan、下载官方Agent编程产品、注册域名与服务器并同步做ICP备案，然后通过Agent的Plan模式描述需求并让AI自动执行开发。上线后建议建立分支保护与测试流程，并强调即使不懂代码，也必须对系统架构了如指掌。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s/EeHjsju08ARLbwtwFcViqg">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making">AI 热潮正在瓦解全球决策机制</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 13:13</div>
+<div class="summary">一位拥有 300 多次行业交流经验的从业者观察到，全球公私机构正陷入集体性 AI 狂热，决策层要么没有计划，要么只能低头回避。过去一年半中，其团队所见的所有 AI 项目均以失败告终（成功率 0%），失败原因常与 LLM 能力无关，而是企业本就难以有效运行软件项目，且 AI 项目叠加了额外风险。内部聊天机器人几乎无人使用，客户服务聊天机器人也极少带来良好体验，例如三菱的语音客服承诺回电却六周未兑现。</div>
+<div class="src-link"><a href="https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 本周趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐13,815 · CSS · 本周+9,193</span></div>
+<div class="summary">Anti-AI-slop design skill for Claude Code, Cursor, and Codex.</div>
+<div class="src-link"><a href="https://github.com/Nutlope/hallmark">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">16</span><a class="title" href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐76,162 · TypeScript · 本周+12,743</span></div>
+<div class="summary">The open-source CapCut alternative</div>
+<div class="src-link"><a href="https://github.com/OpenCut-app/OpenCut">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">17</span><a class="title" href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐124,889 · Python · 本周+6,211</span></div>
+<div class="summary">100+ AI Agent &amp; RAG apps you can actually run — clone, customize, ship.</div>
+<div class="src-link"><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">18</span><a class="title" href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐28,216 · Python · 本周+2,375</span></div>
+<div class="summary">DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.</div>
+<div class="src-link"><a href="https://github.com/HKUDS/DeepTutor">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">19</span><a class="title" href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐25,500 · Python · 本周+5,228</span></div>
+<div class="summary">&quot;Vibe-Trading: Your Personal Trading Agent&quot;</div>
+<div class="src-link"><a href="https://github.com/HKUDS/Vibe-Trading">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">20</span><a class="title" href="https://github.com/tirth8205/code-review-graph">tirth8205/code-review-graph</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐22,242 · Python · 本周+1,103</span></div>
+<div class="summary">Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read on</div>
+<div class="src-link"><a href="https://github.com/tirth8205/code-review-graph">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">21</span><a class="title" href="https://github.com/ibelick/ui-skills">ibelick/ui-skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐5,558 · TypeScript · 本周+1,669</span></div>
+<div class="summary">Skills for Design Engineers</div>
+<div class="src-link"><a href="https://github.com/ibelick/ui-skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">22</span><a class="title" href="https://github.com/mattpocock/skills">mattpocock/skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐178,297 · Shell · 本周+10,983</span></div>
+<div class="summary">Skills for Real Engineers. Straight from my .agents directory.</div>
+<div class="src-link"><a href="https://github.com/mattpocock/skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">23</span><a class="title" href="https://github.com/kangarooking/cangjie-skill">kangarooking/cangjie-skill</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐4,013 · Python · 本周+1,284</span></div>
+<div class="summary">把书、长视频、播客等高价值内容蒸馏成可执行的 Agent Skills</div>
+<div class="src-link"><a href="https://github.com/kangarooking/cangjie-skill">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">24</span><a class="title" href="https://github.com/iOfficeAI/OfficeCLI">iOfficeAI/OfficeCLI</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐19,941 · C# · 本周+4,269</span></div>
+<div class="summary">OfficeCLI is the first and best Office suite purpose-built for AI agents to read, edit, and automate Word, Excel, and Po</div>
+<div class="src-link"><a href="https://github.com/iOfficeAI/OfficeCLI">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">25</span><a class="title" href="https://github.com/openai/codex">openai/codex</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐99,919 · Rust · 本周+2,361</span></div>
+<div class="summary">Lightweight coding agent that runs in your terminal</div>
+<div class="src-link"><a href="https://github.com/openai/codex">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">26</span><a class="title" href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐10,067 · Python · 本周+693</span></div>
+<div class="summary">Kimi Code CLI is your next CLI agent.</div>
+<div class="src-link"><a href="https://github.com/MoonshotAI/kimi-cli">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-07-20 · 共 26 条</div></body></html>
