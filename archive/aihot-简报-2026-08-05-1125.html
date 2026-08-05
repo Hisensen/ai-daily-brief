@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-08-05 · 最近 2 天精选 · 共 29 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：🎨 AIGC × 电商 × 自媒体变现雷达 2 · 模型发布/更新 6 · 产品发布/更新 14 · 行业动态 3 · 技巧与观点 6 · GitHub 本周趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#db2777"></span><h2>🎨 AIGC × 电商 × 自媒体变现雷达</h2><span class="count">2 条</span></div><div class="radar-note">从今日全部动态里按「变现相关度」捞出的重点（AIGC / 图片 / 视频 / 剪辑 / 电商 / 广告 / 自媒体）——点标题看原文，完整摘要见下方对应版块。</div><div class="radar"><div class="radar-item"><a class="radar-link" href="https://x.com/OpenRouter/status/2084699413898027064">OpenRouter 上线 FLUX 3 Video 统一多模态模型</a><span class="radar-meta">X：OpenRouter (@OpenRouter) · 今天 01:54</span></div><div class="radar-item"><a class="radar-link" href="https://x.com/SenseTime_AI/status/2084667189479837741">商汤 SenseNova U1 开源：统一推理与图像生成</a><span class="radar-meta">X：商汤 SenseTime (@SenseTime_AI) · 昨天 23:46</span></div></div></div><div class="section"><div class="section-head"><span class="bar" style="background:#6d28d9"></span><h2>模型发布/更新</h2><span class="count">6 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://x.com/Alibaba_Qwen/status/2084831888729072121">Qwen-Image-3.0-Pro 上线 Qwen Cloud</a></div>
+<div class="meta"><span class="src">X：通义千问 / Qwen (@Alibaba_Qwen)</span> · 今天 10:40</div>
+<div class="summary">阿里通义千问发布 Qwen-Image-3.0-Pro 与 Standard，现已在 Qwen Cloud 上线。该模型在 Arena 文生图榜单中位列中国模型第一、主流模型第二，支持 4.5k-token 提示词、10px 级文字渲染及 12 种语言。Pro 版起价 $0.04/张，Standard 版起价 $0.03/张。</div>
+<div class="src-link"><a href="https://x.com/Alibaba_Qwen/status/2084831888729072121">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://x.com/OpenRouter/status/2084699413898027064">OpenRouter 上线 FLUX 3 Video 统一多模态模型</a></div>
+<div class="meta"><span class="src">X：OpenRouter (@OpenRouter)</span> · 今天 01:54</div>
+<div class="summary">@bfl_ai 的 FLUX 3 Video 现已在 OpenRouter 上向所有人开放。
+
+一个统一的视频、音频、图像和动作预测多模态模型家族。严肃、有趣、创意、真实、电影感，随你所需。基于统一架构联合训练。</div>
+<div class="src-link"><a href="https://x.com/OpenRouter/status/2084699413898027064">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://x.com/SenseTime_AI/status/2084667189479837741">商汤 SenseNova U1 开源：统一推理与图像生成</a></div>
+<div class="meta"><span class="src">X：商汤 SenseTime (@SenseTime_AI)</span> · 昨天 23:46</div>
+<div class="summary">商汤发布开源模型 SenseNova U1，可在统一流程中同时进行推理与图像生成。其信息图模式可将单条提示词转为结构化幻灯片，交错模式则逐步生成图文内容，如演示六步画龙教程。模型已上线 SenseNova Studio、HuggingFace 及 GitHub。</div>
+<div class="src-link"><a href="https://x.com/SenseTime_AI/status/2084667189479837741">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://x.com/AntLingAGI/status/2084656533489754475">蚂蚁百灵发布Ling-3.0-flash开源权重</a></div>
+<div class="meta"><span class="src">X：蚂蚁百灵 (@AntLingAGI)</span> · 昨天 23:03</div>
+<div class="summary">今天，我们发布了 Ling-3.0-flash 的开源权重。🎉
+
+官方 BF16 和 FP8 量化版本现已可用，您可以根据自己的硬件、性能要求和部署需求选择最合适的版本。</div>
+<div class="src-link"><a href="https://x.com/AntLingAGI/status/2084656533489754475">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://blogs.nvidia.com/blog/alpamayo-2-super-open-model-now-available">NVIDIA Alpamayo 2 Super 开放商用，面向 Robotaxi 与自动驾驶的前沿开源模型</a></div>
+<div class="meta"><span class="src">NVIDIA Blog（RSS）</span> · 昨天 23:00</div>
+<div class="summary">NVIDIA Alpamayo 2 Super 现已开放商用，基于 Cosmos 3 Super Reasoner 构建，采用强化学习后训练，支持轨迹预测、因果链推理、元动作、自动标注及视觉问答等多任务输出。</div>
+<div class="src-link"><a href="https://blogs.nvidia.com/blog/alpamayo-2-super-open-model-now-available">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&amp;mid=2247498223&amp;idx=1&amp;sn=ae271ec2c72723393d3e1d8074a33205">腾讯混元发布 Hy ASR 3.0 preview：真正懂上下文的语音识别</a></div>
+<div class="meta"><span class="src">公众号：腾讯混元</span> · 昨天 16:12</div>
+<div class="summary">腾讯混元发布新一代语音识别模型 Hy ASR 3.0 preview，基于大语言模型 Hy3 与 MoE 架构，融合高精度识别与语义理解。其在开源评测集中中文普通话 WER 3.34%、英语 WER 2.62%、粤语 WER 3.12%，并支持上下文纠错、热词注入及高噪耳语等场景。该模型已上线腾讯云 API，元宝 App 首发并免费开放。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&amp;mid=2247498223&amp;idx=1&amp;sn=ae271ec2c72723393d3e1d8074a33205">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#2563eb"></span><h2>产品发布/更新</h2><span class="count">14 条</span></div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://simonwillison.net/2026/Aug/4/new-release-of-llm">LLM 0.32 发布：新增推理轨迹、OpenAI Responses、服务端工具与更智能的日志</a></div>
+<div class="meta"><span class="src">Simon Willison 博客</span> · 今天 07:58</div>
+<div class="summary">Simon Willison 发布 LLM 0.32，这是该项目自启动以来最重要的新版本。新版本支持显示推理轨迹、服务端工具、OpenAI Responses API，并默认使用 GPT-5.6 Luna 模型。</div>
+<div class="src-link"><a href="https://simonwillison.net/2026/Aug/4/new-release-of-llm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://x.com/Replit/status/2084761337570144424">Replit 环境智能：免提示词自动生成设计</a></div>
+<div class="meta"><span class="src">X：Replit (@Replit)</span> · 今天 06:00</div>
+<div class="summary">你无需提示词，也无需设计语言。
+
+环境智能（Ambient Intelligence）会在每个画面旁显示建议卡片，每张卡片都指向你的设计的一个不同方向。点击你喜欢的那张，即可看到它生成一个新的画面。
+
+你再也不必纠结下一步该做什么。
+
+立即在 http://replit.com/design 体验。</div>
+<div class="src-link"><a href="https://x.com/Replit/status/2084761337570144424">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://github.com/MakazhanAlpamys/Soup">Soup v0.72.4：在4 GB显存笔记本GPU上微调8B模型</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 今天 02:17<span class="badge">⭐211 · Python</span></div>
+<div class="summary">Soup 推出 v0.72.4，支持在配备 4 GB 显存的笔记本 GPU 上通过 QLoRA 微调 8B 模型，无需 SSH 或云服务。</div>
+<div class="src-link"><a href="https://github.com/MakazhanAlpamys/Soup">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://www.lmsys.org/blog/2026-08-04-specforge-v0-3">SpecForge v0.3.0 发布：统一解耦与共置投机解码栈，新增开放 SpecBundle 草稿模型</a></div>
+<div class="meta"><span class="src">LMSYS：Blog（Chatbot Arena 团队）</span> · 今天 01:51</div>
+<div class="summary">SpecForge v0.3.0 将目标模型推理与草稿模型训练分离，支持 EAGLE3、EAGLE3.1、P-EAGLE、DFlash、Domino、DSpark 等多种投机解码算法，并统一在线、离线与解耦工作流。</div>
+<div class="src-link"><a href="https://www.lmsys.org/blog/2026-08-04-specforge-v0-3">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://developers.googleblog.com/a-unified-api-for-ai-model-routing">Google Cloud API Gateway 推出统一模型路由功能，支持 Gemini、Claude 与 OpenAI OSS-GPT</a></div>
+<div class="meta"><span class="src">Google Developers Blog（RSS）</span> · 今天 00:45</div>
+<div class="summary">Google Cloud API Gateway 新增模型路由功能（Public Preview），开发者可在 OpenAPI 3.x 规范中配置虚拟模型名到后端目标的映射，无需硬编码端点或管理开源代理。网关作为无服务器入口层，接受标准 OpenAI 兼容请求，自动将负载转码为目标模型的原生格式并动态路由流量。</div>
+<div class="src-link"><a href="https://developers.googleblog.com/a-unified-api-for-ai-model-routing">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://cloud.google.com/blog/products/databases/deep-dive-on-new-ai-powered-database-agents">Google Cloud 推出 Database Operations Agents，实现自主数据库管理</a></div>
+<div class="meta"><span class="src">Google Cloud：Databases（RSS）</span> · 今天 00:00</div>
+<div class="summary">Google Cloud 在 Agentic Data Cloud 发布中推出两款 AI 数据库智能体：Database Onboarding Agent 负责 Day 0 的配置与部署，Database Observability Agent 负责 Day 1/2 的监控、故障排查与维护。</div>
+<div class="src-link"><a href="https://cloud.google.com/blog/products/databases/deep-dive-on-new-ai-powered-database-agents">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://blogs.nvidia.com/blog/ai-storage-fms">NVIDIA 开源 cuFile API，推动 GPU 直连存储</a></div>
+<div class="meta"><span class="src">NVIDIA Blog（RSS）</span> · 昨天 23:00</div>
+<div class="summary">NVIDIA 在 FMS 大会上宣布开源 cuFile API 及底层存储软件栈，让 GPU 可直接读写存储，访问延迟降至微秒级。其 Vera CPU 在两级压缩与加密流水线中吞吐量比 x86 CPU 最高提升 3.21 倍，并联合 40 多家厂商推出 Storage-Next 计划。</div>
+<div class="src-link"><a href="https://blogs.nvidia.com/blog/ai-storage-fms">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://blog.cloudflare.com/local-tracing">Cloudflare 让智能体通过本地追踪调试 Workers</a></div>
+<div class="meta"><span class="src">Cloudflare Blog</span> · 昨天 21:00</div>
+<div class="summary">Cloudflare 即日起在 wrangler dev 和 vite dev 中自动为本地 Worker 调用捕获 OpenTelemetry 追踪，无需安装 SDK 或配置智能体。智能体可通过 Local Explorer API 查询追踪数据，定位失败操作、修复本地环境并验证结果。开发者也可在浏览器界面 Local Explorer 中可视化查看 spans、时序、错误及关联控制台日志。</div>
+<div class="src-link"><a href="https://blog.cloudflare.com/local-tracing">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://blog.cloudflare.com/agents-on-cloudflare">Cloudflare 推出 Agents 平台，率先上线智能体追踪功能</a></div>
+<div class="meta"><span class="src">Cloudflare Blog</span> · 昨天 21:00</div>
+<div class="summary">Cloudflare 推出 Cloudflare Agents，将部署在平台上的智能体会话统一到一个视图中，并率先上线 agent tracing 功能。该功能支持 OpenTelemetry 兼容的 Think、Flue 和 AI SDK 等智能体框架，可测量每次模型调用、工具执行和 token 消耗。</div>
+<div class="src-link"><a href="https://blog.cloudflare.com/agents-on-cloudflare">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">16</span><a class="title" href="https://blog.cloudflare.com/ci-workflows">Cloudflare 推出 CI SDK：在 Cloudflare 上为百万级仓库运行 CI/CD 流水线</a></div>
+<div class="meta"><span class="src">Cloudflare Blog</span> · 昨天 21:00</div>
+<div class="summary">Cloudflare 推出基于 Workflows 和 Sandbox SDK 的 CI SDK，让平台方直接在 Cloudflare 上运行 CI/CD 流水线，支持构建、lint、类型检查、单元测试、依赖缓存及条件部署。</div>
+<div class="src-link"><a href="https://blog.cloudflare.com/ci-workflows">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">17</span><a class="title" href="https://blog.cloudflare.com/agent-development-lifecycle">Cloudflare 推出 Agent Development Lifecycle，让智能体接管更多软件开发生命周期</a></div>
+<div class="meta"><span class="src">Cloudflare Blog</span> · 昨天 21:00</div>
+<div class="summary">Cloudflare 宣布推出 Agent Development Lifecycle（ADLC），以取代传统 SDLC，让 AI 智能体从仅生成代码扩展到承担更多开发流程。</div>
+<div class="src-link"><a href="https://blog.cloudflare.com/agent-development-lifecycle">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">18</span><a class="title" href="https://www.marktechpost.com/2026/08/04/reflex-open-sources-xy-a-rust-backed-super-fast-python-charting-library-that-keeps-100-million-point-charts-interactive">Reflex 开源 XY：基于 Rust 的超快 Python 绘图库，可保持 1 亿点图表交互流畅</a></div>
+<div class="meta"><span class="src">MarkTechPost（RSS）</span> · 昨天 16:57</div>
+<div class="summary">Reflex AI 发布 Apache-2.0 许可的 Python 交互式 2D 绘图库 XY，通过 Rust 原生核心、二进制缓冲传输和 WebGL2 渲染，在 1 万至 1 亿点范围内保持约 0.08 秒的渲染时间。</div>
+<div class="src-link"><a href="https://www.marktechpost.com/2026/08/04/reflex-open-sources-xy-a-rust-backed-super-fast-python-charting-library-that-keeps-100-million-point-charts-interactive">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">19</span><a class="title" href="https://github.com/leonickson1/Swiftlet">Swiftlet：在 Mac 上运行 80B 版 Qwen（内存 4.3 GB），在 iPhone 上运行 35B 版</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 14:32<span class="badge">⭐348 · Swift</span></div>
+<div class="summary">Swiftlet 是一个 Swift + Metal 运行时，可在普通 Apple 设备上运行 Qwen3-Next 和 Qwen3.5/3.6 MoE 混合模型，仅将小型稠密核心驻留内存，按需从存储流式加载路由专家权重。</div>
+<div class="src-link"><a href="https://github.com/leonickson1/Swiftlet">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">20</span><a class="title" href="https://mp.weixin.qq.com/s?__biz=Mzg3Mzg2MTg2NQ%3D%3D&amp;mid=2247498861&amp;idx=1&amp;sn=d2d16692dd7eb27f9d466803f25c2b78">面壁智能开源 ForgeStencil：一周自动优化 100+ 工业与科学软件，全程零人工介入</a></div>
+<div class="meta"><span class="src">公众号：面壁智能（MiniCPM）</span> · 昨天 12:20</div>
+<div class="summary">面壁智能联合 OpenBMB 开源全球首个支持 Stencil 自动研究、自动部署的 AI 优化系统 ForgeStencil，由 Kernel Agent 与 App Agent 闭环协作，实现从算子优化到应用集成的全自动流程。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s?__biz=Mzg3Mzg2MTg2NQ%3D%3D&amp;mid=2247498861&amp;idx=1&amp;sn=d2d16692dd7eb27f9d466803f25c2b78">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#0891b2"></span><h2>行业动态</h2><span class="count">3 条</span></div><div class="item">
+<div class="line1"><span class="num">21</span><a class="title" href="https://x.com/rohanpaul_ai/status/2084655258102546579">Anthropic 与成立仅数月的云初创公司 Volta 签署 100 亿美元算力协议</a></div>
+<div class="meta"><span class="src">X：Rohan Paul (@rohanpaul_ai)</span> · 昨天 22:58</div>
+<div class="summary">Anthropic 与成立仅数月的云初创公司 Volta 签署 100 亿美元算力协议，约合每年 17 亿美元。Volta 估值 24 亿美元，硬件几乎全为租用：算力来自比特币矿商 Bitdeer 挪威 121MW 站点，芯片由 Nvidia 供应、Dell 组装。Anthropic 买的是交付速度，代价是承担超大规模云厂商合同从未有过的交易对手风险。</div>
+<div class="src-link"><a href="https://x.com/rohanpaul_ai/status/2084655258102546579">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">22</span><a class="title" href="https://www.ithome.com/0/985/665.htm">工信部发布首部L3/L4自动驾驶系统安全要求强制性国标，2027年7月实施</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 19:06</div>
+<div class="summary">工信部组织制定的《智能网联汽车 自动驾驶系统安全要求》（GB 44721-2026）强制性国家标准获批发布，拟于2027年7月1日起实施。这是我国首部针对L3级有条件自动驾驶和L4级高度自动驾驶系统的强制性国标，由2024年推荐性国标GB/T 44721-2024升级而来，为自动驾驶产品明确了统一的安全准入基线。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/985/665.htm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">23</span><a class="title" href="https://x.com/thsottiaux/status/2084506501834829833">GPT-5.6 Luna降价80%永久生效</a></div>
+<div class="meta"><span class="src">X：Tibo (@thsottiaux)</span> · 昨天 13:07</div>
+<div class="summary">有些人显然误解了，但 GPT-5.6 Luna 降价 80% 不是临时噱头，而是永久的。效率提升不会消失。幸运的是。</div>
+<div class="src-link"><a href="https://x.com/thsottiaux/status/2084506501834829833">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">6 条</span></div><div class="item">
+<div class="line1"><span class="num">24</span><a class="title" href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647684946&amp;idx=1&amp;sn=ae7edcc572b998dc4e1ac3591977aa85">开源「活人感写作.skill」：一个帮你写出没有AI味的文字的通用写作技能</a></div>
+<div class="meta"><span class="src">公众号：数字生命卡兹克</span> · 今天 09:35</div>
+<div class="summary">数字生命卡兹克开源「活人感写作.skill」（英文名 human Writing.skill），旨在去除AI味、帮用户写出有真实生活感的文字。该Skill鼓励用户提供真实案例与情感，并针对辞章端禁用AI常用口癖和黑话，同时适配Qwen 3.8 Max、DeepSeek V4 Pro、Kimi K3等模型，可直接用于WorkBuddy、千问办公等产品。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647684946&amp;idx=1&amp;sn=ae7edcc572b998dc4e1ac3591977aa85">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">25</span><a class="title" href="https://simonwillison.net/2026/Aug/4/minimax-h3-mlx">MiniMax-H3 通过 MLX 移植可在 Apple Silicon 上运行</a></div>
+<div class="meta"><span class="src">Simon Willison 博客</span> · 今天 03:10</div>
+<div class="summary">MiniMax 发布 MiniMax-H3，一个可接受文本、图像、音频和视频并生成最长 15 秒带音频视频片段的通用全模态生成系统。Python 包 PipeNetwork/minimax-h3-mlx 将其移植到 MLX，支持 Apple Silicon 运行。作者在 M5 Max MacBook Pro 上实测，下载约 115 GB 模型文件，视频生成耗时不到 45 分钟。</div>
+<div class="src-link"><a href="https://simonwillison.net/2026/Aug/4/minimax-h3-mlx">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">26</span><a class="title" href="https://github.blog/engineering/turn-one-giant-ai-generated-pull-request-to-a-reviewable-stack">GitHub 如何用堆叠式 Pull Request 拆解 AI 生成的巨型代码</a></div>
+<div class="meta"><span class="src">GitHub Blog</span> · 今天 00:47</div>
+<div class="summary">GitHub 介绍用堆叠式 Pull Request（stacked PR）解决 AI 编码智能体生成巨型代码难以审查的问题。通过将 1，000+ 行的大 diff 按数据、API、接线、UI 拆成 L1-L4 四个独立分层，每层可分配不同审查者。</div>
+<div class="src-link"><a href="https://github.blog/engineering/turn-one-giant-ai-generated-pull-request-to-a-reviewable-stack">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">27</span><a class="title" href="https://blog.cloudflare.com/astro-issue-triage">Cloudflare 如何用软件工厂将 Astro 的 GitHub issue 数降至零</a></div>
+<div class="meta"><span class="src">Cloudflare Blog</span> · 昨天 21:00</div>
+<div class="summary">Cloudflare 在 Astro 仓库上运行自动化 triage 流水线，通过隔离的 AI 子代理复现、诊断并修复 bug，将开放 issue 从 200 多个降至约 30 个，预计下月归零。该流水线由 issue 标签驱动，修复后自动发布预览版本供用户验证。其底层引擎已发展为 Flue，一个开源的平台无关框架，用于构建持久化智能体与工作流。</div>
+<div class="src-link"><a href="https://blog.cloudflare.com/astro-issue-triage">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">28</span><a class="title" href="https://github.com/ryanzhou/deepseek-v4-flash-mi300x">在单颗 AMD MI300X 上运行 DeepSeek V4 Flash</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 20:56<span class="badge">⭐104 · Python</span></div>
+<div class="summary">一个开源仓库提供了在单颗 AMD MI300X 上生产运行 DeepSeek-V4-Flash-0731 的完整配置与补丁，无需额外量化或权重卸载。该 304B 参数模型在 192 GB HBM 上实现单流 168.6 tok/s 解码、8 并发流 542 tok/s 聚合吞吐，并验证了 256K 上下文。</div>
+<div class="src-link"><a href="https://github.com/ryanzhou/deepseek-v4-flash-mi300x">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">29</span><a class="title" href="https://www.marktechpost.com/2026/08/04/building-an-advanced-ai-skill-security-auditing-pipeline-with-nvidia-skillspector-langgraph-yara-rules-sarif-and-ci-policy-gates">用 NVIDIA SkillSpector、LangGraph、YARA 规则、SARIF 与 CI 策略门构建高级 AI 技能安全审计流水线</a></div>
+<div class="meta"><span class="src">MarkTechPost（RSS）</span> · 昨天 16:12</div>
+<div class="summary">本教程演示如何用 NVIDIA SkillSpector 评估 AI 技能的安全态势，构建包含干净、风险、恶意及 MCP 示例的合成技能市场，并通过 LangGraph 检查流水线扫描每个技能。</div>
+<div class="src-link"><a href="https://www.marktechpost.com/2026/08/04/building-an-advanced-ai-skill-security-auditing-pipeline-with-nvidia-skillspector-langgraph-yara-rules-sarif-and-ci-policy-gates">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 本周趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">30</span><a class="title" href="https://github.com/zhaoxuya520/reverse-skill">zhaoxuya520/reverse-skill</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐18,120 · PowerShell · 本周+8,386</span></div>
+<div class="summary">Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-deman</div>
+<div class="src-link"><a href="https://github.com/zhaoxuya520/reverse-skill">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">31</span><a class="title" href="https://github.com/microsoft/AI-For-Beginners">microsoft/AI-For-Beginners</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐61,746 · Jupyter Notebook · 本周+8,582</span></div>
+<div class="summary">12 Weeks, 24 Lessons, AI for All!</div>
+<div class="src-link"><a href="https://github.com/microsoft/AI-For-Beginners">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">32</span><a class="title" href="https://github.com/block/buzz">block/buzz</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐22,608 · Rust · 本周+7,262</span></div>
+<div class="summary">A hive mind communication platform</div>
+<div class="src-link"><a href="https://github.com/block/buzz">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">33</span><a class="title" href="https://github.com/virgiliojr94/book-to-skill">virgiliojr94/book-to-skill</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐16,481 · Python · 本周+5,420</span></div>
+<div class="summary">Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.</div>
+<div class="src-link"><a href="https://github.com/virgiliojr94/book-to-skill">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">34</span><a class="title" href="https://github.com/different-ai/openwork">different-ai/openwork</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐20,944 · TypeScript · 本周+3,601</span></div>
+<div class="summary">The open-source alternative to Claude Cowork (powered by opencode)</div>
+<div class="src-link"><a href="https://github.com/different-ai/openwork">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">35</span><a class="title" href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐16,835 · Python · 本周+4,389</span></div>
+<div class="summary">A skill to stop your coding agent from burying the answer. ADHD-friendly output.</div>
+<div class="src-link"><a href="https://github.com/ayghri/i-have-adhd">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">36</span><a class="title" href="https://github.com/lyogavin/airllm">lyogavin/airllm</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐28,485 · Jupyter Notebook · 本周+3,911</span></div>
+<div class="summary">AirLLM 70B inference with single 4GB GPU</div>
+<div class="src-link"><a href="https://github.com/lyogavin/airllm">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">37</span><a class="title" href="https://github.com/1jehuang/jcode">1jehuang/jcode</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐15,914 · Rust · 本周+3,294</span></div>
+<div class="summary">The most RAM efficient harness</div>
+<div class="src-link"><a href="https://github.com/1jehuang/jcode">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">38</span><a class="title" href="https://github.com/TencentCloud/TencentDB-Agent-Memory">TencentCloud/TencentDB-Agent-Memory</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐13,902 · TypeScript · 本周+3,659</span></div>
+<div class="summary">TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusab</div>
+<div class="src-link"><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">39</span><a class="title" href="https://github.com/opengeos/GeoLibre">opengeos/GeoLibre</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐5,398 · TypeScript · 本周+2,236</span></div>
+<div class="summary">A lightweight, cloud-native GIS platform for visualizing, exploring, and analyzing geospatial data. It runs in the web b</div>
+<div class="src-link"><a href="https://github.com/opengeos/GeoLibre">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">40</span><a class="title" href="https://github.com/moeru-ai/airi">moeru-ai/airi</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐46,892 · TypeScript · 本周+2,358</span></div>
+<div class="summary">💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wi</div>
+<div class="src-link"><a href="https://github.com/moeru-ai/airi">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">41</span><a class="title" href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐18,834 · Go · 本周+3,361</span></div>
+<div class="summary">Fast, efficient, battle-tested at Alibaba&#x27;s scale. Hybrid architecture code review tool: deterministic pipelines + LLM A</div>
+<div class="src-link"><a href="https://github.com/alibaba/open-code-review">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-08-05 · 共 41 条</div></body></html>
