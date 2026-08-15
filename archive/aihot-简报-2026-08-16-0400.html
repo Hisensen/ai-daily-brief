@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-08-16 · 过去 24 小时精选 · 共 1 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：论文研究 1 · GitHub 今日趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#16a34a"></span><h2>论文研究</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://the-decoder.com/ai-generated-books-are-flooding-amazon-and-tanking-sales-for-human-authors">AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入</a></div>
+<div class="meta"><span class="src">The Decoder：AI News（RSS）</span> · 昨天 19:00</div>
+<div class="summary">一项对14，419本自出版电子书的分析显示，AI生成书籍正以数量而非质量挤占人类作者市场，即便未检测到AI文本的书籍，单书收入也在下滑。2023年Q1至2026年Q1，书目总量增长38.3倍，而季度收入仅增长8.9倍；在八个类型中，七个类型的无AI文本书籍单书收入下降。</div>
+<div class="src-link"><a href="https://the-decoder.com/ai-generated-books-are-flooding-amazon-and-tanking-sales-for-human-authors">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 今日趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://github.com/cordiverse/cordis">cordiverse/cordis</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐3,981 · TypeScript · 今日+616</span></div>
+<div class="summary">Meta-Framework of Spatiotemporal Composability</div>
+<div class="src-link"><a href="https://github.com/cordiverse/cordis">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐18,455 · HTML · 今日+1,619</span></div>
+<div class="summary">29 editorial diagram types for Claude Code. Self-contained HTML + SVG. No shadows, no Mermaid-slop.</div>
+<div class="src-link"><a href="https://github.com/cathrynlavery/diagram-design">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://github.com/cursor/plugins">cursor/plugins</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐2,926 · TypeScript · 今日+152</span></div>
+<div class="summary">Cursor plugin specification and official plugins</div>
+<div class="src-link"><a href="https://github.com/cursor/plugins">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://github.com/cactus-compute/needle">cactus-compute/needle</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐6,001 · Python · 今日+551</span></div>
+<div class="summary">14MB foundation model for tiny devices; phones, wearables, smart home, and robots.</div>
+<div class="src-link"><a href="https://github.com/cactus-compute/needle">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://github.com/unslothai/unsloth">unslothai/unsloth</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐71,965 · Python · 今日+435</span></div>
+<div class="summary">Local UI to run and train LLMs and diffusion models, including Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX </div>
+<div class="src-link"><a href="https://github.com/unslothai/unsloth">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://github.com/public-apis/public-apis">public-apis/public-apis</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐459,989 · Python · 今日+2,476</span></div>
+<div class="summary">A collective list of free APIs</div>
+<div class="src-link"><a href="https://github.com/public-apis/public-apis">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://github.com/MakazhanAlpamys/Soup">MakazhanAlpamys/Soup</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐1,586 · Python · 今日+303</span></div>
+<div class="summary">Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.</div>
+<div class="src-link"><a href="https://github.com/MakazhanAlpamys/Soup">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://github.com/github/spec-kit">github/spec-kit</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐129,095 · Python · 今日+901</span></div>
+<div class="summary">💫 Toolkit to help you get started with Spec-Driven Development</div>
+<div class="src-link"><a href="https://github.com/github/spec-kit">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://github.com/megadose/holehe">megadose/holehe</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐13,070 · Python · 今日+389</span></div>
+<div class="summary">holehe allows you to check if the mail is used on different sites like twitter, instagram and will retrieve information </div>
+<div class="src-link"><a href="https://github.com/megadose/holehe">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://github.com/altic-dev/FluidVoice">altic-dev/FluidVoice</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐10,272 · Swift · 今日+165</span></div>
+<div class="summary">Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. A local Wispr Flow alte</div>
+<div class="src-link"><a href="https://github.com/altic-dev/FluidVoice">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://github.com/ToolJet/ToolJet">ToolJet/ToolJet</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐39,454 · JavaScript · 今日+553</span></div>
+<div class="summary">ToolJet is the open-source foundation of ToolJet AI - the enterprise app generation platform for building internal tools</div>
+<div class="src-link"><a href="https://github.com/ToolJet/ToolJet">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐47,279 · Python · 今日+100</span></div>
+<div class="summary">&quot;CLI-Anything: Making ALL Software Agent-Native&quot; -- CLI-Hub: https://clianything.cc/</div>
+<div class="src-link"><a href="https://github.com/HKUDS/CLI-Anything">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-08-16 · 共 13 条</div></body></html>
