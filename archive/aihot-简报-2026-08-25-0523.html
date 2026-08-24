@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-08-25 · 最近 2 天精选 · 共 4 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：模型发布/更新 1 · 产品发布/更新 2 · 技巧与观点 1 · GitHub 本周趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#6d28d9"></span><h2>模型发布/更新</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://openai.com/index/gpt-5-6-in-kiro">GPT-5.6 登陆 Kiro，为开发者提升性价比</a></div>
+<div class="meta"><span class="src">OpenAI：官网动态（RSS · 排除企业/客户案例）</span> · 昨天 20:00</div>
+<div class="summary">GPT-5.6 模型家族现已登陆软件开发智能体 Kiro，包含 Sol、Terra 和 Luna 三款模型。在 Terminal-Bench 2.1 测试中，GPT-5.6 Terra 在 Kiro 内完成任务成本降低约 82%。该更新由 OpenAI 与 AWS 合作优化，旨在以更少迭代和更高 token 价值帮助开发者产出更高质量的代码。</div>
+<div class="src-link"><a href="https://openai.com/index/gpt-5-6-in-kiro">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#2563eb"></span><h2>产品发布/更新</h2><span class="count">2 条</span></div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://engineering.fb.com/2026/08/24/networking-traffic/metaroce-rdma-transport-ai-ethernet">MetaRoCE：为 AI 规模以太网打造的全新 RDMA 传输协议</a></div>
+<div class="meta"><span class="src">Meta Engineering Blog（RSS）</span> · 今天 02:02</div>
+<div class="summary">Meta 设计并开源了 MetaRoCE，一个专为 AI 工作负载在通用以太网上打造的 RDMA 传输协议，已通过 Open Compute Project（OCP）发布规范、参考软件实现和合规测试套件。该协议将智能移至端点，原生支持乱序交付、多路径、无损容忍和双向拥塞控制，无需 PFC，可在百万 GPU 规模下提供高吞吐、低尾延迟。现有 RDMA Verbs API 和软件栈无需修改即可运行。</div>
+<div class="src-link"><a href="https://engineering.fb.com/2026/08/24/networking-traffic/metaroce-rdma-transport-ai-ethernet">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://blogs.nvidia.com/blog/vera-rubin-nvl72-efficiency-ai-agents">NVIDIA Vera Rubin NVL72 树立 AI 智能体效率新标准：每瓦特工作量提升至 30 倍</a></div>
+<div class="meta"><span class="src">NVIDIA Blog（RSS）</span> · 昨天 23:00</div>
+<div class="summary">NVIDIA 实测数据显示，Vera Rubin NVL72 在智能体工作负载下每兆瓦吞吐量较 GB300 NVL72 最高提升 30 倍，每百万 token 成本降低至 35 倍。</div>
+<div class="src-link"><a href="https://blogs.nvidia.com/blog/vera-rubin-nvl72-efficiency-ai-agents">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them">OpenAI 正为一切构建 AI 智能体，但用户会愿意交出控制权吗？</a></div>
+<div class="meta"><span class="src">TechCrunch：AI（RSS）</span> · 昨天 23:00</div>
+<div class="summary">OpenAI 推出 ChatGPT Work，将 Codex 改造为面向非工程师的智能体产品，最低订阅档每月 20 美元即可使用，旨在让白领通过 LLM 自主完成多步骤工作。OpenAI 内部 6 月有 98% 员工使用 Codex，但组织订阅者仅 17%、个人订阅者不足 1%。公司正通过简化界面扩大采用，以支撑其巨额训练投入。</div>
+<div class="src-link"><a href="https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 本周趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://github.com/modular/modular">modular/modular</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐29,062 · Mojo · 本周+2,176</span></div>
+<div class="summary">The Modular Platform (includes MAX &amp; Mojo)</div>
+<div class="src-link"><a href="https://github.com/modular/modular">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/MoneyPrinterTurbo</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐115,907 · Python · 本周+11,167</span></div>
+<div class="summary">利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.</div>
+<div class="src-link"><a href="https://github.com/harry0703/MoneyPrinterTurbo">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://github.com/AprilNEA/OpenLogi">AprilNEA/OpenLogi</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐15,779 · Rust · 本周+6,078</span></div>
+<div class="summary">⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HI</div>
+<div class="src-link"><a href="https://github.com/AprilNEA/OpenLogi">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://github.com/basecamp/omarchy">basecamp/omarchy</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐30,019 · Shell · 本周+3,660</span></div>
+<div class="summary">Beautiful, Modern &amp; Opinionated Linux</div>
+<div class="src-link"><a href="https://github.com/basecamp/omarchy">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://github.com/volcengine/OpenViking">volcengine/OpenViking</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐32,950 · Python · 本周+3,799</span></div>
+<div class="summary">Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.</div>
+<div class="src-link"><a href="https://github.com/volcengine/OpenViking">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://github.com/anthropics/claude-plugins-community">anthropics/claude-plugins-community</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐1,316 · Python · 本周+406</span></div>
+<div class="summary">Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-dire</div>
+<div class="src-link"><a href="https://github.com/anthropics/claude-plugins-community">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://github.com/cordiverse/cordis">cordiverse/cordis</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐7,396 · TypeScript · 本周+2,725</span></div>
+<div class="summary">Meta-Framework of Spatiotemporal Composability</div>
+<div class="src-link"><a href="https://github.com/cordiverse/cordis">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://github.com/public-apis/public-apis">public-apis/public-apis</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐469,831 · Python · 本周+8,295</span></div>
+<div class="summary">A collective list of free APIs</div>
+<div class="src-link"><a href="https://github.com/public-apis/public-apis">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐4,387 · Rust · 本周+2,614</span></div>
+<div class="summary">Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors</div>
+<div class="src-link"><a href="https://github.com/akitaonrails/ai-memory">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://github.com/jundot/omlx">jundot/omlx</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐20,540 · Python · 本周+1,671</span></div>
+<div class="summary">LLM inference server with continuous batching &amp; SSD caching for Apple Silicon — managed from the macOS menu bar</div>
+<div class="src-link"><a href="https://github.com/jundot/omlx">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://github.com/apache/maka">apache/maka</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐2,850 · TypeScript · 本周+859</span></div>
+<div class="summary">Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decis</div>
+<div class="src-link"><a href="https://github.com/apache/maka">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">16</span><a class="title" href="https://github.com/eneskirca/nodeterm">eneskirca/nodeterm</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐1,172 · TypeScript · 本周+496</span></div>
+<div class="summary">Node-based terminal manager for AI coding agents — tmux-backed terminals and parallel agent sessions as draggable nodes </div>
+<div class="src-link"><a href="https://github.com/eneskirca/nodeterm">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-08-25 · 共 16 条</div></body></html>
