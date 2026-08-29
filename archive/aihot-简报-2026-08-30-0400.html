@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-08-30 · 最近 2 天精选 · 共 5 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：模型发布/更新 1 · 行业动态 2 · 论文研究 1 · 技巧与观点 1 · GitHub 本周趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#6d28d9"></span><h2>模型发布/更新</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://www.ithome.com/0/995/896.htm">智谱开源 GLM-5.3 模型权重，主打智能体编程与网络防御</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 12:31</div>
+<div class="summary">智谱宣布开源 GLM-5.3 模型权重，支持本地运行与个性化定制，擅长复杂编码、防御性网络安全及长程任务。该模型在 AA 综合智能指数中取得 60 分，与 Claude Fable 5、GPT-5.6 Sol 等闭源旗舰同级，并与 Kimi K3 并列开源模型第一。仅年营业额超 100 亿美元的机构将其作为外部模型服务提供时才需安全审查。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/995/896.htm">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#0891b2"></span><h2>行业动态</h2><span class="count">2 条</span></div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://x.com/mntruell/status/2093532254006063557">Cursor回应OpenAI将封禁其模型访问</a></div>
+<div class="meta"><span class="src">X：Michael Truell (@mntruell)</span> · 昨天 10:52</div>
+<div class="summary">我们很遗憾地看到，OpenAI 发布声明称计划在三个月内阻止 Cursor 用户访问 OpenAI 模型。
+
+OpenAI 模型承载了 Cursor 约 5% 的用户流量，我们正在与 OpenAI 团队沟通以解决此事。
+
+Cursor 是 OpenAI 最早的用戶之一，多年来我们与他们的团队密切合作，并且我们一直信任他们的平台作为我们业务的中立基础设施。</div>
+<div class="src-link"><a href="https://x.com/mntruell/status/2093532254006063557">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://x.com/thsottiaux/status/2093515916076343774">OpenAI 终止与 Cursor 合作，11 月 12 日生效</a></div>
+<div class="meta"><span class="src">X：Tibo (@thsottiaux)</span> · 昨天 09:47</div>
+<div class="summary">OpenAI 因 SpaceX 收购 Cursor 后信任问题，决定终止向其提供模型访问，合作于 11 月 12 日结束。开发者仍可通过自有 OpenAI API 密钥及 IDE 扩展继续使用 GPT 模型。OpenAI 表示将继续支持广泛的工具生态与开源计划。</div>
+<div class="src-link"><a href="https://x.com/thsottiaux/status/2093515916076343774">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#16a34a"></span><h2>论文研究</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://arxiv.org/abs/2608.23691">开放世界多智能体环境中的自主数学发现</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 15:32</div>
+<div class="summary">在无中央协调器的开放世界多智能体环境Station中，来自不同模型家族的AI智能体自主选择研究方向、开展实验并构建共享科学文献。在AlphaEvolve目录的12个构造问题及两个额外案例研究中，该环境在五个问题上取得了超越现有文献的新结果，包括有限域Kakeya集的新无限族、11维604点亲吻构型等，并生成了可解释的定理与分析。所有原始智能体对话、证明和验证代码均已公开。</div>
+<div class="src-link"><a href="https://arxiv.org/abs/2608.23691">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://terminalbytes.com/run-qwen-3-8-27b-locally">在本地运行 Qwen3.8 27B：来自我的 Mac Studio 的实际数据</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 15:00</div>
+<div class="summary">Qwen3.8 27B（27.3B 参数，混合注意力架构，262，144 token 上下文窗口，Apache 2.0 开源）在 Mac Studio M3 Ultra 上经 Ollama 以 Q4_K_M 量化（17GB）生成速度约 14 tokens/s。</div>
+<div class="src-link"><a href="https://terminalbytes.com/run-qwen-3-8-27b-locally">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 本周趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://github.com/freestylefly/awesome-gpt-image-2">freestylefly/awesome-gpt-image-2</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐25,020 · JavaScript · 本周+12,877</span></div>
+<div class="summary">Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中</div>
+<div class="src-link"><a href="https://github.com/freestylefly/awesome-gpt-image-2">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://github.com/anthropics/claude-plugins-community">anthropics/claude-plugins-community</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐2,704 · Python · 本周+2,207</span></div>
+<div class="summary">Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-dire</div>
+<div class="src-link"><a href="https://github.com/anthropics/claude-plugins-community">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://github.com/omacom/omarchy">omacom/omarchy</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐34,638 · Shell · 本周+5,942</span></div>
+<div class="summary">Beautiful, Modern &amp; Opinionated Linux</div>
+<div class="src-link"><a href="https://github.com/omacom/omarchy">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://github.com/tt-a1i/archify">tt-a1i/archify</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐30,635 · JavaScript · 本周+11,099</span></div>
+<div class="summary">Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained</div>
+<div class="src-link"><a href="https://github.com/tt-a1i/archify">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://github.com/apache/maka">apache/maka</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐4,029 · TypeScript · 本周+1,918</span></div>
+<div class="summary">Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decis</div>
+<div class="src-link"><a href="https://github.com/apache/maka">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://github.com/AprilNEA/OpenLogi">AprilNEA/OpenLogi</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐17,605 · Rust · 本周+4,825</span></div>
+<div class="summary">⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HI</div>
+<div class="src-link"><a href="https://github.com/AprilNEA/OpenLogi">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐38,035 · Python · 本周+4,828</span></div>
+<div class="summary">The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor C</div>
+<div class="src-link"><a href="https://github.com/MadsLorentzen/ai-job-search">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://github.com/tashfeenahmed/freellmapi">tashfeenahmed/freellmapi</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐22,167 · TypeScript · 本周+2,162</span></div>
+<div class="summary">7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any cus</div>
+<div class="src-link"><a href="https://github.com/tashfeenahmed/freellmapi">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://github.com/openai/codex">openai/codex</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐119,787 · Rust · 本周+9,109</span></div>
+<div class="summary">Lightweight coding agent that runs in your terminal</div>
+<div class="src-link"><a href="https://github.com/openai/codex">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐35,335 · Python · 本周+1,281</span></div>
+<div class="summary">Official, Anthropic-managed directory of high quality Claude Code Plugins.</div>
+<div class="src-link"><a href="https://github.com/anthropics/claude-plugins-official">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">16</span><a class="title" href="https://github.com/rohitg00/ai-engineering-from-scratch">rohitg00/ai-engineering-from-scratch</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐50,940 · Python · 本周+3,263</span></div>
+<div class="summary">Learn it. Build it. Ship it for others.</div>
+<div class="src-link"><a href="https://github.com/rohitg00/ai-engineering-from-scratch">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">17</span><a class="title" href="https://github.com/cursor/plugins">cursor/plugins</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐6,139 · TypeScript · 本周+1,594</span></div>
+<div class="summary">Cursor plugin specification and official plugins</div>
+<div class="src-link"><a href="https://github.com/cursor/plugins">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-08-30 · 共 17 条</div></body></html>
