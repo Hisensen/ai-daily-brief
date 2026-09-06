@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-09-07 · 过去 24 小时精选 · 共 5 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：产品发布/更新 1 · 技巧与观点 4 · GitHub 今日趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#2563eb"></span><h2>产品发布/更新</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://x.com/testingcatalog/status/2096350628054176240">OpenAI GPT-6 Astra 登顶 Code Arena WebDev 榜首，领先 Claude Fable 5.1 达 35 分</a></div>
+<div class="meta"><span class="src">X：Testing Catalog (@testingcatalog)</span> · 昨天 05:31</div>
+<div class="summary">GPT-6 Astra （Max） 以 1797 分登顶 Code Arena： WebDev，领先第 2 名 Claude Fable 5.1 （Max） 35 分、第 3 名 Claude Opus 5 （Max） 1688 分。</div>
+<div class="src-link"><a href="https://x.com/testingcatalog/status/2096350628054176240">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">4 条</span></div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://x.com/rohanpaul_ai/status/2096665545190043737">OpenAI 宣布达到自动化研究实习生里程碑，内部 agent 运行时达人力 3.1 倍</a></div>
+<div class="meta"><span class="src">X：Rohan Paul (@rohanpaul_ai)</span> · 今天 02:23</div>
+<div class="summary">OpenAI 发布内部数据称已达到自动化研究实习生里程碑，即可在人类监督下完成熟练研究员需数天的明确任务。截至 8 月中旬，其研究组织每投入 1 个人工工作日，就使用 3.1 个 agent 工作日的运行时长，该比值衡量的是运行时间而非等效生产力；原文作者援引 OpenAI 员工观点称递归自我改进或成为未来几年 AI 能力的关键，并呼吁其他 AI 公司同样公开数据。</div>
+<div class="src-link"><a href="https://x.com/rohanpaul_ai/status/2096665545190043737">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://openai.com/index/an-alien-mind">OpenAI 长文阐述对齐与监测困境，称 CoT 监控能力正在减弱</a></div>
+<div class="meta"><span class="src">OpenAI：官网动态（RSS · 排除企业/客户案例）</span> · 昨天 17:00</div>
+<div class="summary">OpenAI 发布长文《An Alien Mind》，回溯 2023 年 RLSlow 项目中确认推理模型可扩展训练的起点，并系统阐述目标对齐与价值对齐的区分。文章指出链式思维监控的效果正随着模型能力提升而逐步减弱，GPT-6 Astra 在对齐上显著优于 GPT-5.6 Sol；作者预期进展可能持续走向机器递归自我改进（RSI），呼吁自愿放缓扩展、建立第三方安全门槛并加强国际协调。</div>
+<div class="src-link"><a href="https://openai.com/index/an-alien-mind">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://openai.com/index/research-acceleration-view-inside-openai">OpenAI 发布内部研究加速报告：已达成自动化研究实习生目标，推进 2028 年 3 月自动化 AI 研究员</a></div>
+<div class="meta"><span class="src">OpenAI：官网动态（RSS · 排除企业/客户案例）</span> · 昨天 16:00</div>
+<div class="summary">OpenAI 发文披露自动化研究进展，宣布已达成去年秋天设定的今年 9 月拥有自动化研究实习生（可在人类指导下完成耗时数天的明确研究任务）的目标，并计划在 2028 年 3 月前造出自动化 AI 研究员。</div>
+<div class="src-link"><a href="https://openai.com/index/research-acceleration-view-inside-openai">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://www.ithome.com/0/998/927.htm">Fortune 报道 OpenAI 多次修改 GPT-6 Astra 基准测试数据，部分成绩大幅变化</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 14:46</div>
+<div class="summary">据 Fortune 报道，OpenAI 自 9 月 3 日发布 GPT-6 Astra 公告以来多次修改评测基准数据：Astra 幻觉率曾从 4.2% 降至 2% 后又改回。</div>
+<div class="src-link"><a href="https://www.ithome.com/0/998/927.htm">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 今日趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐251,042 · JavaScript · 今日+1,486</span></div>
+<div class="summary">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development f</div>
+<div class="src-link"><a href="https://github.com/affaan-m/ECC">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://github.com/mattpocock/skills">mattpocock/skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐254,292 · Shell · 今日+2,206</span></div>
+<div class="summary">Skills for Real Engineers. Straight from my .agents directory.</div>
+<div class="src-link"><a href="https://github.com/mattpocock/skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐32,221 · HTML · 今日+621</span></div>
+<div class="summary">38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.</div>
+<div class="src-link"><a href="https://github.com/cathrynlavery/diagram-design">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐242,456 · Python · 今日+520</span></div>
+<div class="summary">The agent that grows with you</div>
+<div class="src-link"><a href="https://github.com/NousResearch/hermes-agent">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://github.com/openai/skills">openai/skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐25,564 · Python · 今日+44</span></div>
+<div class="summary">Skills Catalog for Codex</div>
+<div class="src-link"><a href="https://github.com/openai/skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐205,149 · TypeScript · 今日+552</span></div>
+<div class="summary">The open source coding agent.</div>
+<div class="src-link"><a href="https://github.com/anomalyco/opencode">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://github.com/blader/humanizer">blader/humanizer</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐44,108 · Python · 今日+748</span></div>
+<div class="summary">Agent skill that removes signs of AI-generated writing from text</div>
+<div class="src-link"><a href="https://github.com/blader/humanizer">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://github.com/llvm/llvm-project">llvm/llvm-project</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐40,180 · LLVM · 今日+35</span></div>
+<div class="summary">The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.</div>
+<div class="src-link"><a href="https://github.com/llvm/llvm-project">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐129,125 · JavaScript · 今日+1,539</span></div>
+<div class="summary">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</div>
+<div class="src-link"><a href="https://github.com/DietrichGebert/ponytail">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐70,930 · TypeScript · 今日+276</span></div>
+<div class="summary">🌊 The original agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build co</div>
+<div class="src-link"><a href="https://github.com/ruvnet/ruflo">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">16</span><a class="title" href="https://github.com/magnitudedev/magnitude">magnitudedev/magnitude</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐3,608 · TypeScript · 今日+604</span></div>
+<div class="summary">Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. </div>
+<div class="src-link"><a href="https://github.com/magnitudedev/magnitude">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">17</span><a class="title" href="https://github.com/BraveOPotato/FckSignups">BraveOPotato/FckSignups</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐3,232 · TypeScript · 今日+436</span></div>
+<div class="summary">A list of tools that are open-source, in-browser, and require no-signups!</div>
+<div class="src-link"><a href="https://github.com/BraveOPotato/FckSignups">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-09-07 · 共 17 条</div></body></html>
