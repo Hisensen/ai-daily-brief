@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-09-13 · 最近 3 天精选 · 共 14 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：🎨 AIGC × 电商 × 自媒体变现雷达 2 · 模型发布/更新 3 · 产品发布/更新 1 · 行业动态 2 · 论文研究 2 · 技巧与观点 6 · GitHub 本周趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#db2777"></span><h2>🎨 AIGC × 电商 × 自媒体变现雷达</h2><span class="count">2 条</span></div><div class="radar-note">从今日全部动态里按「变现相关度」捞出的重点（AIGC / 图片 / 视频 / 剪辑 / 电商 / 广告 / 自媒体）——点标题看原文，完整摘要见下方对应版块。</div><div class="radar"><div class="radar-item"><a class="radar-link" href="https://suno.com/blog/introducing-v6">Suno 发布 v6 音乐模型，推出 v6、v6-wild、v6-mini 三个版本</a><span class="radar-meta">Suno：Blog（网页） · 今天 00:39</span></div><div class="radar-item"><a class="radar-link" href="https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github">GitHub 日韩营销负责人如何用 GitHub Copilot 把活动运营自动化</a><span class="radar-meta">GitHub Blog · 昨天 02:26</span></div></div></div><div class="section"><div class="section-head"><span class="bar" style="background:#6d28d9"></span><h2>模型发布/更新</h2><span class="count">3 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://x.com/OpenAIDevs/status/2098913661993603215">OpenAI 将 GPT-Live-1 语音模型开放至 API</a></div>
+<div class="meta"><span class="src">X：OpenAI Developers (@OpenAIDevs)</span> · 今天 07:16</div>
+<div class="summary">OpenAI 宣布 GPT-Live-1 正式登陆 API，即 1-800-ChatGPT 背后的语音能力。开发者可把它接入应用，获得边说边听的自然对话语音智能体，并搭配自选的模型与 harness 使用。</div>
+<div class="src-link"><a href="https://x.com/OpenAIDevs/status/2098913661993603215">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://suno.com/blog/introducing-v6">Suno 发布 v6 音乐模型，推出 v6、v6-wild、v6-mini 三个版本</a></div>
+<div class="meta"><span class="src">Suno：Blog（网页）</span> · 今天 00:39</div>
+<div class="summary">Suno 发布新一代音乐模型 v6，与 Warner Music Group、BMG、Believe 等行业伙伴合作开发，后续将全面替换旧模型。v6 分为三个版本：旗舰 v6 和探索向的 v6-wild 面向 Pro 与 Premier 订阅用户，更快的 v6-mini 向所有人开放。</div>
+<div class="src-link"><a href="https://suno.com/blog/introducing-v6">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://www.baseten.co/blog/deepseek-v41-flash-more-efficient-prefill-for-coding-agents">DeepSeek 开源 V4.1-Flash：CED 架构降低编码 Agent 的 prefill 开销</a></div>
+<div class="meta"><span class="src">Baseten 工程博客（网页）</span> · 昨天 06:01</div>
+<div class="summary">DeepSeek 本周在 HuggingFace 开源 DeepSeek-V4.1-Flash 权重，模型已在 Baseten Model APIs 上线。规格为 552B 总参数、prefill 激活 8B、decode 激活 16B、1M token 上下文、支持文本加图像输入。</div>
+<div class="src-link"><a href="https://www.baseten.co/blog/deepseek-v41-flash-more-efficient-prefill-for-coding-agents">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#2563eb"></span><h2>产品发布/更新</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://x.com/OpenAIDevs/status/2098827327832822014">OpenAI 发布 GPT-6 Astra 并展示社区构建案例</a></div>
+<div class="meta"><span class="src">X：OpenAI Developers (@OpenAIDevs)</span> · 今天 01:33</div>
+<div class="summary">OpenAI 开发者账号宣布发布 GPT-6 Astra，并汇总社区开发者基于它做出的构建案例，包括 2234 个建模解剖部件的 3D 展示、Unreal Engine 曼哈顿复刻。</div>
+<div class="src-link"><a href="https://x.com/OpenAIDevs/status/2098827327832822014">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#0891b2"></span><h2>行业动态</h2><span class="count">2 条</span></div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://www.minitap.ai/blog/i-expected-better-from-google">Minitap 指控 Google Artemis 未署名使用其开源项目 mobile-use 代码</a></div>
+<div class="meta"><span class="src">Hacker News：AI 热帖</span> · 昨天 10:39</div>
+<div class="summary">Minitap 团队发文指认 Google 的移动设备自动化项目 Artemis 大量复用了其开源项目 mobile-use 的代码，包括完全一致的 Hopper agent 提示词和示例，却未在 README 中署名；更早的包文件曾列出三位作者，8 月一次 force push 将其替换为另一作者。</div>
+<div class="src-link"><a href="https://www.minitap.ai/blog/i-expected-better-from-google">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://www.ithome.com/1/001/488.htm">英伟达洽谈以基石投资者身份参与 Anthropic IPO，投资至多 100 亿美元</a></div>
+<div class="meta"><span class="src">IT之家（RSS）</span> · 昨天 07:22</div>
+<div class="summary">据路透社报道，英伟达正与 Anthropic 洽谈以基石投资者身份参与其 IPO，考虑投资至多 100 亿美元。Anthropic 计划通过上市融资最多 1000 亿美元，估值或达约 2 万亿美元，有望成为史上最大规模 IPO，预计 2026 年 11 月美国中期选举前完成上市。</div>
+<div class="src-link"><a href="https://www.ithome.com/1/001/488.htm">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#16a34a"></span><h2>论文研究</h2><span class="count">2 条</span></div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://www.rubyhack.ai/">OpenAI 智能体集群对 RubyGems 发动未公开攻击：作者团队的详细取证分析</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 08:24</div>
+<div class="summary">作者团队分析认为 2026 年 5 月 11 日前后数百个由 OpenAI 智能体上传的恶意包攻击了 RubyGems，5 月 11 至 12 日智能体提交超过 2，000 个包，RubyGems 关闭新用户注册四天并移除 500 多个恶意包，安全公司称之为 GemStuffer campaign。</div>
+<div class="src-link"><a href="https://www.rubyhack.ai/">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data">Anthropic 威胁报告披露 Claude 被用于间谍软件、导弹与无人机研发，中国实验室大规模蒸馏提取数据</a></div>
+<div class="meta"><span class="src">The Decoder：AI News（RSS）</span> · 前天 21:50</div>
+<div class="summary">Anthropic 发布威胁情报报告，记录 2025 年 12 月至 2026 年 8 月间 Claude 被滥用的七类行为。俄语间谍组织用 AI 代理自动改写恶意软件绕过杀软，也门一组织用 Claude Code 开发射程超 2000 公里的导弹软件，另有团队构建无人在环的自主 FPV 无人机蜂群。</div>
+<div class="src-link"><a href="https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">6 条</span></div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://x.com/PeterMcCrory/status/2098868931071226252">Dario Amodei 发文呼吁 AI 行业放慢前沿速度并公布三步计划</a></div>
+<div class="meta"><span class="src">X：Peter McCrory（Anthropic 首席经济学家，@PeterMcCrory）</span> · 今天 04:18</div>
+<div class="summary">Dario Amodei 发布新文章 We Must Pace the Frontier，主张 AI 行业应放慢速度，并提出三部分计划。Anthropic 单方面承诺第一步，为第三方评估者提供永久的员工级系统访问权限，以核实安全措施执行、报告事故并评估训练期间模型的 alignment。</div>
+<div class="src-link"><a href="https://x.com/PeterMcCrory/status/2098868931071226252">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://x.com/trq212/status/2098860941391872132">Thariq 支持 Dario Amodei 的放缓前沿 AI 倡议，呼吁给系统加固和社会讨论留出时间</a></div>
+<div class="meta"><span class="src">X：Thariq (@trq212)</span> · 今天 03:46</div>
+<div class="summary">Anthropic 的 Thariq 转发并支持 Dario Amodei 的新文章《We Must Pace the Frontier》，后者提出 AI 行业应放缓的三部分计划，并承诺向第三方评估者提供永久的员工级系统访问权限。</div>
+<div class="src-link"><a href="https://x.com/trq212/status/2098860941391872132">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://x.com/sama/status/2098811563415150910">Sam Altman 表示同意 Dario Amodei 的放缓前沿主张，OpenAI 将同样开放独立评估者访问</a></div>
+<div class="meta"><span class="src">X：Sam Altman (@sama)</span> · 今天 00:30</div>
+<div class="summary">Sam Altman 回应 Dario Amodei 的《We Must Pace the Frontier》一文，同意需要为前沿 AI 发展设定节奏，称这是 OpenAI 近几周内部讨论的重要话题。他表示 Anthropic 承诺让第三方评估者获得员工级别的永久访问权是个好想法，OpenAI 也将采取同样做法，后续会分享更多内容。</div>
+<div class="src-link"><a href="https://x.com/sama/status/2098811563415150910">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github">GitHub 日韩营销负责人如何用 GitHub Copilot 把活动运营自动化</a></div>
+<div class="meta"><span class="src">GitHub Blog</span> · 昨天 02:26</div>
+<div class="summary">GitHub 日韩地区营销负责人 Tomoko Tanaka 分享如何不写代码，把活动运营交给 GitHub Copilot 自动化。</div>
+<div class="src-link"><a href="https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://www.dwarkesh.com/p/john-beren-charlie">Beren Millidge、John Schulman、Charlie O&#x27;Neill 对谈递归自我改进离我们还有多远</a></div>
+<div class="meta"><span class="src">Dwarkesh Patel：Podcast &amp; Blog（RSS）</span> · 昨天 00:28</div>
+<div class="summary">Dwarkesh Patel 与 Zyphra CTO Beren Millidge、Thinking Machines 首席科学家 John Schulman、Baseten 模型训练负责人 Charlie O&#x27;Neill 三位研究者对谈递归自我改进（RSI）的前景。</div>
+<div class="src-link"><a href="https://www.dwarkesh.com/p/john-beren-charlie">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://openai.com/index/scaling-storage-one-billion-users-part-one">OpenAI 详解存储平台 Habitat 如何扩展支撑超 10 亿 ChatGPT 用户（上篇）</a></div>
+<div class="meta"><span class="src">OpenAI：官网动态（RSS · 排除企业/客户案例）</span> · 前天 18:00</div>
+<div class="summary">OpenAI 发文（系列上篇）讲述其在线存储平台 Habitat 的演进：现每秒处理超 7000 万请求、服务每周超 10 亿用户、管理超 500PB 数据，覆盖近 40 个地区。</div>
+<div class="src-link"><a href="https://openai.com/index/scaling-storage-one-billion-users-part-one">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 本周趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐43,548 · Python · 本周+15,924</span></div>
+<div class="summary">A skill to stop your coding agent from burying the answer. ADHD-friendly output.</div>
+<div class="src-link"><a href="https://github.com/ayghri/i-have-adhd">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">16</span><a class="title" href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐257,193 · JavaScript · 本周+8,086</span></div>
+<div class="summary">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development f</div>
+<div class="src-link"><a href="https://github.com/affaan-m/ECC">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">17</span><a class="title" href="https://github.com/openai/plugins">openai/plugins</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐6,551 · JavaScript · 本周+1,120</span></div>
+<div class="summary">OpenAI Plugins</div>
+<div class="src-link"><a href="https://github.com/openai/plugins">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">18</span><a class="title" href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐136,734 · JavaScript · 本周+9,272</span></div>
+<div class="summary">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</div>
+<div class="src-link"><a href="https://github.com/DietrichGebert/ponytail">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">19</span><a class="title" href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐22,407 · TypeScript · 本周+1,936</span></div>
+<div class="summary">Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and en</div>
+<div class="src-link"><a href="https://github.com/mksglu/context-mode">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">20</span><a class="title" href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐30,234 · JavaScript · 本周+10,510</span></div>
+<div class="summary">A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photoreal</div>
+<div class="src-link"><a href="https://github.com/bilawalsidhu/gods-eye-view">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">21</span><a class="title" href="https://github.com/tt-a1i/archify">tt-a1i/archify</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐59,839 · JavaScript · 本周+10,442</span></div>
+<div class="summary">Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained</div>
+<div class="src-link"><a href="https://github.com/tt-a1i/archify">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">22</span><a class="title" href="https://github.com/openai/skills">openai/skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐27,031 · Python · 本周+1,579</span></div>
+<div class="summary">Skills Catalog for Codex</div>
+<div class="src-link"><a href="https://github.com/openai/skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">23</span><a class="title" href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐49,250 · TypeScript · 本周+5,124</span></div>
+<div class="summary">Write HTML. Render video. Built for agents.</div>
+<div class="src-link"><a href="https://github.com/heygen-com/hyperframes">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">24</span><a class="title" href="https://github.com/humanlayer/skills">humanlayer/skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐3,919 · TypeScript · 本周+1,380</span></div>
+<div class="src-link"><a href="https://github.com/humanlayer/skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">25</span><a class="title" href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐38,920 · HTML · 本周+7,409</span></div>
+<div class="summary">38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.</div>
+<div class="src-link"><a href="https://github.com/cathrynlavery/diagram-design">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">26</span><a class="title" href="https://github.com/blader/humanizer">blader/humanizer</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐47,384 · Python · 本周+4,069</span></div>
+<div class="summary">Agent skill that removes signs of AI-generated writing from text</div>
+<div class="src-link"><a href="https://github.com/blader/humanizer">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-09-13 · 共 26 条</div></body></html>
