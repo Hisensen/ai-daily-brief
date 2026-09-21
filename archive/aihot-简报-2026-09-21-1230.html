@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  color: #1e293b; line-height: 1.7; margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.cover {
+  border-bottom: 4px solid #0f172a; padding-bottom: 18px; margin-bottom: 28px;
+}
+.cover .brand {
+  font-size: 12px; letter-spacing: 3px; color: #64748b;
+  text-transform: uppercase; font-weight: 700;
+}
+.cover h1 {
+  font-size: 34px; margin: 8px 0 6px; color: #0f172a; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cover .subtitle { font-size: 15px; color: #475569; font-weight: 500; }
+.intro {
+  background: #f8fafc; border-left: 4px solid #0f172a; border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-bottom: 28px; font-size: 14px; color: #334155;
+}
+.section { margin-bottom: 26px; break-inside: avoid-page; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.section-head .bar { width: 6px; height: 22px; border-radius: 3px; }
+.section-head h2 {
+  font-size: 19px; margin: 0; font-weight: 800; color: #0f172a;
+}
+.section-head .count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.item {
+  padding: 12px 0 14px; border-bottom: 1px solid #e2e8f0; break-inside: avoid;
+}
+.item:last-child { border-bottom: none; }
+.item .line1 { display: flex; align-items: baseline; gap: 8px; }
+.item .num {
+  font-size: 13px; font-weight: 800; color: #cbd5e1; min-width: 26px;
+}
+.item .title {
+  font-size: 15.5px; font-weight: 700; color: #0f172a; text-decoration: none;
+  line-height: 1.45;
+}
+.item .title:hover { text-decoration: underline; }
+.item .meta {
+  margin: 3px 0 0 34px; font-size: 12px; color: #64748b;
+}
+.item .meta .src { color: #475569; font-weight: 600; }
+.item .meta .badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 10px;
+  background: #fef3c7; color: #92400e; font-weight: 700; font-size: 11px;
+}
+.item .summary {
+  margin: 6px 0 0 34px; font-size: 13px; color: #334155; line-height: 1.65;
+}
+.item .src-link {
+  margin: 6px 0 0 34px; font-size: 12px;
+}
+.item .src-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+.item .src-link a:hover { text-decoration: underline; }
+.radar-note {
+  margin: 0 0 12px; font-size: 12.5px; color: #9d174d; line-height: 1.6;
+  background: #fdf2f8; border-radius: 8px; padding: 8px 12px;
+}
+.radar { display: flex; flex-direction: column; gap: 2px; }
+.radar-item { padding: 7px 0; border-bottom: 1px dashed #f6d4e4; break-inside: avoid; }
+.radar-item:last-child { border-bottom: none; }
+.radar-item .radar-link {
+  font-size: 14.5px; font-weight: 700; color: #be185d; text-decoration: none; line-height: 1.5;
+}
+.radar-item .radar-link:hover { text-decoration: underline; }
+.radar-item .radar-meta { font-size: 12px; color: #9d5877; margin-left: 8px; }
+.footer {
+  margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0;
+  font-size: 11px; color: #94a3b8; text-align: center;
+}
+@media screen {
+  body { max-width: 860px; margin: 0 auto; padding: 36px 28px 48px; background: #fff; }
+}
+</style></head><body><div class="cover"><div class="brand">AI HOT · aihot.virxact.com</div><h1>AI HOT 每日简报</h1><div class="subtitle">2026-09-21 · 最近 2 天精选 · 共 8 条 · 按发布时间倒序</div></div><div class="intro">自上次查看以来的 AI 精选动态：🎨 AIGC × 电商 × 自媒体变现雷达 3 · 模型发布/更新 3 · 产品发布/更新 1 · 行业动态 1 · 论文研究 1 · 技巧与观点 2 · GitHub 本周趋势榜 12。</div><div class="section"><div class="section-head"><span class="bar" style="background:#db2777"></span><h2>🎨 AIGC × 电商 × 自媒体变现雷达</h2><span class="count">3 条</span></div><div class="radar-note">从今日全部动态里按「变现相关度」捞出的重点（AIGC / 图片 / 视频 / 剪辑 / 电商 / 广告 / 自媒体）——点标题看原文，完整摘要见下方对应版块。</div><div class="radar"><div class="radar-item"><a class="radar-link" href="https://x.com/Alibaba_Qwen/status/2101866671900401913">通义千问发布 Qwen-Image-2.1：7B 单检查点同时支持图像生成与编辑</a><span class="radar-meta">X：通义千问 / Qwen (@Alibaba_Qwen) · 今天 10:50</span></div><div class="radar-item"><a class="radar-link" href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647686509&amp;idx=1&amp;sn=1b5ee8ab30c5825eaff76083e1f8dbcc">数字生命卡兹克访谈汉化组：AI 时代字幕组与漫画组的真实处境</a><span class="radar-meta">公众号：数字生命卡兹克 · 今天 09:52</span></div><div class="radar-item"><a class="radar-link" href="https://qwen.ai/blog?id=qwen-image-2.1">Qwen 开源 Qwen-Image-2.1：7B 统一生成与编辑并原生支持透明图像</a><span class="radar-meta">Qwen：Blog Retrieval（API） · 昨天 20:00</span></div></div></div><div class="section"><div class="section-head"><span class="bar" style="background:#6d28d9"></span><h2>模型发布/更新</h2><span class="count">3 条</span></div><div class="item">
+<div class="line1"><span class="num">01</span><a class="title" href="https://x.com/Alibaba_Qwen/status/2101866671900401913">通义千问发布 Qwen-Image-2.1：7B 单检查点同时支持图像生成与编辑</a></div>
+<div class="meta"><span class="src">X：通义千问 / Qwen (@Alibaba_Qwen)</span> · 今天 10:50</div>
+<div class="summary">通义千问发布 Qwen-Image-2.1，一个 7B 参数的原生图像生成与编辑模型，生成和编辑共用单一检查点，最多支持 10 张参考图。模型自带提示词增强 LLM，已集成 diffusers 和 ComfyUI，并在 Hugging Face Spaces 提供免安装的浏览器在线 demo：https://huggingface.co/spaces/hugging-apps/qwen-image-2-1</div>
+<div class="src-link"><a href="https://x.com/Alibaba_Qwen/status/2101866671900401913">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">02</span><a class="title" href="https://qwen.ai/blog?id=qwen-image-2.1">Qwen 开源 Qwen-Image-2.1：7B 统一生成与编辑并原生支持透明图像</a></div>
+<div class="meta"><span class="src">Qwen：Blog Retrieval（API）</span> · 昨天 20:00</div>
+<div class="summary">Qwen 团队开源 Qwen-Image-2.1，将文生图与图像编辑统一到一个模型中，视觉生成组件仅 7B 参数，并原生支持生成和编辑透明图像。模型支持最多 10 张参考图、圆形/涂鸦/独立蒙版指定局部编辑，通过混合粒度注意力架构和 KV cache 复用提升推理效率，同时改进文字渲染、人像光照与人物产品保真度，并覆盖全景图、信息图和分镜等任务。</div>
+<div class="src-link"><a href="https://qwen.ai/blog?id=qwen-image-2.1">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">03</span><a class="title" href="https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&amp;mid=2247488120&amp;idx=1&amp;sn=8ba9ac7f0b36682d6262290677c665da">阶跃星辰发布旗舰模型 Step 5 Preview，10 月 15 日开源权重</a></div>
+<div class="meta"><span class="src">公众号：阶跃星辰（Step）</span> · 昨天 10:00</div>
+<div class="summary">阶跃星辰发布旗舰基座模型 Step 5 Preview，采用稀疏 MoE 架构，总参数量 600B、激活 27B，支持 100 万 Token 上下文和文本与视觉输入，在 Artificial Analysis Intelligence Index 得 44 分，居全球开源模型前三，单任务成本为 Claude Opus 5 的 1/8。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&amp;mid=2247488120&amp;idx=1&amp;sn=8ba9ac7f0b36682d6262290677c665da">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#2563eb"></span><h2>产品发布/更新</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">04</span><a class="title" href="https://x.com/Alibaba_Qwen/status/2101670814953455780">Qwen-Image-2.1 已支持 ComfyUI，开源权重开放下载</a></div>
+<div class="meta"><span class="src">X：通义千问 / Qwen (@Alibaba_Qwen)</span> · 昨天 21:52</div>
+<div class="summary">Qwen 宣布 Qwen-Image-2.1 现已支持 ComfyUI，权重开放。单个 7B checkpoint 同时支持图像生成与编辑，可原生 2K 生成，单次最多基于 10 张参考图进行指令编辑，并支持含 alpha 通道的 RGBA 输出。</div>
+<div class="src-link"><a href="https://x.com/Alibaba_Qwen/status/2101670814953455780">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#0891b2"></span><h2>行业动态</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">05</span><a class="title" href="https://www.tomshardware.com/tech-industry/artificial-intelligence/microsoft-director-called-ai-scraping-the-largest-theft-of-labor-in-human-history-while-openai-head-brands-chatgpt-an-existential-threat-to-publishers-revelations-come-from-legal-briefs-filed-in-nyt-lawsuit">纽约时报诉讼文件披露：微软高管称 AI 抓取是人类历史上最大规模的劳动力盗用</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 昨天 07:58</div>
+<div class="summary">纽约时报在起诉 OpenAI 和微软的版权案中提交法律简报并申请即决判决，引用双方内部文件称 AI 抓取是&quot;人类历史上最大规模的劳动力盗用&quot;，OpenAI ChatGPT 负责人称其对出版商是&quot;生存威胁&quot;。文件还显示 Copilot 使纽约时报的点击率相比 Bing 搜索最多下降 93%，且 Nadella 在证词中表示付费墙内容应获得授权，这些内容可能削弱 OpenAI 的合理使用抗辩。</div>
+<div class="src-link"><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/microsoft-director-called-ai-scraping-the-largest-theft-of-labor-in-human-history-while-openai-head-brands-chatgpt-an-existential-threat-to-publishers-revelations-come-from-legal-briefs-filed-in-nyt-lawsuit">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#16a34a"></span><h2>论文研究</h2><span class="count">1 条</span></div><div class="item">
+<div class="line1"><span class="num">06</span><a class="title" href="https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector">独立调查：ChatGPT 的 __obi 跨站 Cookie 可将站外浏览行为关联到 ChatGPT 账号</a></div>
+<div class="meta"><span class="src">Hacker News 热门（buzzing.cc 中文翻译）</span> · 今天 02:05</div>
+<div class="summary">作者通过自己手机上的流量捕获复现了 OpenAI 广告收集器机制：bzr.openai.com 在 .openai.com 域设置 __obi Cookie，绑定 ChatGPT 账号（或稳定的匿名主体），投放广告的商家站点加载 OpenAI 像素代码时会把 __obi 连同浏览和购买数据回传给 OpenAI。</div>
+<div class="src-link"><a href="https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#ea580c"></span><h2>技巧与观点</h2><span class="count">2 条</span></div><div class="item">
+<div class="line1"><span class="num">07</span><a class="title" href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647686509&amp;idx=1&amp;sn=1b5ee8ab30c5825eaff76083e1f8dbcc">数字生命卡兹克访谈汉化组：AI 时代字幕组与漫画组的真实处境</a></div>
+<div class="meta"><span class="src">公众号：数字生命卡兹克</span> · 今天 09:52</div>
+<div class="summary">作者访谈多位字幕组与漫画汉化组成员，发现他们并不抵触AI。Eliza 的字幕组把听写、打轴交给AI后，原本需要3到5小时的打轴缩短到20分钟到1小时；程序员阵雨为喜欢的主播自研AI工具，单人完成两小时直播的中文字幕。漫画汉化组则因嵌字质量等原因仍坚持人工制作，成员看重的是同好社群与爱好本身。</div>
+<div class="src-link"><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647686509&amp;idx=1&amp;sn=1b5ee8ab30c5825eaff76083e1f8dbcc">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">08</span><a class="title" href="https://www.marktechpost.com/2026/09/20/you-too-google-google-confirms-gemini-breached-3-companies-in-ai-security-tests">Google 确认 Gemini 在 Irregular 安全测试中访问 3 家真实公司系统，与 OpenAI、Anthropic、Meta 属同一评估事故</a></div>
+<div class="meta"><span class="src">MarkTechPost（RSS）</span> · 今天 04:20</div>
+<div class="summary">Google 于 9 月 18 日确认，Gemini 模型在 5 月由第三方安全评估方 Irregular 组织的 capture-the-flag 测试中访问了 3 家真实公司的系统，起因是本应离线的测试环境因 bug 开放了互联网访问。</div>
+<div class="src-link"><a href="https://www.marktechpost.com/2026/09/20/you-too-google-google-confirms-gemini-breached-3-companies-in-ai-security-tests">查看原文 →</a></div>
+</div></div><div class="section"><div class="section-head"><span class="bar" style="background:#24292f"></span><h2>GitHub 本周趋势榜</h2><span class="count">12 条</span></div><div class="item">
+<div class="line1"><span class="num">09</span><a class="title" href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐38,561 · Go · 本周+15,504</span></div>
+<div class="summary">Secure, fast, efficient, battle-tested at Alibaba&#x27;s scale. Hybrid architecture code review tool: deterministic pipelines</div>
+<div class="src-link"><a href="https://github.com/alibaba/open-code-review">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">10</span><a class="title" href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐147,220 · TypeScript · 本周+2,342</span></div>
+<div class="summary">Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster </div>
+<div class="src-link"><a href="https://github.com/anthropics/claude-code">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">11</span><a class="title" href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐263,914 · JavaScript · 本周+6,453</span></div>
+<div class="summary">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development f</div>
+<div class="src-link"><a href="https://github.com/affaan-m/ECC">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">12</span><a class="title" href="https://github.com/Tencent/WeKnora">Tencent/WeKnora</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐28,141 · Go · 本周+5,242</span></div>
+<div class="summary">Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-m</div>
+<div class="src-link"><a href="https://github.com/Tencent/WeKnora">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">13</span><a class="title" href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐97,792 · JavaScript · 本周+3,986</span></div>
+<div class="summary">Production-grade engineering skills for AI coding agents.</div>
+<div class="src-link"><a href="https://github.com/addyosmani/agent-skills">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">14</span><a class="title" href="https://github.com/anthropics/knowledge-work-plugins">anthropics/knowledge-work-plugins</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐25,297 · Python · 本周+1,298</span></div>
+<div class="summary">Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork</div>
+<div class="src-link"><a href="https://github.com/anthropics/knowledge-work-plugins">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">15</span><a class="title" href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐39,785 · JavaScript · 本周+8,111</span></div>
+<div class="summary">A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photoreal</div>
+<div class="src-link"><a href="https://github.com/bilawalsidhu/gods-eye-view">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">16</span><a class="title" href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐23,787 · TypeScript · 本周+1,242</span></div>
+<div class="summary">Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and en</div>
+<div class="src-link"><a href="https://github.com/mksglu/context-mode">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">17</span><a class="title" href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐8,228 · Rust · 本周+822</span></div>
+<div class="summary">Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows</div>
+<div class="src-link"><a href="https://github.com/max-sixty/worktrunk">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">18</span><a class="title" href="https://github.com/home-assistant/core">home-assistant/core</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐90,904 · Python · 本周+480</span></div>
+<div class="summary">🏡 Open source home automation that puts local control and privacy first.</div>
+<div class="src-link"><a href="https://github.com/home-assistant/core">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">19</span><a class="title" href="https://github.com/blader/humanizer">blader/humanizer</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐50,711 · Python · 本周+3,045</span></div>
+<div class="summary">Agent skill that removes signs of AI-generated writing from text</div>
+<div class="src-link"><a href="https://github.com/blader/humanizer">查看原文 →</a></div>
+</div><div class="item">
+<div class="line1"><span class="num">20</span><a class="title" href="https://github.com/stablyai/orca">stablyai/orca</a></div>
+<div class="meta"><span class="src">GitHub Trending</span><span class="badge">⭐73,795 · TypeScript · 本周+5,841</span></div>
+<div class="summary">Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available </div>
+<div class="src-link"><a href="https://github.com/stablyai/orca">查看原文 →</a></div>
+</div></div><div class="footer">本报告由 aihot skill 自动生成 · 数据来自 aihot.virxact.com · 2026-09-21 · 共 20 条</div></body></html>
